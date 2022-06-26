@@ -12,9 +12,9 @@ namespace Entra21.TrabalhoWindowsForm
         private string ArquivoLocal = "status.json";
         private List<Status> statuses;
 
-        public void Adcionar(Status encoder)
+        public void Adcionar(Status status)
         {
-            statuses.Add(encoder);
+            statuses.Add(status);
             SalvarArquivo();
         }
 

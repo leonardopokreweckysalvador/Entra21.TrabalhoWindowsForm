@@ -19,9 +19,9 @@ namespace Entra21.TrabalhoWindowsForm
             LerArquivo();
         }
 
-        public void Adicionar(Pessoa encoder)
+        public void Adicionar(Pessoa pessoa)
         {
-            pessoas.Add(encoder);
+            pessoas.Add(pessoa);
             SalvarArquivo();
         }
 
