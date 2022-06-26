@@ -53,7 +53,7 @@ namespace Entra21.TrabalhoWindowsForm
                     concessionaria.HoraFecha = concessionariaEditar.HoraFecha;
                     concessionaria.AbreFinalSemana = concessionariaEditar.AbreFinalSemana;
                     concessionaria.Endereco = concessionariaEditar.Endereco;
-                    //concessionaria.Pessoa = concessionariaEditar.Proprietario;
+                    concessionaria.Proprietario = concessionariaEditar.Proprietario;
 
                     SalvarArquivo();
                     return;

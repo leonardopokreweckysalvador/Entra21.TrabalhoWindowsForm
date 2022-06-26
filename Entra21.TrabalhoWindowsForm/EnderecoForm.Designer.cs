@@ -52,7 +52,7 @@
             // 
             // maskedTextBoxCep
             // 
-            this.maskedTextBoxCep.Location = new System.Drawing.Point(495, 37);
+            this.maskedTextBoxCep.Location = new System.Drawing.Point(602, 37);
             this.maskedTextBoxCep.Mask = "99999-999";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(84, 23);
@@ -67,13 +67,13 @@
             this.dataGridViewEndereco.Name = "dataGridViewEndereco";
             this.dataGridViewEndereco.ReadOnly = true;
             this.dataGridViewEndereco.RowTemplate.Height = 25;
-            this.dataGridViewEndereco.Size = new System.Drawing.Size(465, 373);
+            this.dataGridViewEndereco.Size = new System.Drawing.Size(570, 373);
             this.dataGridViewEndereco.TabIndex = 1;
             // 
             // labelCep
             // 
             this.labelCep.AutoSize = true;
-            this.labelCep.Location = new System.Drawing.Point(495, 19);
+            this.labelCep.Location = new System.Drawing.Point(602, 19);
             this.labelCep.Name = "labelCep";
             this.labelCep.Size = new System.Drawing.Size(28, 15);
             this.labelCep.TabIndex = 2;
@@ -81,50 +81,50 @@
             // 
             // textBoxEstado
             // 
-            this.textBoxEstado.Location = new System.Drawing.Point(495, 91);
+            this.textBoxEstado.Location = new System.Drawing.Point(602, 91);
             this.textBoxEstado.Name = "textBoxEstado";
             this.textBoxEstado.Size = new System.Drawing.Size(135, 23);
             this.textBoxEstado.TabIndex = 3;
             // 
             // textBoxCidade
             // 
-            this.textBoxCidade.Location = new System.Drawing.Point(495, 141);
+            this.textBoxCidade.Location = new System.Drawing.Point(602, 141);
             this.textBoxCidade.Name = "textBoxCidade";
-            this.textBoxCidade.Size = new System.Drawing.Size(293, 23);
+            this.textBoxCidade.Size = new System.Drawing.Size(351, 23);
             this.textBoxCidade.TabIndex = 4;
             // 
             // textBoxBairro
             // 
-            this.textBoxBairro.Location = new System.Drawing.Point(495, 196);
+            this.textBoxBairro.Location = new System.Drawing.Point(602, 196);
             this.textBoxBairro.Name = "textBoxBairro";
-            this.textBoxBairro.Size = new System.Drawing.Size(293, 23);
+            this.textBoxBairro.Size = new System.Drawing.Size(351, 23);
             this.textBoxBairro.TabIndex = 5;
             // 
             // textBoxLogradouro
             // 
-            this.textBoxLogradouro.Location = new System.Drawing.Point(495, 250);
+            this.textBoxLogradouro.Location = new System.Drawing.Point(602, 250);
             this.textBoxLogradouro.Name = "textBoxLogradouro";
-            this.textBoxLogradouro.Size = new System.Drawing.Size(219, 23);
+            this.textBoxLogradouro.Size = new System.Drawing.Size(246, 23);
             this.textBoxLogradouro.TabIndex = 6;
             // 
             // textBoxNumero
             // 
-            this.textBoxNumero.Location = new System.Drawing.Point(720, 250);
+            this.textBoxNumero.Location = new System.Drawing.Point(854, 250);
             this.textBoxNumero.Name = "textBoxNumero";
-            this.textBoxNumero.Size = new System.Drawing.Size(68, 23);
+            this.textBoxNumero.Size = new System.Drawing.Size(99, 23);
             this.textBoxNumero.TabIndex = 7;
             // 
             // textBoxComplemento
             // 
-            this.textBoxComplemento.Location = new System.Drawing.Point(495, 303);
+            this.textBoxComplemento.Location = new System.Drawing.Point(602, 303);
             this.textBoxComplemento.Name = "textBoxComplemento";
-            this.textBoxComplemento.Size = new System.Drawing.Size(293, 23);
+            this.textBoxComplemento.Size = new System.Drawing.Size(351, 23);
             this.textBoxComplemento.TabIndex = 8;
             // 
             // labelEstado
             // 
             this.labelEstado.AutoSize = true;
-            this.labelEstado.Location = new System.Drawing.Point(495, 73);
+            this.labelEstado.Location = new System.Drawing.Point(602, 73);
             this.labelEstado.Name = "labelEstado";
             this.labelEstado.Size = new System.Drawing.Size(42, 15);
             this.labelEstado.TabIndex = 9;
@@ -133,7 +133,7 @@
             // labelCidade
             // 
             this.labelCidade.AutoSize = true;
-            this.labelCidade.Location = new System.Drawing.Point(493, 123);
+            this.labelCidade.Location = new System.Drawing.Point(600, 123);
             this.labelCidade.Name = "labelCidade";
             this.labelCidade.Size = new System.Drawing.Size(44, 15);
             this.labelCidade.TabIndex = 10;
@@ -142,7 +142,7 @@
             // labelBairro
             // 
             this.labelBairro.AutoSize = true;
-            this.labelBairro.Location = new System.Drawing.Point(495, 178);
+            this.labelBairro.Location = new System.Drawing.Point(602, 178);
             this.labelBairro.Name = "labelBairro";
             this.labelBairro.Size = new System.Drawing.Size(38, 15);
             this.labelBairro.TabIndex = 11;
@@ -151,7 +151,7 @@
             // labelLogradouro
             // 
             this.labelLogradouro.AutoSize = true;
-            this.labelLogradouro.Location = new System.Drawing.Point(495, 232);
+            this.labelLogradouro.Location = new System.Drawing.Point(602, 232);
             this.labelLogradouro.Name = "labelLogradouro";
             this.labelLogradouro.Size = new System.Drawing.Size(69, 15);
             this.labelLogradouro.TabIndex = 12;
@@ -160,7 +160,7 @@
             // labelNumero
             // 
             this.labelNumero.AutoSize = true;
-            this.labelNumero.Location = new System.Drawing.Point(720, 232);
+            this.labelNumero.Location = new System.Drawing.Point(858, 232);
             this.labelNumero.Name = "labelNumero";
             this.labelNumero.Size = new System.Drawing.Size(51, 15);
             this.labelNumero.TabIndex = 13;
@@ -169,7 +169,7 @@
             // labelComplemento
             // 
             this.labelComplemento.AutoSize = true;
-            this.labelComplemento.Location = new System.Drawing.Point(495, 285);
+            this.labelComplemento.Location = new System.Drawing.Point(602, 285);
             this.labelComplemento.Name = "labelComplemento";
             this.labelComplemento.Size = new System.Drawing.Size(84, 15);
             this.labelComplemento.TabIndex = 14;
@@ -195,9 +195,9 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(653, 346);
+            this.buttonCancelar.Location = new System.Drawing.Point(805, 346);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(135, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(148, 23);
             this.buttonCancelar.TabIndex = 17;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(495, 346);
+            this.buttonSalvar.Location = new System.Drawing.Point(602, 346);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(135, 23);
             this.buttonSalvar.TabIndex = 18;
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonEditar);
@@ -237,7 +237,7 @@
             this.Controls.Add(this.dataGridViewEndereco);
             this.Controls.Add(this.maskedTextBoxCep);
             this.Name = "EnderecoForm";
-            this.Text = "EnderecoForm";
+            this.Text = "Endereco";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEndereco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
