@@ -150,6 +150,9 @@
             // comboBoxSexo
             // 
             this.comboBoxSexo.FormattingEnabled = true;
+            this.comboBoxSexo.Items.AddRange(new object[] {
+            "Masculino",
+            "Feminino"});
             this.comboBoxSexo.Location = new System.Drawing.Point(594, 208);
             this.comboBoxSexo.Name = "comboBoxSexo";
             this.comboBoxSexo.Size = new System.Drawing.Size(310, 23);

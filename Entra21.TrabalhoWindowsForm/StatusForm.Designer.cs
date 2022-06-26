@@ -160,7 +160,7 @@
             // labelLimiteFinanceiro
             // 
             this.labelLimiteFinanceiro.AutoSize = true;
-            this.labelLimiteFinanceiro.Location = new System.Drawing.Point(611, 364);
+            this.labelLimiteFinanceiro.Location = new System.Drawing.Point(611, 339);
             this.labelLimiteFinanceiro.Name = "labelLimiteFinanceiro";
             this.labelLimiteFinanceiro.Size = new System.Drawing.Size(96, 15);
             this.labelLimiteFinanceiro.TabIndex = 11;
@@ -198,6 +198,7 @@
             // maskedTextBoxSalario
             // 
             this.maskedTextBoxSalario.Location = new System.Drawing.Point(611, 265);
+            this.maskedTextBoxSalario.Mask = "R$";
             this.maskedTextBoxSalario.Name = "maskedTextBoxSalario";
             this.maskedTextBoxSalario.Size = new System.Drawing.Size(329, 23);
             this.maskedTextBoxSalario.TabIndex = 16;
@@ -215,7 +216,8 @@
             // 
             // maskedTextBoxLimiteFinanceiro
             // 
-            this.maskedTextBoxLimiteFinanceiro.Location = new System.Drawing.Point(612, 382);
+            this.maskedTextBoxLimiteFinanceiro.Location = new System.Drawing.Point(612, 357);
+            this.maskedTextBoxLimiteFinanceiro.Mask = "R$";
             this.maskedTextBoxLimiteFinanceiro.Name = "maskedTextBoxLimiteFinanceiro";
             this.maskedTextBoxLimiteFinanceiro.Size = new System.Drawing.Size(328, 23);
             this.maskedTextBoxLimiteFinanceiro.TabIndex = 18;
@@ -223,7 +225,7 @@
             // radioButtonNomeLimpo2
             // 
             this.radioButtonNomeLimpo2.AutoSize = true;
-            this.radioButtonNomeLimpo2.Location = new System.Drawing.Point(612, 341);
+            this.radioButtonNomeLimpo2.Location = new System.Drawing.Point(672, 316);
             this.radioButtonNomeLimpo2.Name = "radioButtonNomeLimpo2";
             this.radioButtonNomeLimpo2.Size = new System.Drawing.Size(47, 19);
             this.radioButtonNomeLimpo2.TabIndex = 19;
