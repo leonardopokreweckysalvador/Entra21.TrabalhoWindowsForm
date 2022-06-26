@@ -71,6 +71,37 @@ namespace Entra21.TrabalhoWindowsForm
                 }
             }
         }
+        public void SalvarArquivo()
+        {
+            var carroEmJson = JsonConvert.SerializeObject(carros);
+            File.WriteAllText(arquivoLocal, carroEmJson);
+        }
 
+        public List<Carro> ObterTodos()
+        {
+            return carros;
+        }
+
+        public Carro ObterPorCodigo(int codigo)
+        {
+            for(var i = 0; i < carros.Count; i++)
+            {
+                var carro = carros[i];
+                if(carro.Codigo == codigo)
+                    return carro;
+            }
+            return null;
+        }
+
+        public int ObterUltimoCodigo()
+        {
+            var ultimoCodigo = int.MinValue;
+            for(var i = 0; i < carros.Count; i++)
+            {
+                var carro = carros[i];
+                ultimoCodigo = carro.Codigo;
+            }
+            return ultimoCodigo;
+        }
     }
 }
