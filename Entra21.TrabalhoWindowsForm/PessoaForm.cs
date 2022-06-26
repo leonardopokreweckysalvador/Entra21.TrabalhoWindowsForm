@@ -16,5 +16,10 @@ namespace Entra21.TrabalhoWindowsForm
         {
             InitializeComponent();
         }
+
+        private void labelSexo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

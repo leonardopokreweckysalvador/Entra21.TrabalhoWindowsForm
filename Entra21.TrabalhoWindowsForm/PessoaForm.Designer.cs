@@ -44,6 +44,7 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxRg = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxEndereco = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,11 +109,12 @@
             // labelSexo
             // 
             this.labelSexo.AutoSize = true;
-            this.labelSexo.Location = new System.Drawing.Point(594, 190);
+            this.labelSexo.Location = new System.Drawing.Point(594, 195);
             this.labelSexo.Name = "labelSexo";
             this.labelSexo.Size = new System.Drawing.Size(30, 15);
             this.labelSexo.TabIndex = 6;
             this.labelSexo.Text = "Sexo";
+            this.labelSexo.Click += new System.EventHandler(this.labelSexo_Click);
             // 
             // labelCpf
             // 
@@ -153,7 +155,7 @@
             this.comboBoxSexo.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.comboBoxSexo.Location = new System.Drawing.Point(594, 208);
+            this.comboBoxSexo.Location = new System.Drawing.Point(594, 213);
             this.comboBoxSexo.Name = "comboBoxSexo";
             this.comboBoxSexo.Size = new System.Drawing.Size(310, 23);
             this.comboBoxSexo.TabIndex = 14;
@@ -192,11 +194,21 @@
             this.maskedTextBoxRg.Size = new System.Drawing.Size(310, 23);
             this.maskedTextBoxRg.TabIndex = 18;
             // 
+            // comboBoxEndereco
+            // 
+            this.comboBoxEndereco.FormattingEnabled = true;
+            this.comboBoxEndereco.Location = new System.Drawing.Point(594, 164);
+            this.comboBoxEndereco.Name = "comboBoxEndereco";
+            this.comboBoxEndereco.Size = new System.Drawing.Size(310, 23);
+            this.comboBoxEndereco.TabIndex = 19;
+            this.comboBoxEndereco.Text = "Endereço";
+            // 
             // PessoaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 406);
+            this.Controls.Add(this.comboBoxEndereco);
             this.Controls.Add(this.maskedTextBoxRg);
             this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonCancelar);
@@ -239,5 +251,6 @@
         private Button buttonCancelar;
         private MaskedTextBox maskedTextBoxCpf;
         private MaskedTextBox maskedTextBoxRg;
+        private ComboBox comboBoxEndereco;
     }
 }
