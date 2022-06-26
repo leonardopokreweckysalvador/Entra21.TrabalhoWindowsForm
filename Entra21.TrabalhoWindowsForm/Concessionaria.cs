@@ -13,7 +13,6 @@ namespace Entra21.TrabalhoWindowsForm
         public DateTime HoraAbre;
         public DateTime HoraFecha;
         public bool AbreFinalSemana;
-        //public Pessoa Proprietario;
-
+        public Pessoa Proprietario;
     }
 }
