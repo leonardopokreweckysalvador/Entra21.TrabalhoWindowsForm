@@ -39,11 +39,11 @@
             this.labelRg = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.dateTimePickerDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.textBoxCpf = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSexo = new System.Windows.Forms.ComboBox();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxRg = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,27 +146,13 @@
             this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(310, 23);
             this.dateTimePickerDataNascimento.TabIndex = 10;
             // 
-            // textBoxCpf
+            // comboBoxSexo
             // 
-            this.textBoxCpf.Location = new System.Drawing.Point(594, 262);
-            this.textBoxCpf.Name = "textBoxCpf";
-            this.textBoxCpf.Size = new System.Drawing.Size(310, 23);
-            this.textBoxCpf.TabIndex = 12;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(594, 315);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 23);
-            this.textBox1.TabIndex = 13;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(594, 208);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(310, 23);
-            this.comboBox1.TabIndex = 14;
+            this.comboBoxSexo.FormattingEnabled = true;
+            this.comboBoxSexo.Location = new System.Drawing.Point(594, 208);
+            this.comboBoxSexo.Name = "comboBoxSexo";
+            this.comboBoxSexo.Size = new System.Drawing.Size(310, 23);
+            this.comboBoxSexo.TabIndex = 14;
             // 
             // buttonSalvar
             // 
@@ -186,16 +172,30 @@
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
+            // maskedTextBoxCpf
+            // 
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(594, 262);
+            this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(310, 23);
+            this.maskedTextBoxCpf.TabIndex = 17;
+            // 
+            // maskedTextBoxRg
+            // 
+            this.maskedTextBoxRg.Location = new System.Drawing.Point(594, 315);
+            this.maskedTextBoxRg.Name = "maskedTextBoxRg";
+            this.maskedTextBoxRg.Size = new System.Drawing.Size(310, 23);
+            this.maskedTextBoxRg.TabIndex = 18;
+            // 
             // PessoaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 406);
+            this.Controls.Add(this.maskedTextBoxRg);
+            this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBoxCpf);
+            this.Controls.Add(this.comboBoxSexo);
             this.Controls.Add(this.dateTimePickerDataNascimento);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelRg);
@@ -228,10 +228,10 @@
         private Label labelRg;
         private TextBox textBoxNome;
         private DateTimePicker dateTimePickerDataNascimento;
-        private TextBox textBoxCpf;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxSexo;
         private Button buttonSalvar;
         private Button buttonCancelar;
+        private MaskedTextBox maskedTextBoxCpf;
+        private MaskedTextBox maskedTextBoxRg;
     }
 }
