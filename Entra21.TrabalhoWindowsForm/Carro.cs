@@ -8,7 +8,7 @@ namespace Entra21.TrabalhoWindowsForm
 {
     internal class Carro
     {
-        public int Id;
+        public int Codigo;
         public Pessoa Proprietario;
         public Concessionaria Loja;
         public EnumCategoria Categoria;

@@ -8,7 +8,7 @@ namespace Entra21.TrabalhoWindowsForm
 {
     internal class Marca
     {
-        public int Id;
+        public int Codigo;
         public string Nome;
         public DateTime AnoFundacao;
         public string Grupo;
