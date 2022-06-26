@@ -99,6 +99,7 @@ namespace Entra21.TrabalhoWindowsForm
             for(var i = 0; i < carros.Count; i++)
             {
                 var carro = carros[i];
+                if (carro.Codigo > ultimoCodigo)
                 ultimoCodigo = carro.Codigo;
             }
             return ultimoCodigo;
