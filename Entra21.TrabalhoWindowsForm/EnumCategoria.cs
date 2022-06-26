@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entra21.TrabalhoWindowsForm
 {
-    internal class Marca
+    enum EnumCategoria
     {
-        public int Id;
-        public string Nome;
-        public DateTime AnoFundacao;
-        public string Grupo;
-        public string Pais;
+        Suv, Hatch, Sedan, Utilitario, Minivan
     }
 }
