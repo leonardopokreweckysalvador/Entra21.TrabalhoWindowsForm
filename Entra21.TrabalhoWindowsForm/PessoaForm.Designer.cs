@@ -141,6 +141,7 @@
             // 
             // dateTimePickerDataNascimento
             // 
+            this.dateTimePickerDataNascimento.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(594, 111);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
             this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(310, 23);
@@ -175,6 +176,7 @@
             // maskedTextBoxCpf
             // 
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(594, 262);
+            this.maskedTextBoxCpf.Mask = "999.999.999-99";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(310, 23);
             this.maskedTextBoxCpf.TabIndex = 17;
@@ -182,6 +184,7 @@
             // maskedTextBoxRg
             // 
             this.maskedTextBoxRg.Location = new System.Drawing.Point(594, 315);
+            this.maskedTextBoxRg.Mask = "9.999.999";
             this.maskedTextBoxRg.Name = "maskedTextBoxRg";
             this.maskedTextBoxRg.Size = new System.Drawing.Size(310, 23);
             this.maskedTextBoxRg.TabIndex = 18;

@@ -45,8 +45,9 @@
             this.textBoxProfissao = new System.Windows.Forms.TextBox();
             this.textBoxEmpresaTrabalho = new System.Windows.Forms.TextBox();
             this.maskedTextBoxSalario = new System.Windows.Forms.MaskedTextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonNomeLimpo1 = new System.Windows.Forms.RadioButton();
             this.maskedTextBoxLimiteFinanceiro = new System.Windows.Forms.MaskedTextBox();
+            this.radioButtonNomeLimpo2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,16 +202,16 @@
             this.maskedTextBoxSalario.Size = new System.Drawing.Size(329, 23);
             this.maskedTextBoxSalario.TabIndex = 16;
             // 
-            // radioButton1
+            // radioButtonNomeLimpo1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(611, 316);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 19);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonNomeLimpo1.AutoSize = true;
+            this.radioButtonNomeLimpo1.Location = new System.Drawing.Point(611, 316);
+            this.radioButtonNomeLimpo1.Name = "radioButtonNomeLimpo1";
+            this.radioButtonNomeLimpo1.Size = new System.Drawing.Size(44, 19);
+            this.radioButtonNomeLimpo1.TabIndex = 17;
+            this.radioButtonNomeLimpo1.TabStop = true;
+            this.radioButtonNomeLimpo1.Text = "Sim";
+            this.radioButtonNomeLimpo1.UseVisualStyleBackColor = true;
             // 
             // maskedTextBoxLimiteFinanceiro
             // 
@@ -219,13 +220,25 @@
             this.maskedTextBoxLimiteFinanceiro.Size = new System.Drawing.Size(328, 23);
             this.maskedTextBoxLimiteFinanceiro.TabIndex = 18;
             // 
+            // radioButtonNomeLimpo2
+            // 
+            this.radioButtonNomeLimpo2.AutoSize = true;
+            this.radioButtonNomeLimpo2.Location = new System.Drawing.Point(612, 341);
+            this.radioButtonNomeLimpo2.Name = "radioButtonNomeLimpo2";
+            this.radioButtonNomeLimpo2.Size = new System.Drawing.Size(47, 19);
+            this.radioButtonNomeLimpo2.TabIndex = 19;
+            this.radioButtonNomeLimpo2.TabStop = true;
+            this.radioButtonNomeLimpo2.Text = "Não";
+            this.radioButtonNomeLimpo2.UseVisualStyleBackColor = true;
+            // 
             // StatusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 450);
+            this.Controls.Add(this.radioButtonNomeLimpo2);
             this.Controls.Add(this.maskedTextBoxLimiteFinanceiro);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioButtonNomeLimpo1);
             this.Controls.Add(this.maskedTextBoxSalario);
             this.Controls.Add(this.textBoxEmpresaTrabalho);
             this.Controls.Add(this.textBoxProfissao);
@@ -270,7 +283,8 @@
         private TextBox textBoxProfissao;
         private TextBox textBoxEmpresaTrabalho;
         private MaskedTextBox maskedTextBoxSalario;
-        private RadioButton radioButton1;
+        private RadioButton radioButtonNomeLimpo1;
         private MaskedTextBox maskedTextBoxLimiteFinanceiro;
+        private RadioButton radioButtonNomeLimpo2;
     }
 }
