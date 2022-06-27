@@ -64,6 +64,35 @@ namespace Entra21.TrabalhoWindowsForm
                 CadastrarEndereco(cep, estado, cidade, bairro, logradouro, numero, complemento);
             }
 
+            PreencherDataGridViewEndereco();
+
+            LimparCampos();
+        }
+
+        private void PreencherDataGridViewEndereco()
+        {
+            dataGridViewEndereco.Rows.Clear();
+
+            var enderecos = enderecoServico.ObterTodos();
+
+            for (var i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+
+                dataGridViewEndereco.Rows.Add(new object []
+                {
+                    endereco.Codigo,
+                    endereco.Cep,
+                    endereco.Estado,
+                    endereco.Cidade,
+                    endereco.Bairro,
+                    endereco.Logradouro,
+                    endereco.Numero,
+                    endereco.Complemento
+                });
+            }
+
+            dataGridViewEndereco.ClearSelection();
         }
 
         private bool ValidarDados(string cep, string estado, string cidade, string bairro, string logradouro, string numero, string complemento)
@@ -165,7 +194,7 @@ namespace Entra21.TrabalhoWindowsForm
                 textBoxCidade.Text = dadosEndereco.Localidade;
                 textBoxBairro.Text = dadosEndereco.Bairro;
                 textBoxLogradouro.Text = dadosEndereco.Logradouro;
-                
+
             }
         }
     }
