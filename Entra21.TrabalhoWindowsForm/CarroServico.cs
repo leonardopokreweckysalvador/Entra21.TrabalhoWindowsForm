@@ -16,7 +16,6 @@ namespace Entra21.TrabalhoWindowsForm
         public CarroServico()
         {
             carros = new List<Carro>();
-
             LerArquivo();
         }
 

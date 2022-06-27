@@ -54,7 +54,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.labelCategoriaDoVeiculo = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPlacaVeiculo = new System.Windows.Forms.MaskedTextBox();
             this.labelPlacaVeiculo = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.labelRenavam = new System.Windows.Forms.Label();
@@ -312,12 +312,12 @@
             this.textBox3.Size = new System.Drawing.Size(381, 27);
             this.textBox3.TabIndex = 24;
             // 
-            // maskedTextBox1
+            // maskedTextBoxPlacaVeiculo
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(490, 249);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(125, 27);
-            this.maskedTextBox1.TabIndex = 26;
+            this.maskedTextBoxPlacaVeiculo.Location = new System.Drawing.Point(490, 249);
+            this.maskedTextBoxPlacaVeiculo.Name = "maskedTextBoxPlacaVeiculo";
+            this.maskedTextBoxPlacaVeiculo.Size = new System.Drawing.Size(125, 27);
+            this.maskedTextBoxPlacaVeiculo.TabIndex = 26;
             // 
             // labelPlacaVeiculo
             // 
@@ -330,15 +330,15 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(489, 302);
+            this.textBox4.Location = new System.Drawing.Point(621, 249);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(257, 27);
+            this.textBox4.Size = new System.Drawing.Size(250, 27);
             this.textBox4.TabIndex = 28;
             // 
             // labelRenavam
             // 
             this.labelRenavam.AutoSize = true;
-            this.labelRenavam.Location = new System.Drawing.Point(489, 279);
+            this.labelRenavam.Location = new System.Drawing.Point(621, 226);
             this.labelRenavam.Name = "labelRenavam";
             this.labelRenavam.Size = new System.Drawing.Size(144, 20);
             this.labelRenavam.TabIndex = 29;
@@ -352,7 +352,7 @@
             this.Controls.Add(this.labelRenavam);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.labelPlacaVeiculo);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.maskedTextBoxPlacaVeiculo);
             this.Controls.Add(this.labelCategoriaDoVeiculo);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.labelModeloVeiculo);
@@ -415,7 +415,7 @@
         private TextBox textBox2;
         private Label labelCategoriaDoVeiculo;
         private TextBox textBox3;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox maskedTextBoxPlacaVeiculo;
         private Label labelPlacaVeiculo;
         private TextBox textBox4;
         private Label labelRenavam;
