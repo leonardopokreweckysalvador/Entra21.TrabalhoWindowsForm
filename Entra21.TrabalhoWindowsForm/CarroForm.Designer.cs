@@ -62,6 +62,8 @@
             this.labelaAnoModelo = new System.Windows.Forms.Label();
             this.textBoxAnoFabricacao = new System.Windows.Forms.TextBox();
             this.textBoxAnoModelo = new System.Windows.Forms.TextBox();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -382,11 +384,31 @@
             this.textBoxAnoModelo.Size = new System.Drawing.Size(125, 27);
             this.textBoxAnoModelo.TabIndex = 34;
             // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.Location = new System.Drawing.Point(995, 640);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCancelar.TabIndex = 36;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(895, 640);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
+            this.buttonSalvar.TabIndex = 35;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            // 
             // CarroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 681);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.textBoxAnoModelo);
             this.Controls.Add(this.textBoxAnoFabricacao);
             this.Controls.Add(this.labelaAnoModelo);
@@ -465,5 +487,7 @@
         private Label labelaAnoModelo;
         private TextBox textBoxAnoFabricacao;
         private TextBox textBoxAnoModelo;
+        private Button buttonCancelar;
+        private Button buttonSalvar;
     }
 }
