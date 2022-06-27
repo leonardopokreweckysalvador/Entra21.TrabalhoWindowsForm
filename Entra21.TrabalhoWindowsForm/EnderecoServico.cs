@@ -96,7 +96,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         public int ObterUltimoCodigo()
         {
-            var ultimoCodigo = int.MinValue;
+            var ultimoCodigo = 0;
             for (var i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];

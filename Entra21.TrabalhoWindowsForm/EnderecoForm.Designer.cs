@@ -47,6 +47,14 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEndereco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,15 +65,26 @@
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(84, 23);
             this.maskedTextBoxCep.TabIndex = 0;
+            this.maskedTextBoxCep.Leave += new System.EventHandler(this.maskedTextBoxCep_Leave);
             // 
             // dataGridViewEndereco
             // 
             this.dataGridViewEndereco.AllowUserToAddRows = false;
             this.dataGridViewEndereco.AllowUserToDeleteRows = false;
             this.dataGridViewEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEndereco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Cep,
+            this.Estado,
+            this.Cidade,
+            this.Bairro,
+            this.Logradouro,
+            this.Numero,
+            this.Complemento});
             this.dataGridViewEndereco.Location = new System.Drawing.Point(12, 37);
             this.dataGridViewEndereco.Name = "dataGridViewEndereco";
             this.dataGridViewEndereco.ReadOnly = true;
+            this.dataGridViewEndereco.RowHeadersWidth = 20;
             this.dataGridViewEndereco.RowTemplate.Height = 25;
             this.dataGridViewEndereco.Size = new System.Drawing.Size(570, 373);
             this.dataGridViewEndereco.TabIndex = 1;
@@ -211,6 +230,57 @@
             this.buttonSalvar.TabIndex = 18;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // Cep
+            // 
+            this.Cep.HeaderText = "CEP";
+            this.Cep.Name = "Cep";
+            this.Cep.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Cidade
+            // 
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
+            // 
+            // Bairro
+            // 
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
+            // 
+            // Logradouro
+            // 
+            this.Logradouro.HeaderText = "Logradouro";
+            this.Logradouro.Name = "Logradouro";
+            this.Logradouro.ReadOnly = true;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Número";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // Complemento
+            // 
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.Name = "Complemento";
+            this.Complemento.ReadOnly = true;
+            this.Complemento.Visible = false;
             // 
             // EnderecoForm
             // 
@@ -238,6 +308,7 @@
             this.Controls.Add(this.maskedTextBoxCep);
             this.Name = "EnderecoForm";
             this.Text = "Endereco";
+            this.Load += new System.EventHandler(this.EnderecoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEndereco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,5 +336,13 @@
         private Button buttonEditar;
         private Button buttonCancelar;
         private Button buttonSalvar;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Cep;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn Cidade;
+        private DataGridViewTextBoxColumn Bairro;
+        private DataGridViewTextBoxColumn Logradouro;
+        private DataGridViewTextBoxColumn Numero;
+        private DataGridViewTextBoxColumn Complemento;
     }
 }
