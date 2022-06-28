@@ -86,6 +86,7 @@
             this.dataGridViewEndereco.ReadOnly = true;
             this.dataGridViewEndereco.RowHeadersWidth = 25;
             this.dataGridViewEndereco.RowTemplate.Height = 25;
+            this.dataGridViewEndereco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEndereco.Size = new System.Drawing.Size(570, 373);
             this.dataGridViewEndereco.TabIndex = 1;
             // 
@@ -252,6 +253,7 @@
             this.buttonApagar.TabIndex = 15;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // buttonEditar
             // 
@@ -286,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(984, 460);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonEditar);

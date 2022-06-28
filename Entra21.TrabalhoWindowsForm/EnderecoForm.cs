@@ -17,33 +17,19 @@ namespace Entra21.TrabalhoWindowsForm
 
         public EnderecoForm()
         {
+            InitializeComponent();
+            
             enderecoServico = new EnderecoServico();
 
-            InitializeComponent();
+            PreencherDataGridViewEndereco();
+
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             LimparCampos();
         }
-
-        private void LimparCampos()
-        {
-            maskedTextBoxCep.Text = string.Empty;
-            textBoxBairro.Text = string.Empty;
-            textBoxEstado.Text = string.Empty;
-            textBoxCidade.Text = string.Empty;
-            textBoxBairro.Text = string.Empty;
-            textBoxLogradouro.Text = string.Empty;
-            textBoxNumero.Text = string.Empty;
-            textBoxComplemento.Text = string.Empty;
-        }
-
-        private void EnderecoForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var cep = maskedTextBoxCep.Text;
@@ -69,11 +55,33 @@ namespace Entra21.TrabalhoWindowsForm
             LimparCampos();
         }
 
-        private void PreencherDataGridViewEndereco()
+        private void maskedTextBoxCep_Leave(object sender, EventArgs e)
         {
-            dataGridViewEndereco.Rows.Clear();
+            ObterDadosCep();
+        }
 
+        private void EnderecoForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LimparCampos()
+        {
+            maskedTextBoxCep.Text = string.Empty;
+            textBoxBairro.Text = string.Empty;
+            textBoxEstado.Text = string.Empty;
+            textBoxCidade.Text = string.Empty;
+            textBoxBairro.Text = string.Empty;
+            textBoxLogradouro.Text = string.Empty;
+            textBoxNumero.Text = string.Empty;
+            textBoxComplemento.Text = string.Empty;
+        }
+
+        private void PreencherDataGridViewEndereco()
+        {         
             var enderecos = enderecoServico.ObterTodos();
+            
+            dataGridViewEndereco.Rows.Clear();
 
             for (var i = 0; i < enderecos.Count; i++)
             {
@@ -169,11 +177,6 @@ namespace Entra21.TrabalhoWindowsForm
             enderecoServico.Adicionar(endereco);
         }
 
-        private void maskedTextBoxCep_Leave(object sender, EventArgs e)
-        {
-            ObterDadosCep();
-        }
-
         private void ObterDadosCep()
         {
             var cep = maskedTextBoxCep.Text.Replace("-", "");
@@ -196,6 +199,35 @@ namespace Entra21.TrabalhoWindowsForm
                 textBoxLogradouro.Text = dadosEndereco.Logradouro;
 
             }
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEndereco.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um registro para remover.");
+                
+                return;
+            }
+
+            var validar = MessageBox.Show("Gostaria realmente de remover esse registro.", "Aviso", MessageBoxButtons.YesNo);
+
+            if (validar != DialogResult.Yes)
+            {
+                MessageBox.Show("Registro não foi removido.");
+
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewEndereco.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var endereco = enderecoServico.ObterPorCodigo(codigo);
+
+            enderecoServico.Apagar(endereco);
+
+            PreencherDataGridViewEndereco();
         }
     }
 }
