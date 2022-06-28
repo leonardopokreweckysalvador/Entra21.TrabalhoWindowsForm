@@ -53,11 +53,17 @@
             this.labelModeloVeiculo = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.labelCategoriaDoVeiculo = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPlacaVeiculo = new System.Windows.Forms.MaskedTextBox();
             this.labelPlacaVeiculo = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.labelRenavam = new System.Windows.Forms.Label();
+            this.comboBoxCategoriaVeiculo = new System.Windows.Forms.ComboBox();
+            this.labelAnoFabricacao = new System.Windows.Forms.Label();
+            this.labelaAnoModelo = new System.Windows.Forms.Label();
+            this.textBoxAnoFabricacao = new System.Windows.Forms.TextBox();
+            this.textBoxAnoModelo = new System.Windows.Forms.TextBox();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +98,7 @@
             // radioButtonTravaEletrica
             // 
             this.radioButtonTravaEletrica.AutoSize = true;
-            this.radioButtonTravaEletrica.Location = new System.Drawing.Point(489, 552);
+            this.radioButtonTravaEletrica.Location = new System.Drawing.Point(489, 438);
             this.radioButtonTravaEletrica.Name = "radioButtonTravaEletrica";
             this.radioButtonTravaEletrica.Size = new System.Drawing.Size(118, 24);
             this.radioButtonTravaEletrica.TabIndex = 3;
@@ -103,7 +109,7 @@
             // labelOpcionais
             // 
             this.labelOpcionais.AutoSize = true;
-            this.labelOpcionais.Location = new System.Drawing.Point(489, 529);
+            this.labelOpcionais.Location = new System.Drawing.Point(489, 415);
             this.labelOpcionais.Name = "labelOpcionais";
             this.labelOpcionais.Size = new System.Drawing.Size(257, 20);
             this.labelOpcionais.TabIndex = 4;
@@ -112,7 +118,7 @@
             // radioButtonVidrosEletricos
             // 
             this.radioButtonVidrosEletricos.AutoSize = true;
-            this.radioButtonVidrosEletricos.Location = new System.Drawing.Point(489, 572);
+            this.radioButtonVidrosEletricos.Location = new System.Drawing.Point(489, 458);
             this.radioButtonVidrosEletricos.Name = "radioButtonVidrosEletricos";
             this.radioButtonVidrosEletricos.Size = new System.Drawing.Size(132, 24);
             this.radioButtonVidrosEletricos.TabIndex = 5;
@@ -123,7 +129,7 @@
             // radioButtonDirecaoHidraulica
             // 
             this.radioButtonDirecaoHidraulica.AutoSize = true;
-            this.radioButtonDirecaoHidraulica.Location = new System.Drawing.Point(489, 593);
+            this.radioButtonDirecaoHidraulica.Location = new System.Drawing.Point(489, 479);
             this.radioButtonDirecaoHidraulica.Name = "radioButtonDirecaoHidraulica";
             this.radioButtonDirecaoHidraulica.Size = new System.Drawing.Size(154, 24);
             this.radioButtonDirecaoHidraulica.TabIndex = 6;
@@ -134,7 +140,7 @@
             // radioButtonDirecaoEletrica
             // 
             this.radioButtonDirecaoEletrica.AutoSize = true;
-            this.radioButtonDirecaoEletrica.Location = new System.Drawing.Point(489, 614);
+            this.radioButtonDirecaoEletrica.Location = new System.Drawing.Point(489, 500);
             this.radioButtonDirecaoEletrica.Name = "radioButtonDirecaoEletrica";
             this.radioButtonDirecaoEletrica.Size = new System.Drawing.Size(135, 24);
             this.radioButtonDirecaoEletrica.TabIndex = 7;
@@ -145,7 +151,7 @@
             // radioButtonCambioAutomatico
             // 
             this.radioButtonCambioAutomatico.AutoSize = true;
-            this.radioButtonCambioAutomatico.Location = new System.Drawing.Point(490, 635);
+            this.radioButtonCambioAutomatico.Location = new System.Drawing.Point(490, 521);
             this.radioButtonCambioAutomatico.Name = "radioButtonCambioAutomatico";
             this.radioButtonCambioAutomatico.Size = new System.Drawing.Size(164, 24);
             this.radioButtonCambioAutomatico.TabIndex = 8;
@@ -156,7 +162,7 @@
             // radioButtonComputadorDeBordo
             // 
             this.radioButtonComputadorDeBordo.AutoSize = true;
-            this.radioButtonComputadorDeBordo.Location = new System.Drawing.Point(674, 572);
+            this.radioButtonComputadorDeBordo.Location = new System.Drawing.Point(674, 458);
             this.radioButtonComputadorDeBordo.Name = "radioButtonComputadorDeBordo";
             this.radioButtonComputadorDeBordo.Size = new System.Drawing.Size(180, 24);
             this.radioButtonComputadorDeBordo.TabIndex = 9;
@@ -167,7 +173,7 @@
             // radioButtonCombustivelGasolina
             // 
             this.radioButtonCombustivelGasolina.AutoSize = true;
-            this.radioButtonCombustivelGasolina.Location = new System.Drawing.Point(674, 592);
+            this.radioButtonCombustivelGasolina.Location = new System.Drawing.Point(674, 478);
             this.radioButtonCombustivelGasolina.Name = "radioButtonCombustivelGasolina";
             this.radioButtonCombustivelGasolina.Size = new System.Drawing.Size(176, 24);
             this.radioButtonCombustivelGasolina.TabIndex = 10;
@@ -178,7 +184,7 @@
             // radioButtonCombustivelAlcool
             // 
             this.radioButtonCombustivelAlcool.AutoSize = true;
-            this.radioButtonCombustivelAlcool.Location = new System.Drawing.Point(674, 613);
+            this.radioButtonCombustivelAlcool.Location = new System.Drawing.Point(674, 499);
             this.radioButtonCombustivelAlcool.Name = "radioButtonCombustivelAlcool";
             this.radioButtonCombustivelAlcool.Size = new System.Drawing.Size(162, 24);
             this.radioButtonCombustivelAlcool.TabIndex = 11;
@@ -189,7 +195,7 @@
             // radioButtonCombustivelDiesel
             // 
             this.radioButtonCombustivelDiesel.AutoSize = true;
-            this.radioButtonCombustivelDiesel.Location = new System.Drawing.Point(674, 634);
+            this.radioButtonCombustivelDiesel.Location = new System.Drawing.Point(674, 520);
             this.radioButtonCombustivelDiesel.Name = "radioButtonCombustivelDiesel";
             this.radioButtonCombustivelDiesel.Size = new System.Drawing.Size(160, 24);
             this.radioButtonCombustivelDiesel.TabIndex = 12;
@@ -200,7 +206,7 @@
             // radioButtonFlex
             // 
             this.radioButtonFlex.AutoSize = true;
-            this.radioButtonFlex.Location = new System.Drawing.Point(883, 552);
+            this.radioButtonFlex.Location = new System.Drawing.Point(883, 438);
             this.radioButtonFlex.Name = "radioButtonFlex";
             this.radioButtonFlex.Size = new System.Drawing.Size(145, 24);
             this.radioButtonFlex.TabIndex = 13;
@@ -211,7 +217,7 @@
             // radioButtonBancosEmCouro
             // 
             this.radioButtonBancosEmCouro.AutoSize = true;
-            this.radioButtonBancosEmCouro.Location = new System.Drawing.Point(674, 552);
+            this.radioButtonBancosEmCouro.Location = new System.Drawing.Point(674, 438);
             this.radioButtonBancosEmCouro.Name = "radioButtonBancosEmCouro";
             this.radioButtonBancosEmCouro.Size = new System.Drawing.Size(144, 24);
             this.radioButtonBancosEmCouro.TabIndex = 14;
@@ -222,7 +228,7 @@
             // checkBoxLicenciamentoEmDia
             // 
             this.checkBoxLicenciamentoEmDia.AutoSize = true;
-            this.checkBoxLicenciamentoEmDia.Location = new System.Drawing.Point(489, 489);
+            this.checkBoxLicenciamentoEmDia.Location = new System.Drawing.Point(489, 375);
             this.checkBoxLicenciamentoEmDia.Name = "checkBoxLicenciamentoEmDia";
             this.checkBoxLicenciamentoEmDia.Size = new System.Drawing.Size(177, 24);
             this.checkBoxLicenciamentoEmDia.TabIndex = 15;
@@ -232,7 +238,7 @@
             // checkBoxLicenciamentoEmAtraso
             // 
             this.checkBoxLicenciamentoEmAtraso.AutoSize = true;
-            this.checkBoxLicenciamentoEmAtraso.Location = new System.Drawing.Point(674, 489);
+            this.checkBoxLicenciamentoEmAtraso.Location = new System.Drawing.Point(674, 375);
             this.checkBoxLicenciamentoEmAtraso.Name = "checkBoxLicenciamentoEmAtraso";
             this.checkBoxLicenciamentoEmAtraso.Size = new System.Drawing.Size(197, 24);
             this.checkBoxLicenciamentoEmAtraso.TabIndex = 16;
@@ -242,7 +248,7 @@
             // labelSituaçãoDocumentacao
             // 
             this.labelSituaçãoDocumentacao.AutoSize = true;
-            this.labelSituaçãoDocumentacao.Location = new System.Drawing.Point(490, 466);
+            this.labelSituaçãoDocumentacao.Location = new System.Drawing.Point(490, 352);
             this.labelSituaçãoDocumentacao.Name = "labelSituaçãoDocumentacao";
             this.labelSituaçãoDocumentacao.Size = new System.Drawing.Size(183, 20);
             this.labelSituaçãoDocumentacao.TabIndex = 17;
@@ -305,19 +311,13 @@
             this.labelCategoriaDoVeiculo.TabIndex = 25;
             this.labelCategoriaDoVeiculo.Text = "Categoria do Veículo";
             // 
-            // textBox3
+            // maskedTextBoxPlacaVeiculo
             // 
-            this.textBox3.Location = new System.Drawing.Point(490, 196);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(381, 27);
-            this.textBox3.TabIndex = 24;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(490, 249);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(125, 27);
-            this.maskedTextBox1.TabIndex = 26;
+            this.maskedTextBoxPlacaVeiculo.Location = new System.Drawing.Point(490, 249);
+            this.maskedTextBoxPlacaVeiculo.Mask = "999-9999";
+            this.maskedTextBoxPlacaVeiculo.Name = "maskedTextBoxPlacaVeiculo";
+            this.maskedTextBoxPlacaVeiculo.Size = new System.Drawing.Size(125, 27);
+            this.maskedTextBoxPlacaVeiculo.TabIndex = 26;
             // 
             // labelPlacaVeiculo
             // 
@@ -330,31 +330,95 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(489, 302);
+            this.textBox4.Location = new System.Drawing.Point(621, 249);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(257, 27);
+            this.textBox4.Size = new System.Drawing.Size(250, 27);
             this.textBox4.TabIndex = 28;
             // 
             // labelRenavam
             // 
             this.labelRenavam.AutoSize = true;
-            this.labelRenavam.Location = new System.Drawing.Point(489, 279);
+            this.labelRenavam.Location = new System.Drawing.Point(621, 226);
             this.labelRenavam.Name = "labelRenavam";
             this.labelRenavam.Size = new System.Drawing.Size(144, 20);
             this.labelRenavam.TabIndex = 29;
             this.labelRenavam.Text = "Renavam do Veículo";
+            // 
+            // comboBoxCategoriaVeiculo
+            // 
+            this.comboBoxCategoriaVeiculo.FormattingEnabled = true;
+            this.comboBoxCategoriaVeiculo.Location = new System.Drawing.Point(489, 195);
+            this.comboBoxCategoriaVeiculo.Name = "comboBoxCategoriaVeiculo";
+            this.comboBoxCategoriaVeiculo.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxCategoriaVeiculo.TabIndex = 30;
+            // 
+            // labelAnoFabricacao
+            // 
+            this.labelAnoFabricacao.AutoSize = true;
+            this.labelAnoFabricacao.Location = new System.Drawing.Point(490, 279);
+            this.labelAnoFabricacao.Name = "labelAnoFabricacao";
+            this.labelAnoFabricacao.Size = new System.Drawing.Size(135, 20);
+            this.labelAnoFabricacao.TabIndex = 31;
+            this.labelAnoFabricacao.Text = "Ano de fabricação ";
+            // 
+            // labelaAnoModelo
+            // 
+            this.labelaAnoModelo.AutoSize = true;
+            this.labelaAnoModelo.Location = new System.Drawing.Point(621, 279);
+            this.labelaAnoModelo.Name = "labelaAnoModelo";
+            this.labelaAnoModelo.Size = new System.Drawing.Size(114, 20);
+            this.labelaAnoModelo.TabIndex = 32;
+            this.labelaAnoModelo.Text = "Ano do modelo";
+            // 
+            // textBoxAnoFabricacao
+            // 
+            this.textBoxAnoFabricacao.Location = new System.Drawing.Point(490, 302);
+            this.textBoxAnoFabricacao.Name = "textBoxAnoFabricacao";
+            this.textBoxAnoFabricacao.Size = new System.Drawing.Size(125, 27);
+            this.textBoxAnoFabricacao.TabIndex = 33;
+            // 
+            // textBoxAnoModelo
+            // 
+            this.textBoxAnoModelo.Location = new System.Drawing.Point(621, 302);
+            this.textBoxAnoModelo.Name = "textBoxAnoModelo";
+            this.textBoxAnoModelo.Size = new System.Drawing.Size(125, 27);
+            this.textBoxAnoModelo.TabIndex = 34;
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.Location = new System.Drawing.Point(995, 640);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCancelar.TabIndex = 36;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(895, 640);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
+            this.buttonSalvar.TabIndex = 35;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
             // 
             // CarroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 681);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonSalvar);
+            this.Controls.Add(this.textBoxAnoModelo);
+            this.Controls.Add(this.textBoxAnoFabricacao);
+            this.Controls.Add(this.labelaAnoModelo);
+            this.Controls.Add(this.labelAnoFabricacao);
+            this.Controls.Add(this.comboBoxCategoriaVeiculo);
             this.Controls.Add(this.labelRenavam);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.labelPlacaVeiculo);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.maskedTextBoxPlacaVeiculo);
             this.Controls.Add(this.labelCategoriaDoVeiculo);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.labelModeloVeiculo);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.labelLoja);
@@ -414,10 +478,16 @@
         private Label labelModeloVeiculo;
         private TextBox textBox2;
         private Label labelCategoriaDoVeiculo;
-        private TextBox textBox3;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox maskedTextBoxPlacaVeiculo;
         private Label labelPlacaVeiculo;
         private TextBox textBox4;
         private Label labelRenavam;
+        private ComboBox comboBoxCategoriaVeiculo;
+        private Label labelAnoFabricacao;
+        private Label labelaAnoModelo;
+        private TextBox textBoxAnoFabricacao;
+        private TextBox textBoxAnoModelo;
+        private Button buttonCancelar;
+        private Button buttonSalvar;
     }
 }

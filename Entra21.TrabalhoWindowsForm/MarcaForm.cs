@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace Entra21.TrabalhoWindowsForm
 {
-    public partial class PessoaForm : Form
+    public partial class MarcaForm : Form
     {
-        private List<Pessoa> pesoas;
-        private int codigo = 0;
-        private int linhaSelecionada = -1;
-        private int codigoSelecionado = -1;
-        public PessoaForm()
+        public MarcaForm()
         {
             InitializeComponent();
-        }
-
-        private void labelSexo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
