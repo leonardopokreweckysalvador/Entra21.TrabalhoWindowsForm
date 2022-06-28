@@ -12,6 +12,10 @@ namespace Entra21.TrabalhoWindowsForm
 {
     public partial class PessoaForm : Form
     {
+        private List<Pessoa> pesoas;
+        private int codigo = 0;
+        private int linhaSelecionada = -1;
+        private int codigoSelecionado = -1;
         public PessoaForm()
         {
             InitializeComponent();
