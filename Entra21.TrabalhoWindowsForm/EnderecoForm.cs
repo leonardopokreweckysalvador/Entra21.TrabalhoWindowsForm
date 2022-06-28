@@ -64,6 +64,64 @@ namespace Entra21.TrabalhoWindowsForm
         {
 
         }
+       
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEndereco.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um registro para remover.");
+                
+                return;
+            }
+
+            var validar = MessageBox.Show("Gostaria realmente de remover esse registro.", "Aviso", MessageBoxButtons.YesNo);
+
+            if (validar != DialogResult.Yes)
+            {
+                MessageBox.Show("Registro não foi removido.");
+
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewEndereco.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var endereco = enderecoServico.ObterPorCodigo(codigo);
+
+            enderecoServico.Apagar(endereco);
+
+            PreencherDataGridViewEndereco();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosEditar();
+        }
+
+        private void ApresentarDadosEditar()
+        {
+            if (dataGridViewEndereco.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um registro para editar.");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewEndereco.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var endereco = enderecoServico.ObterPorCodigo(codigo);
+
+            maskedTextBoxCep.Text = endereco.Cep;
+            textBoxEstado.Text = endereco.Estado;
+            textBoxCidade.Text = endereco.Cidade;
+            textBoxBairro.Text = endereco.Bairro;
+            textBoxLogradouro.Text = endereco.Logradouro;
+            textBoxNumero.Text = endereco.Numero;
+            textBoxComplemento.Text = endereco.Complemento; 
+
+        }
 
         private void LimparCampos()
         {
@@ -199,35 +257,6 @@ namespace Entra21.TrabalhoWindowsForm
                 textBoxLogradouro.Text = dadosEndereco.Logradouro;
 
             }
-        }
-
-        private void buttonApagar_Click(object sender, EventArgs e)
-        {
-            if (dataGridViewEndereco.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um registro para remover.");
-                
-                return;
-            }
-
-            var validar = MessageBox.Show("Gostaria realmente de remover esse registro.", "Aviso", MessageBoxButtons.YesNo);
-
-            if (validar != DialogResult.Yes)
-            {
-                MessageBox.Show("Registro não foi removido.");
-
-                return;
-            }
-
-            var linhaSelecionada = dataGridViewEndereco.SelectedRows[0];
-
-            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
-
-            var endereco = enderecoServico.ObterPorCodigo(codigo);
-
-            enderecoServico.Apagar(endereco);
-
-            PreencherDataGridViewEndereco();
         }
     }
 }
