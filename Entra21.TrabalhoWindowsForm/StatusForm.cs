@@ -60,7 +60,25 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void ListarStatuses()
         {
-
+            var statuses = statusServico.ObterTodos();
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < statuses.Count; i++)
+            {
+                var status = statuses[i];
+                dataGridView1.Rows.Add(new object[]
+                    {
+                    status.Codigo,
+                    status.DataCadastro,
+                    status.Pessoa,
+                    status.Profissao,
+                    status.EmpresaTrabalho,
+                    status.Salario,
+                    status.NomeLimpo,
+                    status.LimiteFinanceiro
+                    });
+            }
+            
+            dataGridView1.ClearSelection();
         }
 
         private void StatusForm_Load(object sender, EventArgs e)

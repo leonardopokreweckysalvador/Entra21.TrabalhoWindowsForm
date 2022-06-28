@@ -53,7 +53,23 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void ListarPessoas()
         {
-
+            var pessoas = pessoaServico.ObterTodas();
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < pessoas.Count; i++)
+            {
+                var pessoa = pessoas[i];
+                dataGridView1.Rows.Add(new object[]
+                {
+                    pessoa.Codigo,
+                    pessoa.Nome,
+                    pessoa.DataNascimento,
+                    pessoa.Endereco,
+                    pessoa.Sexo,
+                    pessoa.Cpf,
+                    pessoa.Rg
+                });
+                dataGridView1.ClearSelection();
+            }
         }
 
         private void LimparCampos()
