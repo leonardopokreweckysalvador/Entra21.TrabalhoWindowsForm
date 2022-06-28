@@ -12,19 +12,13 @@ namespace Entra21.TrabalhoWindowsForm
 {
     public partial class StatusForm : Form
     {
-        private List<Status> statuses;
-        private int codigo = 0;
-        private int indiceLinhaSelecionada = -1;
-        private int codigoSelecionado = -1;
-
+        private StatusServico statusServico;
+        
         public StatusForm()
         {
             InitializeComponent();
-        }
-
-        private void AdicionarStatusSalvandoNoArquivo()
-        {
-
+            statusServico = new StatusServico();
+            ListarStatuses();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -47,7 +41,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private void LerArquivoApresentandoStatus()
+        private void AdicionarStatuses()
         {
 
         }
@@ -62,9 +56,14 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private void SalvarEmArquivo()
+        private void ListarStatuses()
         {
 
+        }
+
+        private void StatusForm_Load(object sender, EventArgs e)
+        {
+            ListarStatuses();
         }
 
         private void labelSalario_Click(object sender, EventArgs e)

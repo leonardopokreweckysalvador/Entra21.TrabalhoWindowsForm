@@ -109,7 +109,7 @@
             this.labelDataCadastro.AutoSize = true;
             this.labelDataCadastro.Location = new System.Drawing.Point(611, 45);
             this.labelDataCadastro.Name = "labelDataCadastro";
-            this.labelDataCadastro.Size = new System.Drawing.Size(101, 15);
+            this.labelDataCadastro.Size = new System.Drawing.Size(98, 15);
             this.labelDataCadastro.TabIndex = 5;
             this.labelDataCadastro.Text = "Data do Cadastro";
             // 
@@ -118,7 +118,7 @@
             this.labelPessoa.AutoSize = true;
             this.labelPessoa.Location = new System.Drawing.Point(611, 95);
             this.labelPessoa.Name = "labelPessoa";
-            this.labelPessoa.Size = new System.Drawing.Size(88, 15);
+            this.labelPessoa.Size = new System.Drawing.Size(94, 15);
             this.labelPessoa.TabIndex = 6;
             this.labelPessoa.Text = "Nome completo";
             // 
@@ -127,7 +127,7 @@
             this.labelProfissao.AutoSize = true;
             this.labelProfissao.Location = new System.Drawing.Point(611, 145);
             this.labelProfissao.Name = "labelProfissao";
-            this.labelProfissao.Size = new System.Drawing.Size(54, 15);
+            this.labelProfissao.Size = new System.Drawing.Size(55, 15);
             this.labelProfissao.TabIndex = 7;
             this.labelProfissao.Text = "Profissão";
             // 
@@ -136,7 +136,7 @@
             this.labelEmpresaTrabalho.AutoSize = true;
             this.labelEmpresaTrabalho.Location = new System.Drawing.Point(611, 196);
             this.labelEmpresaTrabalho.Name = "labelEmpresaTrabalho";
-            this.labelEmpresaTrabalho.Size = new System.Drawing.Size(108, 15);
+            this.labelEmpresaTrabalho.Size = new System.Drawing.Size(107, 15);
             this.labelEmpresaTrabalho.TabIndex = 8;
             this.labelEmpresaTrabalho.Text = "Empresa (trabalho)";
             // 
@@ -145,7 +145,7 @@
             this.labelSalario.AutoSize = true;
             this.labelSalario.Location = new System.Drawing.Point(611, 247);
             this.labelSalario.Name = "labelSalario";
-            this.labelSalario.Size = new System.Drawing.Size(43, 15);
+            this.labelSalario.Size = new System.Drawing.Size(42, 15);
             this.labelSalario.TabIndex = 9;
             this.labelSalario.Text = "Salário";
             this.labelSalario.Click += new System.EventHandler(this.labelSalario_Click);
@@ -155,7 +155,7 @@
             this.labelNomeLimpo.AutoSize = true;
             this.labelNomeLimpo.Location = new System.Drawing.Point(611, 298);
             this.labelNomeLimpo.Name = "labelNomeLimpo";
-            this.labelNomeLimpo.Size = new System.Drawing.Size(79, 15);
+            this.labelNomeLimpo.Size = new System.Drawing.Size(83, 15);
             this.labelNomeLimpo.TabIndex = 10;
             this.labelNomeLimpo.Text = "Nome é limpo";
             // 
@@ -164,7 +164,7 @@
             this.labelLimiteFinanceiro.AutoSize = true;
             this.labelLimiteFinanceiro.Location = new System.Drawing.Point(611, 339);
             this.labelLimiteFinanceiro.Name = "labelLimiteFinanceiro";
-            this.labelLimiteFinanceiro.Size = new System.Drawing.Size(96, 15);
+            this.labelLimiteFinanceiro.Size = new System.Drawing.Size(98, 15);
             this.labelLimiteFinanceiro.TabIndex = 11;
             this.labelLimiteFinanceiro.Text = "Limite Financeiro";
             // 
@@ -210,7 +210,7 @@
             this.radioButtonNomeLimpo1.AutoSize = true;
             this.radioButtonNomeLimpo1.Location = new System.Drawing.Point(611, 316);
             this.radioButtonNomeLimpo1.Name = "radioButtonNomeLimpo1";
-            this.radioButtonNomeLimpo1.Size = new System.Drawing.Size(44, 19);
+            this.radioButtonNomeLimpo1.Size = new System.Drawing.Size(45, 19);
             this.radioButtonNomeLimpo1.TabIndex = 17;
             this.radioButtonNomeLimpo1.TabStop = true;
             this.radioButtonNomeLimpo1.Text = "Sim";
@@ -262,6 +262,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "StatusForm";
             this.Text = "StatusForm";
+            this.Load += new System.EventHandler(this.StatusForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

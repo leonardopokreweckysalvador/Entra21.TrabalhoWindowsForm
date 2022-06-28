@@ -69,6 +69,7 @@
             this.buttonApagar.TabIndex = 1;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // buttonEditar
             // 
@@ -78,13 +79,14 @@
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // labelNome
             // 
             this.labelNome.AutoSize = true;
             this.labelNome.Location = new System.Drawing.Point(594, 38);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(38, 15);
+            this.labelNome.Size = new System.Drawing.Size(40, 15);
             this.labelNome.TabIndex = 3;
             this.labelNome.Text = "Nome";
             // 
@@ -93,7 +95,7 @@
             this.labelDataNascimento.AutoSize = true;
             this.labelDataNascimento.Location = new System.Drawing.Point(594, 93);
             this.labelDataNascimento.Name = "labelDataNascimento";
-            this.labelDataNascimento.Size = new System.Drawing.Size(115, 15);
+            this.labelDataNascimento.Size = new System.Drawing.Size(114, 15);
             this.labelDataNascimento.TabIndex = 4;
             this.labelDataNascimento.Text = "Data de Nascimento";
             // 
@@ -102,7 +104,7 @@
             this.labelEndereco.AutoSize = true;
             this.labelEndereco.Location = new System.Drawing.Point(594, 146);
             this.labelEndereco.Name = "labelEndereco";
-            this.labelEndereco.Size = new System.Drawing.Size(54, 15);
+            this.labelEndereco.Size = new System.Drawing.Size(56, 15);
             this.labelEndereco.TabIndex = 5;
             this.labelEndereco.Text = "Endereço";
             // 
@@ -111,7 +113,7 @@
             this.labelSexo.AutoSize = true;
             this.labelSexo.Location = new System.Drawing.Point(594, 195);
             this.labelSexo.Name = "labelSexo";
-            this.labelSexo.Size = new System.Drawing.Size(30, 15);
+            this.labelSexo.Size = new System.Drawing.Size(32, 15);
             this.labelSexo.TabIndex = 6;
             this.labelSexo.Text = "Sexo";
             this.labelSexo.Click += new System.EventHandler(this.labelSexo_Click);
@@ -168,6 +170,7 @@
             this.buttonSalvar.TabIndex = 15;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonCancelar
             // 
@@ -177,6 +180,7 @@
             this.buttonCancelar.TabIndex = 16;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // maskedTextBoxCpf
             // 
@@ -227,6 +231,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "PessoaForm";
             this.Text = "PessoaForm";
+            this.Load += new System.EventHandler(this.PessoaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
