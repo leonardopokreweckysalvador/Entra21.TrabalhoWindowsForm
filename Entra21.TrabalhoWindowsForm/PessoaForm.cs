@@ -21,11 +21,6 @@ namespace Entra21.TrabalhoWindowsForm
             ListarPessoas();
         }
 
-        private void labelSexo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonApagar_Click(object sender, EventArgs e)
         {
 
@@ -46,12 +41,12 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private void AdicionarPessoa()
+        private void AdicionarPessoa(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg)
         {
 
         }
 
-        private void EditarDados()
+        private void EditarDados(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg)
         {
 
         }
@@ -70,5 +65,11 @@ namespace Entra21.TrabalhoWindowsForm
         {
             ListarPessoas();
         }
+
+        private void labelSexo_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -41,12 +41,14 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private void AdicionarStatuses()
+        private void AdicionarStatus(int codigo, DateTime dataCadastro, Pessoa pessoa, string profissao,
+            string empresaTrabalho, double salario, bool nomeLimpo, double limiteFinanceiro)
         {
 
         }
 
-        private void EditarDados()
+        private void EditarDados(int codigo, DateTime dataCadastro, Pessoa pessoa, string profissao, 
+            string empresaTrabalho, double salario, bool nomeLimpo, double limiteFinanceiro)
         {
 
         }
