@@ -22,5 +22,17 @@ namespace Entra21.TrabalhoWindowsForm
             var enderecoForm = new EnderecoForm();
             enderecoForm.ShowDialog();
         }
+
+        private void buttonpPessoa_Click(object sender, EventArgs e)
+        {
+            var pessoaForm = new PessoaForm();
+            pessoaForm.ShowDialog();
+        }
+
+        private void buttonStatus_Click(object sender, EventArgs e)
+        {
+            var statusForm = new StatusForm();
+            statusForm.ShowDialog();
+        }
     }
 }

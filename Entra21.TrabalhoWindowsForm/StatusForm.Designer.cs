@@ -200,7 +200,7 @@
             // maskedTextBoxSalario
             // 
             this.maskedTextBoxSalario.Location = new System.Drawing.Point(611, 265);
-            this.maskedTextBoxSalario.Mask = "R$";
+            this.maskedTextBoxSalario.Mask = "$";
             this.maskedTextBoxSalario.Name = "maskedTextBoxSalario";
             this.maskedTextBoxSalario.Size = new System.Drawing.Size(329, 23);
             this.maskedTextBoxSalario.TabIndex = 16;
@@ -219,7 +219,7 @@
             // maskedTextBoxLimiteFinanceiro
             // 
             this.maskedTextBoxLimiteFinanceiro.Location = new System.Drawing.Point(612, 357);
-            this.maskedTextBoxLimiteFinanceiro.Mask = "R$";
+            this.maskedTextBoxLimiteFinanceiro.Mask = "$";
             this.maskedTextBoxLimiteFinanceiro.Name = "maskedTextBoxLimiteFinanceiro";
             this.maskedTextBoxLimiteFinanceiro.Size = new System.Drawing.Size(328, 23);
             this.maskedTextBoxLimiteFinanceiro.TabIndex = 18;
