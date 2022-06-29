@@ -91,7 +91,60 @@ namespace Entra21.TrabalhoWindowsForm
 
         private bool ValidarInformacoes(string proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
-            return false; 
+            if (proprietarioVeiculo.Trim().Length == 0)
+            {
+                MessageBox.Show("Digite o nome completo do proprietário!");
+                textBoxProprietario.Focus();
+                return false;
+            }
+            else if(proprietarioVeiculo.Trim().Length < 6)
+            {
+                MessageBox.Show("Digite o nome completo do proprietário!");
+                textBoxProprietario.Focus();
+                return false;
+            }
+            if (localizacaoVeiculo.Trim().Length == 0)
+            {
+                MessageBox.Show("Digite em qual unidade o veículo se encontra!");
+                textBoxLocalizacaoVeiculo.Focus();
+                return false;
+            }
+            else if(localizacaoVeiculo.Trim() < 5)
+            {
+                MessageBox.Show("Digite em qual unidade o veículo se encontra!");
+                textBoxLocalizacaoVeiculo.Focus();
+                return false;
+            }
+            if (modeloVeiculo.Replace(" ", "").Trim() == 0)
+            {
+                MessageBox.Show("Digite um modelo de veículo válido!");
+                textBoxModeloVeiculo.Focus();
+                return false;
+            }
+            else if (modeloVeiculo.Replace(" ", "").Trim() < 3)
+            {
+                MessageBox.Show("Digite um modelo de veículo válido!");
+                textBoxModeloVeiculo.Focus();
+                return false;
+            }
+            if (categoriaVeiculo == -1)
+            {
+                MessageBox.Show("Selecione uma categoria de veículo!")
+                comboBoxCategoriaVeiculo.Focus();
+                return false;
+            }
+            if (placaVeiculo.Replace("-", "").Trim().Length == 0)
+            {
+                MessageBox.Show("Digite uma placa de veículo válida!")
+                maskedTextBoxPlacaVeiculo.Focus();
+                return false;
+            }
+            else if (placaVeiculo.Replace("-", "").Trim().Length < 7)
+            {
+                MessageBox.Show("Digite uma placa de veículo válida!")
+            }
+            if (renavam)
+            return true; 
         }
 
         private void LimparCampos()
@@ -99,7 +152,7 @@ namespace Entra21.TrabalhoWindowsForm
             textBoxProprietario.Text = string.Empty;
             textBoxLocalizacaoVeiculo.Text = string.Empty;
             textBoxModeloVeiculo.Text = string.Empty;
-            comboBoxCategoriaVeiculo.Text = string.Empty;
+            comboBoxCategoriaVeiculo.Text = ResetText();
             maskedTextBoxPlacaVeiculo.Text = string.Empty;
             textBoxRenavam.Text = string.Empty;
             dateTimePickerAnoFabricacao.Text = string.Empty;
