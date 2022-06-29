@@ -168,12 +168,11 @@
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(354, 27);
             this.textBoxNome.TabIndex = 9;
-            this.textBoxNome.Click += new System.EventHandler(this.textBoxNome_Click);
-            this.textBoxNome.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
             // dateTimePickerDataNascimento
             // 
             this.dateTimePickerDataNascimento.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerDataNascimento.Enabled = false;
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(1210, 136);
             this.dateTimePickerDataNascimento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

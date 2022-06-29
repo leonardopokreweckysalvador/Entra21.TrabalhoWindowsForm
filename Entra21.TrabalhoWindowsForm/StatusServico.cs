@@ -12,6 +12,12 @@ namespace Entra21.TrabalhoWindowsForm
         private string ArquivoLocal = "status.json";
         private List<Status> statuses;
 
+        public StatusServico()
+        {
+            statuses = new List<Status>();
+            LerArquivo();
+        }
+
         public void Adcionar(Status status)
         {
             statuses.Add(status);

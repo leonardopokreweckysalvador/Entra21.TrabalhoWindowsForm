@@ -29,11 +29,32 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-
+            LimparCampos();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void ApresentarDadosParaEdicao()
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma Pessoa para editar");
+                return;
+            }
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var pessoa = pessoaServico.ObterPorCodigo(codigo);
+            textBoxNome.Text = pessoa.Nome;
+            //dateTimePickerDataNascimento. = pessoa.DataNascimento;
+            comboBoxEndereco.SelectedItem = pessoa.Endereco;
+            comboBoxSexo.SelectedItem = pessoa.Sexo;
+            maskedTextBoxCpf.Text = pessoa.Cpf;
+            maskedTextBoxRg.Text = pessoa.Rg;
+            checkBoxCarro.Checked = pessoa.PossuiCarro;
+            checkBoxMoto.Checked = pessoa.PossuiMoto;
 
         }
 
@@ -62,9 +83,21 @@ namespace Entra21.TrabalhoWindowsForm
             ListarPessoas();
         }
 
-        private void EditarDados(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg, string possuiVeiculo)
+        private void EditarDados(string nome, DateTime dataNascimento, Endereco endereco, string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
         {
-
+            var pessoa = new Pessoa();
+            pessoa.Nome = nome;
+            pessoa.DataNascimento = dataNascimento;
+            pessoa.Endereco = endereco;
+            pessoa.Sexo = sexo;
+            pessoa.Cpf = cpf;
+            pessoa.Rg = rg;
+            pessoa.PossuiCarro = possuiCarro;
+            pessoa.PossuiMoto = possuiMoto;
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            pessoa.Codigo = codigo;
+            pessoaServico.Editar(pessoa);
         }
 
         private void ListarPessoas()
@@ -106,16 +139,6 @@ namespace Entra21.TrabalhoWindowsForm
         private void PessoaForm_Load(object sender, EventArgs e)
         {
             ListarPessoas();
-        }
-
-        private void textBoxNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNome_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -12,6 +12,11 @@ namespace Entra21.TrabalhoWindowsForm
         private string ArquivoLocal = "pessoas.json";
         private List<Pessoa> pessoas;
 
+        public PessoaServico()
+        {
+            pessoas = new List<Pessoa>();
+            LerArquivo();
+        }
         public void Adicionar(Pessoa pessoa)
         {
             pessoas.Add(pessoa);

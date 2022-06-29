@@ -29,7 +29,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-
+            LimparCampos();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -62,10 +62,23 @@ namespace Entra21.TrabalhoWindowsForm
             ListarStatuses();
         }
 
-        private void EditarDados(int codigo, DateTime dataCadastro, Pessoa pessoa, string profissao,
+        private void EditarDados(DateTime dataCadastro, Pessoa pessoa, string profissao,
             string empresaTrabalho, double salario, bool nomeLimpo, double limiteFinanceiro)
         {
-
+            var status = new Status();
+            status.DataCadastro = dataCadastro;
+            status.Pessoa = pessoa;
+            status.Profissao = profissao;
+            status.EmpresaTrabalho = empresaTrabalho;
+            status.Salario = salario;
+            status.NomeLimpo = nomeLimpo;
+            status.LimiteFinanceiro = limiteFinanceiro;
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            status.Codigo = codigo;
+            statusServico.Editar(status);
+            LimparCampos();
+            ListarStatuses();
         }
 
         private void LimparCampos()
