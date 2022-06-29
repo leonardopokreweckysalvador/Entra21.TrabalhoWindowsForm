@@ -12,6 +12,9 @@ namespace Entra21.TrabalhoWindowsForm
 {
     public partial class CarroForm : Form
     {
-        
+        private void checkBoxTravaEletrica_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
