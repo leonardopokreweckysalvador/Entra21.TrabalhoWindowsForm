@@ -11,6 +11,7 @@ namespace Entra21.TrabalhoWindowsForm
         public int Codigo;
         public Pessoa Proprietario;
         public Concessionaria Loja;
+
         public EnumCategoria Categoria;
         public string Renavam;
         public string Placa;
