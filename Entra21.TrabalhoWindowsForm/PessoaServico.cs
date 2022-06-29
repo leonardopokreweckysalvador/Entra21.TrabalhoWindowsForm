@@ -66,7 +66,17 @@ namespace Entra21.TrabalhoWindowsForm
             for (var i = 0; i < pessoas.Count; i++)
             {
                 var pessoa = pessoas[i];
-                if (pessoa.Codigo == codigo)
+                return pessoa;
+            }
+            return null;
+        }
+
+        public Pessoa ObterPorNomePessoa(string nomePessoa)
+        {
+            for (var i = 0; i < pessoas.Count; i++)
+            {
+                var pessoa = pessoas[i];
+                if (pessoa.Nome == nomePessoa)
                     return pessoa;
             }
 

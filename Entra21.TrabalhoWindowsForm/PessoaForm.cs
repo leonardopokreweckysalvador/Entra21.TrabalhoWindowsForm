@@ -13,6 +13,7 @@ namespace Entra21.TrabalhoWindowsForm
     public partial class PessoaForm : Form
     {
         private PessoaServico pessoaServico;
+        private EnderecoServico enderecoServico;
 
         public PessoaForm()
         {
@@ -41,9 +42,24 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private void AdicionarPessoa(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg, string possuiVeiculo)
+        private void AdicionarPessoa(string nome, DateTime dataNascimento, int codigo, string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
         {
+            var pessoa = new Pessoa()
+            {
+                Codigo = pessoaServico.ObterUltimoCodigo() + 1,
+                Nome = nome,
+                DataNascimento = dataNascimento,
+                Endereco = enderecoServico.ObterPorCodigo(codigo),
+                Sexo = sexo,
+                Cpf = cpf,
+                Rg = rg,
+                PossuiCarro = possuiCarro,
+                PossuiMoto = possuiMoto
+            };
 
+            pessoaServico.Adicionar(pessoa);
+            LimparCampos();
+            ListarPessoas();
         }
 
         private void EditarDados(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg, string possuiVeiculo)
@@ -91,11 +107,5 @@ namespace Entra21.TrabalhoWindowsForm
         {
             ListarPessoas();
         }
-
-        private void labelSexo_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

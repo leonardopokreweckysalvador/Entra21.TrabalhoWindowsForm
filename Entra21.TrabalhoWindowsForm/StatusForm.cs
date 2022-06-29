@@ -13,7 +13,8 @@ namespace Entra21.TrabalhoWindowsForm
     public partial class StatusForm : Form
     {
         private StatusServico statusServico;
-        
+        private PessoaServico pessoaServico;
+
         public StatusForm()
         {
             InitializeComponent();
@@ -41,13 +42,27 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private void AdicionarStatus(int codigo, DateTime dataCadastro, Pessoa pessoa, string profissao,
+        private void AdicionarStatus(int codigo, DateTime dataCadastro, string nome, string profissao,
             string empresaTrabalho, double salario, bool nomeLimpo, double limiteFinanceiro)
         {
+            var status = new Status()
+            {
+                Codigo = statusServico.ObterUltimoCodigo() + 1,
+                DataCadastro = dataCadastro,
+                Pessoa = pessoaServico.ObterPorNomePessoa(nome),
+                Profissao = profissao,
+                EmpresaTrabalho = empresaTrabalho,
+                Salario = salario,
+                NomeLimpo = nomeLimpo,
+                LimiteFinanceiro = limiteFinanceiro
+            };
 
+            statusServico.Adcionar(status);
+            LimparCampos();
+            ListarStatuses();
         }
 
-        private void EditarDados(int codigo, DateTime dataCadastro, Pessoa pessoa, string profissao, 
+        private void EditarDados(int codigo, DateTime dataCadastro, Pessoa pessoa, string profissao,
             string empresaTrabalho, double salario, bool nomeLimpo, double limiteFinanceiro)
         {
 
@@ -85,7 +100,7 @@ namespace Entra21.TrabalhoWindowsForm
                     status.LimiteFinanceiro
                     });
             }
-            
+
             dataGridView1.ClearSelection();
         }
 
@@ -93,11 +108,5 @@ namespace Entra21.TrabalhoWindowsForm
         {
             ListarStatuses();
         }
-
-        private void labelSalario_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
