@@ -33,6 +33,11 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnNomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGrupoProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPaisDeOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataDeFundacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPossuiManutecaoNacional = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNomeMarca = new System.Windows.Forms.Label();
             this.labelGrupoProprietarioMarca = new System.Windows.Forms.Label();
             this.labelPaisOrigemMarca = new System.Windows.Forms.Label();
@@ -44,11 +49,6 @@
             this.dateTimePickerDataDeFundacaoMarca = new System.Windows.Forms.DateTimePicker();
             this.radioButtonSim = new System.Windows.Forms.RadioButton();
             this.radioButtonNao = new System.Windows.Forms.RadioButton();
-            this.ColumnNomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGrupoProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPaisDeOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataDeFundacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPossuiManutecaoNacional = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +106,50 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(1178, 398);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // ColumnNomeMarca
+            // 
+            this.ColumnNomeMarca.HeaderText = "Marca";
+            this.ColumnNomeMarca.MinimumWidth = 6;
+            this.ColumnNomeMarca.Name = "ColumnNomeMarca";
+            this.ColumnNomeMarca.ReadOnly = true;
+            this.ColumnNomeMarca.Width = 125;
+            // 
+            // ColumnGrupoProprietario
+            // 
+            this.ColumnGrupoProprietario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnGrupoProprietario.HeaderText = "Grupo Proprietário da Marca";
+            this.ColumnGrupoProprietario.MinimumWidth = 6;
+            this.ColumnGrupoProprietario.Name = "ColumnGrupoProprietario";
+            this.ColumnGrupoProprietario.ReadOnly = true;
+            this.ColumnGrupoProprietario.Width = 250;
+            // 
+            // ColumnPaisDeOrigem
+            // 
+            this.ColumnPaisDeOrigem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnPaisDeOrigem.HeaderText = "País de Origem da Marca";
+            this.ColumnPaisDeOrigem.MinimumWidth = 6;
+            this.ColumnPaisDeOrigem.Name = "ColumnPaisDeOrigem";
+            this.ColumnPaisDeOrigem.ReadOnly = true;
+            this.ColumnPaisDeOrigem.Width = 250;
+            // 
+            // ColumnDataDeFundacao
+            // 
+            this.ColumnDataDeFundacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnDataDeFundacao.HeaderText = "Data de Fundação da Marca";
+            this.ColumnDataDeFundacao.MinimumWidth = 6;
+            this.ColumnDataDeFundacao.Name = "ColumnDataDeFundacao";
+            this.ColumnDataDeFundacao.ReadOnly = true;
+            this.ColumnDataDeFundacao.Width = 250;
+            // 
+            // ColumnPossuiManutecaoNacional
+            // 
+            this.ColumnPossuiManutecaoNacional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnPossuiManutecaoNacional.HeaderText = "Possui Manutenção Nacional?";
+            this.ColumnPossuiManutecaoNacional.MinimumWidth = 6;
+            this.ColumnPossuiManutecaoNacional.Name = "ColumnPossuiManutecaoNacional";
+            this.ColumnPossuiManutecaoNacional.ReadOnly = true;
+            this.ColumnPossuiManutecaoNacional.Width = 250;
             // 
             // labelNomeMarca
             // 
@@ -206,50 +250,6 @@
             this.radioButtonNao.TabStop = true;
             this.radioButtonNao.Text = "Não";
             this.radioButtonNao.UseVisualStyleBackColor = true;
-            // 
-            // ColumnNomeMarca
-            // 
-            this.ColumnNomeMarca.HeaderText = "Marca";
-            this.ColumnNomeMarca.MinimumWidth = 6;
-            this.ColumnNomeMarca.Name = "ColumnNomeMarca";
-            this.ColumnNomeMarca.ReadOnly = true;
-            this.ColumnNomeMarca.Width = 125;
-            // 
-            // ColumnGrupoProprietario
-            // 
-            this.ColumnGrupoProprietario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnGrupoProprietario.HeaderText = "Grupo Proprietário da Marca";
-            this.ColumnGrupoProprietario.MinimumWidth = 6;
-            this.ColumnGrupoProprietario.Name = "ColumnGrupoProprietario";
-            this.ColumnGrupoProprietario.ReadOnly = true;
-            this.ColumnGrupoProprietario.Width = 250;
-            // 
-            // ColumnPaisDeOrigem
-            // 
-            this.ColumnPaisDeOrigem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnPaisDeOrigem.HeaderText = "País de Origem da Marca";
-            this.ColumnPaisDeOrigem.MinimumWidth = 6;
-            this.ColumnPaisDeOrigem.Name = "ColumnPaisDeOrigem";
-            this.ColumnPaisDeOrigem.ReadOnly = true;
-            this.ColumnPaisDeOrigem.Width = 250;
-            // 
-            // ColumnDataDeFundacao
-            // 
-            this.ColumnDataDeFundacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnDataDeFundacao.HeaderText = "Data de Fundação da Marca";
-            this.ColumnDataDeFundacao.MinimumWidth = 6;
-            this.ColumnDataDeFundacao.Name = "ColumnDataDeFundacao";
-            this.ColumnDataDeFundacao.ReadOnly = true;
-            this.ColumnDataDeFundacao.Width = 250;
-            // 
-            // ColumnPossuiManutecaoNacional
-            // 
-            this.ColumnPossuiManutecaoNacional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnPossuiManutecaoNacional.HeaderText = "Possui Manutenção Nacional?";
-            this.ColumnPossuiManutecaoNacional.MinimumWidth = 6;
-            this.ColumnPossuiManutecaoNacional.Name = "ColumnPossuiManutecaoNacional";
-            this.ColumnPossuiManutecaoNacional.ReadOnly = true;
-            this.ColumnPossuiManutecaoNacional.Width = 250;
             // 
             // MarcaForm
             // 

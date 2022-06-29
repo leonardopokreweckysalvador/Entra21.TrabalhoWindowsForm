@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRenavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAnoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAnoFabricacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLicenciamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnOpcionais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.labelOpcionais = new System.Windows.Forms.Label();
@@ -36,19 +45,17 @@
             this.textBoxProprietario = new System.Windows.Forms.TextBox();
             this.labelProprietarioVeiculo = new System.Windows.Forms.Label();
             this.labelLoja = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxLocalizacaoVeiculo = new System.Windows.Forms.TextBox();
             this.labelModeloVeiculo = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxModeloVeiculo = new System.Windows.Forms.TextBox();
             this.labelCategoriaDoVeiculo = new System.Windows.Forms.Label();
             this.maskedTextBoxPlacaVeiculo = new System.Windows.Forms.MaskedTextBox();
             this.labelPlacaVeiculo = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxRenavam = new System.Windows.Forms.TextBox();
             this.labelRenavam = new System.Windows.Forms.Label();
             this.comboBoxCategoriaVeiculo = new System.Windows.Forms.ComboBox();
             this.labelAnoFabricacao = new System.Windows.Forms.Label();
             this.labelaAnoModelo = new System.Windows.Forms.Label();
-            this.textBoxAnoFabricacao = new System.Windows.Forms.TextBox();
-            this.textBoxAnoModelo = new System.Windows.Forms.TextBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.checkBoxTravaEletrica = new System.Windows.Forms.CheckBox();
@@ -65,15 +72,8 @@
             this.checkBoxArCondicionado = new System.Windows.Forms.CheckBox();
             this.radioButtonLicenciamentoEmDia = new System.Windows.Forms.RadioButton();
             this.radioButtonLicenciamentoEmAtraso = new System.Windows.Forms.RadioButton();
-            this.ColumnVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRenavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAnoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAnoFabricacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLicenciamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnOpcionais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePickerAnoFabricacao = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAnoModelo = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +99,81 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(1376, 632);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // ColumnVeiculo
+            // 
+            this.ColumnVeiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnVeiculo.HeaderText = "Veículo";
+            this.ColumnVeiculo.MinimumWidth = 6;
+            this.ColumnVeiculo.Name = "ColumnVeiculo";
+            this.ColumnVeiculo.ReadOnly = true;
+            this.ColumnVeiculo.Width = 86;
+            // 
+            // ColumnCategoria
+            // 
+            this.ColumnCategoria.HeaderText = "Categoria";
+            this.ColumnCategoria.MinimumWidth = 6;
+            this.ColumnCategoria.Name = "ColumnCategoria";
+            this.ColumnCategoria.ReadOnly = true;
+            this.ColumnCategoria.Width = 95;
+            // 
+            // ColumnPlaca
+            // 
+            this.ColumnPlaca.HeaderText = "Placa";
+            this.ColumnPlaca.MinimumWidth = 6;
+            this.ColumnPlaca.Name = "ColumnPlaca";
+            this.ColumnPlaca.ReadOnly = true;
+            this.ColumnPlaca.Width = 85;
+            // 
+            // ColumnRenavam
+            // 
+            this.ColumnRenavam.HeaderText = "Nº Renavam";
+            this.ColumnRenavam.MinimumWidth = 6;
+            this.ColumnRenavam.Name = "ColumnRenavam";
+            this.ColumnRenavam.ReadOnly = true;
+            this.ColumnRenavam.Width = 125;
+            // 
+            // ColumnAnoModelo
+            // 
+            this.ColumnAnoModelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnAnoModelo.HeaderText = "Ano Modelo";
+            this.ColumnAnoModelo.MinimumWidth = 6;
+            this.ColumnAnoModelo.Name = "ColumnAnoModelo";
+            this.ColumnAnoModelo.ReadOnly = true;
+            this.ColumnAnoModelo.Width = 111;
+            // 
+            // ColumnAnoFabricacao
+            // 
+            this.ColumnAnoFabricacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnAnoFabricacao.HeaderText = "Ano Fabricação";
+            this.ColumnAnoFabricacao.MinimumWidth = 6;
+            this.ColumnAnoFabricacao.Name = "ColumnAnoFabricacao";
+            this.ColumnAnoFabricacao.ReadOnly = true;
+            this.ColumnAnoFabricacao.Width = 128;
+            // 
+            // ColumnProprietario
+            // 
+            this.ColumnProprietario.HeaderText = "Proprietário";
+            this.ColumnProprietario.MinimumWidth = 6;
+            this.ColumnProprietario.Name = "ColumnProprietario";
+            this.ColumnProprietario.ReadOnly = true;
+            this.ColumnProprietario.Width = 350;
+            // 
+            // ColumnLicenciamento
+            // 
+            this.ColumnLicenciamento.HeaderText = "Licenciamento";
+            this.ColumnLicenciamento.MinimumWidth = 6;
+            this.ColumnLicenciamento.Name = "ColumnLicenciamento";
+            this.ColumnLicenciamento.ReadOnly = true;
+            this.ColumnLicenciamento.Width = 125;
+            // 
+            // ColumnOpcionais
+            // 
+            this.ColumnOpcionais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnOpcionais.HeaderText = "Opcionais";
+            this.ColumnOpcionais.MinimumWidth = 6;
+            this.ColumnOpcionais.Name = "ColumnOpcionais";
+            this.ColumnOpcionais.ReadOnly = true;
             // 
             // buttonEditar
             // 
@@ -165,12 +240,12 @@
             this.labelLoja.TabIndex = 21;
             this.labelLoja.Text = "Loja em que o veículo se encontra";
             // 
-            // textBox1
+            // textBoxLocalizacaoVeiculo
             // 
-            this.textBox1.Location = new System.Drawing.Point(1399, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(381, 27);
-            this.textBox1.TabIndex = 20;
+            this.textBoxLocalizacaoVeiculo.Location = new System.Drawing.Point(1399, 113);
+            this.textBoxLocalizacaoVeiculo.Name = "textBoxLocalizacaoVeiculo";
+            this.textBoxLocalizacaoVeiculo.Size = new System.Drawing.Size(381, 27);
+            this.textBoxLocalizacaoVeiculo.TabIndex = 20;
             // 
             // labelModeloVeiculo
             // 
@@ -182,12 +257,12 @@
             this.labelModeloVeiculo.TabIndex = 23;
             this.labelModeloVeiculo.Text = "Modelo do Veículo";
             // 
-            // textBox2
+            // textBoxModeloVeiculo
             // 
-            this.textBox2.Location = new System.Drawing.Point(1399, 166);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(381, 27);
-            this.textBox2.TabIndex = 22;
+            this.textBoxModeloVeiculo.Location = new System.Drawing.Point(1399, 166);
+            this.textBoxModeloVeiculo.Name = "textBoxModeloVeiculo";
+            this.textBoxModeloVeiculo.Size = new System.Drawing.Size(381, 27);
+            this.textBoxModeloVeiculo.TabIndex = 22;
             // 
             // labelCategoriaDoVeiculo
             // 
@@ -217,12 +292,12 @@
             this.labelPlacaVeiculo.TabIndex = 27;
             this.labelPlacaVeiculo.Text = "Placa do Veículo";
             // 
-            // textBox4
+            // textBoxRenavam
             // 
-            this.textBox4.Location = new System.Drawing.Point(1530, 272);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 27);
-            this.textBox4.TabIndex = 28;
+            this.textBoxRenavam.Location = new System.Drawing.Point(1530, 272);
+            this.textBoxRenavam.Name = "textBoxRenavam";
+            this.textBoxRenavam.Size = new System.Drawing.Size(250, 27);
+            this.textBoxRenavam.TabIndex = 28;
             // 
             // labelRenavam
             // 
@@ -262,20 +337,6 @@
             this.labelaAnoModelo.TabIndex = 32;
             this.labelaAnoModelo.Text = "Ano do modelo";
             // 
-            // textBoxAnoFabricacao
-            // 
-            this.textBoxAnoFabricacao.Location = new System.Drawing.Point(1399, 325);
-            this.textBoxAnoFabricacao.Name = "textBoxAnoFabricacao";
-            this.textBoxAnoFabricacao.Size = new System.Drawing.Size(125, 27);
-            this.textBoxAnoFabricacao.TabIndex = 33;
-            // 
-            // textBoxAnoModelo
-            // 
-            this.textBoxAnoModelo.Location = new System.Drawing.Point(1530, 325);
-            this.textBoxAnoModelo.Name = "textBoxAnoModelo";
-            this.textBoxAnoModelo.Size = new System.Drawing.Size(125, 27);
-            this.textBoxAnoModelo.TabIndex = 34;
-            // 
             // buttonCancelar
             // 
             this.buttonCancelar.Location = new System.Drawing.Point(1690, 640);
@@ -293,6 +354,7 @@
             this.buttonSalvar.TabIndex = 35;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // checkBoxTravaEletrica
             // 
@@ -437,86 +499,29 @@
             this.radioButtonLicenciamentoEmAtraso.Text = "Licenciamento em atraso";
             this.radioButtonLicenciamentoEmAtraso.UseVisualStyleBackColor = true;
             // 
-            // ColumnVeiculo
+            // dateTimePickerAnoFabricacao
             // 
-            this.ColumnVeiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnVeiculo.HeaderText = "Veículo";
-            this.ColumnVeiculo.MinimumWidth = 6;
-            this.ColumnVeiculo.Name = "ColumnVeiculo";
-            this.ColumnVeiculo.ReadOnly = true;
-            this.ColumnVeiculo.Width = 86;
+            this.dateTimePickerAnoFabricacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAnoFabricacao.Location = new System.Drawing.Point(1398, 325);
+            this.dateTimePickerAnoFabricacao.Name = "dateTimePickerAnoFabricacao";
+            this.dateTimePickerAnoFabricacao.Size = new System.Drawing.Size(105, 27);
+            this.dateTimePickerAnoFabricacao.TabIndex = 51;
             // 
-            // ColumnCategoria
+            // dateTimePickerAnoModelo
             // 
-            this.ColumnCategoria.HeaderText = "Categoria";
-            this.ColumnCategoria.MinimumWidth = 6;
-            this.ColumnCategoria.Name = "ColumnCategoria";
-            this.ColumnCategoria.ReadOnly = true;
-            this.ColumnCategoria.Width = 95;
-            // 
-            // ColumnPlaca
-            // 
-            this.ColumnPlaca.HeaderText = "Placa";
-            this.ColumnPlaca.MinimumWidth = 6;
-            this.ColumnPlaca.Name = "ColumnPlaca";
-            this.ColumnPlaca.ReadOnly = true;
-            this.ColumnPlaca.Width = 85;
-            // 
-            // ColumnRenavam
-            // 
-            this.ColumnRenavam.HeaderText = "Nº Renavam";
-            this.ColumnRenavam.MinimumWidth = 6;
-            this.ColumnRenavam.Name = "ColumnRenavam";
-            this.ColumnRenavam.ReadOnly = true;
-            this.ColumnRenavam.Width = 125;
-            // 
-            // ColumnAnoModelo
-            // 
-            this.ColumnAnoModelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnAnoModelo.HeaderText = "Ano Modelo";
-            this.ColumnAnoModelo.MinimumWidth = 6;
-            this.ColumnAnoModelo.Name = "ColumnAnoModelo";
-            this.ColumnAnoModelo.ReadOnly = true;
-            this.ColumnAnoModelo.Width = 121;
-            // 
-            // ColumnAnoFabricacao
-            // 
-            this.ColumnAnoFabricacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnAnoFabricacao.HeaderText = "Ano Fabricação";
-            this.ColumnAnoFabricacao.MinimumWidth = 6;
-            this.ColumnAnoFabricacao.Name = "ColumnAnoFabricacao";
-            this.ColumnAnoFabricacao.ReadOnly = true;
-            this.ColumnAnoFabricacao.Width = 140;
-            // 
-            // ColumnProprietario
-            // 
-            this.ColumnProprietario.HeaderText = "Proprietário";
-            this.ColumnProprietario.MinimumWidth = 6;
-            this.ColumnProprietario.Name = "ColumnProprietario";
-            this.ColumnProprietario.ReadOnly = true;
-            this.ColumnProprietario.Width = 350;
-            // 
-            // ColumnLicenciamento
-            // 
-            this.ColumnLicenciamento.HeaderText = "Licenciamento";
-            this.ColumnLicenciamento.MinimumWidth = 6;
-            this.ColumnLicenciamento.Name = "ColumnLicenciamento";
-            this.ColumnLicenciamento.ReadOnly = true;
-            this.ColumnLicenciamento.Width = 125;
-            // 
-            // ColumnOpcionais
-            // 
-            this.ColumnOpcionais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnOpcionais.HeaderText = "Opcionais";
-            this.ColumnOpcionais.MinimumWidth = 6;
-            this.ColumnOpcionais.Name = "ColumnOpcionais";
-            this.ColumnOpcionais.ReadOnly = true;
+            this.dateTimePickerAnoModelo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAnoModelo.Location = new System.Drawing.Point(1530, 325);
+            this.dateTimePickerAnoModelo.Name = "dateTimePickerAnoModelo";
+            this.dateTimePickerAnoModelo.Size = new System.Drawing.Size(105, 27);
+            this.dateTimePickerAnoModelo.TabIndex = 52;
             // 
             // CarroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1796, 681);
+            this.Controls.Add(this.dateTimePickerAnoModelo);
+            this.Controls.Add(this.dateTimePickerAnoFabricacao);
             this.Controls.Add(this.radioButtonLicenciamentoEmAtraso);
             this.Controls.Add(this.radioButtonLicenciamentoEmDia);
             this.Controls.Add(this.checkBoxArCondicionado);
@@ -533,20 +538,18 @@
             this.Controls.Add(this.checkBoxTravaEletrica);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.textBoxAnoModelo);
-            this.Controls.Add(this.textBoxAnoFabricacao);
             this.Controls.Add(this.labelaAnoModelo);
             this.Controls.Add(this.labelAnoFabricacao);
             this.Controls.Add(this.comboBoxCategoriaVeiculo);
             this.Controls.Add(this.labelRenavam);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxRenavam);
             this.Controls.Add(this.labelPlacaVeiculo);
             this.Controls.Add(this.maskedTextBoxPlacaVeiculo);
             this.Controls.Add(this.labelCategoriaDoVeiculo);
             this.Controls.Add(this.labelModeloVeiculo);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxModeloVeiculo);
             this.Controls.Add(this.labelLoja);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxLocalizacaoVeiculo);
             this.Controls.Add(this.labelProprietarioVeiculo);
             this.Controls.Add(this.textBoxProprietario);
             this.Controls.Add(this.labelSituaçãoDocumentacao);
@@ -572,19 +575,17 @@
         private TextBox textBoxProprietario;
         private Label labelProprietarioVeiculo;
         private Label labelLoja;
-        private TextBox textBox1;
+        private TextBox textBoxLocalizacaoVeiculo;
         private Label labelModeloVeiculo;
-        private TextBox textBox2;
+        private TextBox textBoxModeloVeiculo;
         private Label labelCategoriaDoVeiculo;
         private MaskedTextBox maskedTextBoxPlacaVeiculo;
         private Label labelPlacaVeiculo;
-        private TextBox textBox4;
+        private TextBox textBoxRenavam;
         private Label labelRenavam;
         private ComboBox comboBoxCategoriaVeiculo;
         private Label labelAnoFabricacao;
         private Label labelaAnoModelo;
-        private TextBox textBoxAnoFabricacao;
-        private TextBox textBoxAnoModelo;
         private Button buttonCancelar;
         private Button buttonSalvar;
         private CheckBox checkBoxTravaEletrica;
@@ -610,5 +611,7 @@
         private DataGridViewTextBoxColumn ColumnProprietario;
         private DataGridViewTextBoxColumn ColumnLicenciamento;
         private DataGridViewTextBoxColumn ColumnOpcionais;
+        private DateTimePicker dateTimePickerAnoFabricacao;
+        private DateTimePicker dateTimePickerAnoModelo;
     }
 }
