@@ -96,45 +96,50 @@
             // labelNomeMarca
             // 
             this.labelNomeMarca.AutoSize = true;
+            this.labelNomeMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelNomeMarca.Location = new System.Drawing.Point(439, 37);
             this.labelNomeMarca.Name = "labelNomeMarca";
-            this.labelNomeMarca.Size = new System.Drawing.Size(116, 20);
+            this.labelNomeMarca.Size = new System.Drawing.Size(120, 20);
             this.labelNomeMarca.TabIndex = 5;
             this.labelNomeMarca.Text = "Nome da marca";
             // 
             // labelGrupoProprietarioMarca
             // 
             this.labelGrupoProprietarioMarca.AutoSize = true;
+            this.labelGrupoProprietarioMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelGrupoProprietarioMarca.Location = new System.Drawing.Point(439, 90);
             this.labelGrupoProprietarioMarca.Name = "labelGrupoProprietarioMarca";
-            this.labelGrupoProprietarioMarca.Size = new System.Drawing.Size(199, 20);
+            this.labelGrupoProprietarioMarca.Size = new System.Drawing.Size(209, 20);
             this.labelGrupoProprietarioMarca.TabIndex = 6;
             this.labelGrupoProprietarioMarca.Text = "Grupo Proprietário da marca";
             // 
             // labelPaisOrigemMarca
             // 
             this.labelPaisOrigemMarca.AutoSize = true;
+            this.labelPaisOrigemMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPaisOrigemMarca.Location = new System.Drawing.Point(439, 143);
             this.labelPaisOrigemMarca.Name = "labelPaisOrigemMarca";
-            this.labelPaisOrigemMarca.Size = new System.Drawing.Size(173, 20);
+            this.labelPaisOrigemMarca.Size = new System.Drawing.Size(180, 20);
             this.labelPaisOrigemMarca.TabIndex = 7;
             this.labelPaisOrigemMarca.Text = "Pais de origem da marca";
             // 
             // labelAnoFundacaoMarca
             // 
             this.labelAnoFundacaoMarca.AutoSize = true;
+            this.labelAnoFundacaoMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelAnoFundacaoMarca.Location = new System.Drawing.Point(439, 196);
             this.labelAnoFundacaoMarca.Name = "labelAnoFundacaoMarca";
-            this.labelAnoFundacaoMarca.Size = new System.Drawing.Size(194, 20);
+            this.labelAnoFundacaoMarca.Size = new System.Drawing.Size(200, 20);
             this.labelAnoFundacaoMarca.TabIndex = 8;
             this.labelAnoFundacaoMarca.Text = "Data de fundação da marca";
             // 
             // labelMarcaNacionalOuImportada
             // 
             this.labelMarcaNacionalOuImportada.AutoSize = true;
+            this.labelMarcaNacionalOuImportada.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelMarcaNacionalOuImportada.Location = new System.Drawing.Point(439, 249);
             this.labelMarcaNacionalOuImportada.Name = "labelMarcaNacionalOuImportada";
-            this.labelMarcaNacionalOuImportada.Size = new System.Drawing.Size(264, 20);
+            this.labelMarcaNacionalOuImportada.Size = new System.Drawing.Size(279, 20);
             this.labelMarcaNacionalOuImportada.TabIndex = 9;
             this.labelMarcaNacionalOuImportada.Text = "A marca possui manutenção no Brasil?";
             // 
