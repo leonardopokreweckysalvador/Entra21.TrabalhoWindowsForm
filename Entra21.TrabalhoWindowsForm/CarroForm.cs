@@ -49,11 +49,6 @@ namespace Entra21.TrabalhoWindowsForm
             dataGridViewCarroForm.ClearSelection();
         }
 
-        private void checkBoxTravaEletrica_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var proprietarioVeiculo = textBoxProprietario.Text;
@@ -62,8 +57,8 @@ namespace Entra21.TrabalhoWindowsForm
             var categoriaVeiculo = comboBoxCategoriaVeiculo.Text;
             var placaVeiculo = maskedTextBoxPlacaVeiculo.Text;
             var renavam = textBoxRenavam.Text;
-            var anoFabricacao = dateTimePickerAnoFabricacao.Text;
-            var anoModelo = dateTimePickerAnoModelo.Text;
+            var anoFabricacao = Convert.ToDateTime(dateTimePickerAnoFabricacao.Text);
+            var anoModelo = Convert.ToDateTime(dateTimePickerAnoModelo.Text);
             var licenciamentoEmDia = radioButtonLicenciamentoEmDia.Checked;
             var licenciamentoEmAtraso = radioButtonLicenciamentoEmAtraso.Checked;
             var travaEletrica = checkBoxTravaEletrica.Checked;
@@ -71,7 +66,7 @@ namespace Entra21.TrabalhoWindowsForm
             var direcaoHidraulica = checkBoxDirecaoHidraulica.Checked;
             var direcaoEletrica = checkBoxDirecaoEletrica.Checked;
             var cambioAutomatico = checkBoxCambioAutomatico.Checked;
-            var bancosEmCouro = checkBoxBancosEmCouro;
+            var bancosEmCouro = checkBoxBancosEmCouro.Checked;
             var arCondicionado = checkBoxArCondicionado.Checked;
             var computadorDeBordo = checkBoxComputadorDeBordo.Checked;
             var combustivelGasolina = checkBoxCombustivelGasolina.Checked;
@@ -94,6 +89,11 @@ namespace Entra21.TrabalhoWindowsForm
             LimparCampos();
         }
 
+        private bool ValidarInformacoes(string proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        {
+            return false; 
+        }
+
         private void LimparCampos()
         {
             textBoxProprietario.Text = string.Empty;
@@ -104,8 +104,25 @@ namespace Entra21.TrabalhoWindowsForm
             textBoxRenavam.Text = string.Empty;
             dateTimePickerAnoFabricacao.Text = string.Empty;
             dateTimePickerAnoModelo.Text = string.Empty;
-            radioButtonLicenciamentoEmAtraso.Checked = bool.;
-            radioButtonLicenciamentoEmDia.Text = string.Empty;
+            radioButtonLicenciamentoEmAtraso.Checked = false;
+            radioButtonLicenciamentoEmDia.Checked = false;
+            checkBoxArCondicionado.Checked = false;
+            checkBoxBancosEmCouro.Checked = false;
+            checkBoxCambioAutomatico.Checked = false;
+            checkBoxCombustivelAlcool.Checked = false;
+            checkBoxCombustivelDiesel.Checked = false;
+            checkBoxCombustivelFlex.Checked = false;
+            checkBoxCombustivelGasolina.Checked = false;
+            checkBoxComputadorDeBordo.Checked = false;
+            checkBoxDirecaoEletrica.Checked = false;
+            checkBoxDirecaoHidraulica.Checked = false;
+            checkBoxTravaEletrica.Checked = false;
+            checkBoxVidrosEletricos.Checked = false;
+        }
+
+        private void CadastrarCarro(string proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        {
+
         }
     }
 }
