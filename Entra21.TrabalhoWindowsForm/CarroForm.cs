@@ -109,25 +109,25 @@ namespace Entra21.TrabalhoWindowsForm
                 textBoxLocalizacaoVeiculo.Focus();
                 return false;
             }
-            else if(localizacaoVeiculo.Trim() < 5)
+            else if(localizacaoVeiculo.Trim().Length < 5)
             {
                 MessageBox.Show("Digite em qual unidade o veículo se encontra!");
                 textBoxLocalizacaoVeiculo.Focus();
                 return false;
             }
-            if (modeloVeiculo.Replace(" ", "").Trim() == 0)
+            if (modeloVeiculo.Replace(" ", "").Trim().Length == 0)
             {
                 MessageBox.Show("Digite um modelo de veículo válido!");
                 textBoxModeloVeiculo.Focus();
                 return false;
             }
-            else if (modeloVeiculo.Replace(" ", "").Trim() < 3)
+            else if (modeloVeiculo.Replace(" ", "").Trim().Length < 3)
             {
                 MessageBox.Show("Digite um modelo de veículo válido!");
                 textBoxModeloVeiculo.Focus();
                 return false;
             }
-            if (categoriaVeiculo == -1)
+            if (categoriaVeiculo.Length == -1)
             {
                 MessageBox.Show("Selecione uma categoria de veículo!");
                 comboBoxCategoriaVeiculo.Focus();
@@ -146,7 +146,6 @@ namespace Entra21.TrabalhoWindowsForm
             if (renavam.Replace("-", "").Trim().Length == 0)
             {
                 MessageBox.Show("Digite um renavam válido!");
-                textBox
             }
             return true; 
         }
