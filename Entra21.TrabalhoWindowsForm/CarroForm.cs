@@ -12,6 +12,43 @@ namespace Entra21.TrabalhoWindowsForm
 {
     public partial class CarroForm : Form
     {
+        private CarroServico carroServico;
+
+        public CarroForm()
+        {
+            InitializeComponent();
+
+            carroServico = new CarroServico();
+
+            PreencherDataGridViewCarro();
+        }
+
+        private void PreencherDataGridViewCarro()
+        {
+            var carros = carroServico.ObterTodos();
+
+            dataGridViewCarroForm.Rows.Clear();
+
+            for (var i = 0; i < carros.Count; i++)
+            {
+                var carro = carros[i];
+
+                dataGridViewCarroForm.Rows.Add(new object[]
+                {
+                    carro.Codigo,
+                    carro.Proprietario,
+                    carro.Loja,
+                    carro.Categoria,
+                    carro.Renavam,
+                    carro.Placa,
+                    carro.AnoFabricacao,
+                    carro.AnoModelo,
+
+                });
+            }
+            dataGridViewCarroForm.ClearSelection();
+        }
+
         private void checkBoxTravaEletrica_CheckedChanged(object sender, EventArgs e)
         {
 

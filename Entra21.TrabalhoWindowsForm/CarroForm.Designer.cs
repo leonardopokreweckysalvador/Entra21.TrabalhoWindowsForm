@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCarroForm = new System.Windows.Forms.DataGridView();
             this.ColumnVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,15 +74,15 @@
             this.radioButtonLicenciamentoEmAtraso = new System.Windows.Forms.RadioButton();
             this.dateTimePickerAnoFabricacao = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerAnoModelo = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarroForm)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewCarroForm
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCarroForm.AllowUserToAddRows = false;
+            this.dataGridViewCarroForm.AllowUserToDeleteRows = false;
+            this.dataGridViewCarroForm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCarroForm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnVeiculo,
             this.ColumnCategoria,
             this.ColumnPlaca,
@@ -92,13 +92,13 @@
             this.ColumnProprietario,
             this.ColumnLicenciamento,
             this.ColumnOpcionais});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1376, 632);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewCarroForm.Location = new System.Drawing.Point(16, 37);
+            this.dataGridViewCarroForm.Name = "dataGridViewCarroForm";
+            this.dataGridViewCarroForm.ReadOnly = true;
+            this.dataGridViewCarroForm.RowHeadersWidth = 51;
+            this.dataGridViewCarroForm.RowTemplate.Height = 29;
+            this.dataGridViewCarroForm.Size = new System.Drawing.Size(1376, 632);
+            this.dataGridViewCarroForm.TabIndex = 0;
             // 
             // ColumnVeiculo
             // 
@@ -556,10 +556,10 @@
             this.Controls.Add(this.labelOpcionais);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCarroForm);
             this.Name = "CarroForm";
             this.Text = "CarroForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarroForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,7 +567,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewCarroForm;
         private Button buttonEditar;
         private Button buttonApagar;
         private Label labelOpcionais;
