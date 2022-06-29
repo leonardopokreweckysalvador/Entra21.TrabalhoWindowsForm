@@ -41,12 +41,12 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private void AdicionarPessoa(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg)
+        private void AdicionarPessoa(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg, string possuiVeiculo)
         {
 
         }
 
-        private void EditarDados(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg)
+        private void EditarDados(int nome, DateTime dataNascimento, Endereco endereco, string Sexo, string Cpf, string Rg, string possuiVeiculo)
         {
 
         }
@@ -66,7 +66,9 @@ namespace Entra21.TrabalhoWindowsForm
                     pessoa.Endereco,
                     pessoa.Sexo,
                     pessoa.Cpf,
-                    pessoa.Rg
+                    pessoa.Rg,
+                    pessoa.PossuiCarro,
+                    pessoa.PossuiMoto
                 });
                 dataGridView1.ClearSelection();
             }

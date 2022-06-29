@@ -45,6 +45,9 @@
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxRg = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxEndereco = new System.Windows.Forms.ComboBox();
+            this.checkBoxCarro = new System.Windows.Forms.CheckBox();
+            this.checkBoxMoto = new System.Windows.Forms.CheckBox();
+            this.labelPossuiVeiculo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +96,7 @@
             // labelDataNascimento
             // 
             this.labelDataNascimento.AutoSize = true;
-            this.labelDataNascimento.Location = new System.Drawing.Point(594, 93);
+            this.labelDataNascimento.Location = new System.Drawing.Point(594, 83);
             this.labelDataNascimento.Name = "labelDataNascimento";
             this.labelDataNascimento.Size = new System.Drawing.Size(114, 15);
             this.labelDataNascimento.TabIndex = 4;
@@ -102,7 +105,7 @@
             // labelEndereco
             // 
             this.labelEndereco.AutoSize = true;
-            this.labelEndereco.Location = new System.Drawing.Point(594, 146);
+            this.labelEndereco.Location = new System.Drawing.Point(594, 131);
             this.labelEndereco.Name = "labelEndereco";
             this.labelEndereco.Size = new System.Drawing.Size(56, 15);
             this.labelEndereco.TabIndex = 5;
@@ -111,7 +114,7 @@
             // labelSexo
             // 
             this.labelSexo.AutoSize = true;
-            this.labelSexo.Location = new System.Drawing.Point(594, 195);
+            this.labelSexo.Location = new System.Drawing.Point(594, 175);
             this.labelSexo.Name = "labelSexo";
             this.labelSexo.Size = new System.Drawing.Size(32, 15);
             this.labelSexo.TabIndex = 6;
@@ -121,7 +124,7 @@
             // labelCpf
             // 
             this.labelCpf.AutoSize = true;
-            this.labelCpf.Location = new System.Drawing.Point(594, 244);
+            this.labelCpf.Location = new System.Drawing.Point(594, 222);
             this.labelCpf.Name = "labelCpf";
             this.labelCpf.Size = new System.Drawing.Size(28, 15);
             this.labelCpf.TabIndex = 7;
@@ -130,7 +133,7 @@
             // labelRg
             // 
             this.labelRg.AutoSize = true;
-            this.labelRg.Location = new System.Drawing.Point(594, 297);
+            this.labelRg.Location = new System.Drawing.Point(594, 269);
             this.labelRg.Name = "labelRg";
             this.labelRg.Size = new System.Drawing.Size(22, 15);
             this.labelRg.TabIndex = 8;
@@ -146,7 +149,7 @@
             // dateTimePickerDataNascimento
             // 
             this.dateTimePickerDataNascimento.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(594, 111);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(594, 101);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
             this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(310, 23);
             this.dateTimePickerDataNascimento.TabIndex = 10;
@@ -157,7 +160,7 @@
             this.comboBoxSexo.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.comboBoxSexo.Location = new System.Drawing.Point(594, 213);
+            this.comboBoxSexo.Location = new System.Drawing.Point(594, 193);
             this.comboBoxSexo.Name = "comboBoxSexo";
             this.comboBoxSexo.Size = new System.Drawing.Size(310, 23);
             this.comboBoxSexo.TabIndex = 14;
@@ -184,7 +187,7 @@
             // 
             // maskedTextBoxCpf
             // 
-            this.maskedTextBoxCpf.Location = new System.Drawing.Point(594, 262);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(594, 240);
             this.maskedTextBoxCpf.Mask = "999.999.999-99";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(310, 23);
@@ -192,7 +195,7 @@
             // 
             // maskedTextBoxRg
             // 
-            this.maskedTextBoxRg.Location = new System.Drawing.Point(594, 315);
+            this.maskedTextBoxRg.Location = new System.Drawing.Point(594, 287);
             this.maskedTextBoxRg.Mask = "9.999.999";
             this.maskedTextBoxRg.Name = "maskedTextBoxRg";
             this.maskedTextBoxRg.Size = new System.Drawing.Size(310, 23);
@@ -201,17 +204,48 @@
             // comboBoxEndereco
             // 
             this.comboBoxEndereco.FormattingEnabled = true;
-            this.comboBoxEndereco.Location = new System.Drawing.Point(594, 164);
+            this.comboBoxEndereco.Location = new System.Drawing.Point(594, 149);
             this.comboBoxEndereco.Name = "comboBoxEndereco";
             this.comboBoxEndereco.Size = new System.Drawing.Size(310, 23);
             this.comboBoxEndereco.TabIndex = 19;
-            this.comboBoxEndereco.Text = "Endereço";
+            // 
+            // checkBoxCarro
+            // 
+            this.checkBoxCarro.AutoSize = true;
+            this.checkBoxCarro.Location = new System.Drawing.Point(595, 338);
+            this.checkBoxCarro.Name = "checkBoxCarro";
+            this.checkBoxCarro.Size = new System.Drawing.Size(55, 19);
+            this.checkBoxCarro.TabIndex = 20;
+            this.checkBoxCarro.Text = "Carro";
+            this.checkBoxCarro.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMoto
+            // 
+            this.checkBoxMoto.AutoSize = true;
+            this.checkBoxMoto.Location = new System.Drawing.Point(595, 363);
+            this.checkBoxMoto.Name = "checkBoxMoto";
+            this.checkBoxMoto.Size = new System.Drawing.Size(55, 19);
+            this.checkBoxMoto.TabIndex = 21;
+            this.checkBoxMoto.Text = "Moto";
+            this.checkBoxMoto.UseVisualStyleBackColor = true;
+            // 
+            // labelPossuiVeiculo
+            // 
+            this.labelPossuiVeiculo.AutoSize = true;
+            this.labelPossuiVeiculo.Location = new System.Drawing.Point(594, 320);
+            this.labelPossuiVeiculo.Name = "labelPossuiVeiculo";
+            this.labelPossuiVeiculo.Size = new System.Drawing.Size(82, 15);
+            this.labelPossuiVeiculo.TabIndex = 22;
+            this.labelPossuiVeiculo.Text = "Possui veículo";
             // 
             // PessoaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 406);
+            this.Controls.Add(this.labelPossuiVeiculo);
+            this.Controls.Add(this.checkBoxMoto);
+            this.Controls.Add(this.checkBoxCarro);
             this.Controls.Add(this.comboBoxEndereco);
             this.Controls.Add(this.maskedTextBoxRg);
             this.Controls.Add(this.maskedTextBoxCpf);
@@ -257,5 +291,8 @@
         private MaskedTextBox maskedTextBoxCpf;
         private MaskedTextBox maskedTextBoxRg;
         private ComboBox comboBoxEndereco;
+        private CheckBox checkBoxCarro;
+        private CheckBox checkBoxMoto;
+        private Label labelPossuiVeiculo;
     }
 }

@@ -18,12 +18,12 @@ namespace Entra21.TrabalhoWindowsForm
             SalvarArquivo();
         }
 
-        public void Apagar(Status statusApagar)
+        public void Apagar(int codigo)
         {
             for (var i = 0; i < statuses.Count; i++)
             {
                 var status = statuses[i];
-                if (status.Codigo == statusApagar.Codigo)
+                if (status.Codigo == codigo)
                 {
                     statuses.Remove(status);
                     SalvarArquivo();
@@ -34,22 +34,15 @@ namespace Entra21.TrabalhoWindowsForm
 
         public void Editar(Status statusEditar)
         {
-            for (var i = 0; i < statuses.Count; i++)
-            {
-                var status = statuses[i];
-                if (status.Codigo == statusEditar.Codigo)
-                {
-                    status.DataCadastro = statusEditar.DataCadastro;
-                    status.Pessoa = statusEditar.Pessoa;
-                    status.Profissao = statusEditar.Profissao;
-                    status.EmpresaTrabalho = statusEditar.EmpresaTrabalho;
-                    status.Salario = statusEditar.Salario;
-                    status.NomeLimpo = statusEditar.NomeLimpo;
-                    status.LimiteFinanceiro = statusEditar.LimiteFinanceiro;
-                    SalvarArquivo();
-                    return;
-                }
-            }
+            var status = ObterPorCodigo(statusEditar.Codigo);
+            status.DataCadastro = statusEditar.DataCadastro;
+            status.Pessoa = statusEditar.Pessoa;
+            status.Profissao = statusEditar.Profissao;
+            status.EmpresaTrabalho = statusEditar.EmpresaTrabalho;
+            status.Salario = statusEditar.Salario;
+            status.NomeLimpo = statusEditar.NomeLimpo;
+            status.LimiteFinanceiro = statusEditar.LimiteFinanceiro;
+            SalvarArquivo();
         }
 
         public void LerArquivo()
@@ -89,8 +82,7 @@ namespace Entra21.TrabalhoWindowsForm
             for (var i = 0; i < statuses.Count; i++)
             {
                 var status = statuses[i];
-                if (status.Codigo > ultimoCodigo)
-                    ultimoCodigo = status.Codigo;
+                ultimoCodigo = status.Codigo;
             }
 
             return ultimoCodigo;

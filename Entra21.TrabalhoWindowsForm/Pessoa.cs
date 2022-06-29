@@ -15,5 +15,7 @@ namespace Entra21.TrabalhoWindowsForm
         public string Sexo;
         public string Cpf;
         public string Rg;
+        public bool PossuiCarro;
+        public bool PossuiMoto;
     }
 }

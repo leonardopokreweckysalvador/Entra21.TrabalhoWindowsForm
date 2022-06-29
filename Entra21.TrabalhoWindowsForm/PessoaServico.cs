@@ -12,25 +12,18 @@ namespace Entra21.TrabalhoWindowsForm
         private string ArquivoLocal = "pessoas.json";
         private List<Pessoa> pessoas;
 
-        public PessoaServico()
-        {
-            pessoas = new List<Pessoa>();
-
-            LerArquivo();
-        }
-
         public void Adicionar(Pessoa pessoa)
         {
             pessoas.Add(pessoa);
             SalvarArquivo();
         }
 
-        public void Apagar(Pessoa pessoaApagar)
+        public void Apagar(int codigo)
         {
             for (var i = 0; i < pessoas.Count; i++)
             {
                 var pessoa = pessoas[i];
-                if (pessoa.Codigo == pessoaApagar.Codigo)
+                if (pessoa.Codigo == codigo)
                 {
                     pessoas.Remove(pessoa);
                     SalvarArquivo();
@@ -41,21 +34,16 @@ namespace Entra21.TrabalhoWindowsForm
 
         public void Editar(Pessoa pessoaEditar)
         {
-            for (var i = 0; i < pessoas.Count; i++)
-            {
-                var pessoa = pessoas[i];
-                if (pessoa.Codigo == pessoaEditar.Codigo)
-                {
-                    pessoa.Nome = pessoaEditar.Nome;
-                    pessoa.DataNascimento = pessoaEditar.DataNascimento;
-                    pessoa.Endereco = pessoaEditar.Endereco;
-                    pessoa.Sexo = pessoaEditar.Sexo;
-                    pessoa.Cpf= pessoaEditar.Cpf;
-                    pessoa.Rg = pessoaEditar.Rg;
-                    SalvarArquivo();
-                    return;                       
-                }
-            }
+            var pessoa = ObterPorCodigo(pessoaEditar.Codigo);
+            pessoa.Nome = pessoaEditar.Nome;
+            pessoa.DataNascimento = pessoaEditar.DataNascimento;
+            pessoa.Endereco = pessoaEditar.Endereco;
+            pessoa.Sexo = pessoaEditar.Sexo;
+            pessoa.Cpf = pessoaEditar.Cpf;
+            pessoa.Rg = pessoaEditar.Rg;
+            pessoa.PossuiCarro = pessoaEditar.PossuiCarro;
+            pessoa.PossuiMoto = pessoaEditar.PossuiMoto;
+            SalvarArquivo();
         }
 
         public void LerArquivo()
@@ -92,12 +80,11 @@ namespace Entra21.TrabalhoWindowsForm
 
         public int ObterUltimoCodigo()
         {
-            var ultimoCodigo = int.MinValue;
-            for (var i = 0; i < pessoas.Count;i++)
+            int ultimoCodigo = 0;
+            for (var i = 0; i < pessoas.Count; i++)
             {
                 var pessoa = pessoas[i];
-                if (pessoa.Codigo > ultimoCodigo)
-                    ultimoCodigo = pessoa.Codigo;
+                ultimoCodigo = pessoa.Codigo;
             }
 
             return ultimoCodigo;
