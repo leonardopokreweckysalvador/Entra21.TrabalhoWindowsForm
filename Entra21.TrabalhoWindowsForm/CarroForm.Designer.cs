@@ -65,17 +65,39 @@
             this.checkBoxArCondicionado = new System.Windows.Forms.CheckBox();
             this.radioButtonLicenciamentoEmDia = new System.Windows.Forms.RadioButton();
             this.radioButtonLicenciamentoEmAtraso = new System.Windows.Forms.RadioButton();
+            this.ColumnVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRenavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAnoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAnoFabricacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLicenciamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnOpcionais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnVeiculo,
+            this.ColumnCategoria,
+            this.ColumnPlaca,
+            this.ColumnRenavam,
+            this.ColumnAnoModelo,
+            this.ColumnAnoFabricacao,
+            this.ColumnProprietario,
+            this.ColumnLicenciamento,
+            this.ColumnOpcionais});
             this.dataGridView1.Location = new System.Drawing.Point(16, 37);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 632);
+            this.dataGridView1.Size = new System.Drawing.Size(1376, 632);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonEditar
@@ -100,7 +122,7 @@
             // 
             this.labelOpcionais.AutoSize = true;
             this.labelOpcionais.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelOpcionais.Location = new System.Drawing.Point(489, 415);
+            this.labelOpcionais.Location = new System.Drawing.Point(1398, 438);
             this.labelOpcionais.Name = "labelOpcionais";
             this.labelOpcionais.Size = new System.Drawing.Size(267, 20);
             this.labelOpcionais.TabIndex = 4;
@@ -110,7 +132,7 @@
             // 
             this.labelSituaçãoDocumentacao.AutoSize = true;
             this.labelSituaçãoDocumentacao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSituaçãoDocumentacao.Location = new System.Drawing.Point(490, 352);
+            this.labelSituaçãoDocumentacao.Location = new System.Drawing.Point(1399, 375);
             this.labelSituaçãoDocumentacao.Name = "labelSituaçãoDocumentacao";
             this.labelSituaçãoDocumentacao.Size = new System.Drawing.Size(189, 20);
             this.labelSituaçãoDocumentacao.TabIndex = 17;
@@ -118,7 +140,7 @@
             // 
             // textBoxProprietario
             // 
-            this.textBoxProprietario.Location = new System.Drawing.Point(490, 37);
+            this.textBoxProprietario.Location = new System.Drawing.Point(1399, 60);
             this.textBoxProprietario.Name = "textBoxProprietario";
             this.textBoxProprietario.Size = new System.Drawing.Size(381, 27);
             this.textBoxProprietario.TabIndex = 18;
@@ -127,7 +149,7 @@
             // 
             this.labelProprietarioVeiculo.AutoSize = true;
             this.labelProprietarioVeiculo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelProprietarioVeiculo.Location = new System.Drawing.Point(490, 14);
+            this.labelProprietarioVeiculo.Location = new System.Drawing.Point(1399, 37);
             this.labelProprietarioVeiculo.Name = "labelProprietarioVeiculo";
             this.labelProprietarioVeiculo.Size = new System.Drawing.Size(169, 20);
             this.labelProprietarioVeiculo.TabIndex = 19;
@@ -137,7 +159,7 @@
             // 
             this.labelLoja.AutoSize = true;
             this.labelLoja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelLoja.Location = new System.Drawing.Point(490, 67);
+            this.labelLoja.Location = new System.Drawing.Point(1399, 90);
             this.labelLoja.Name = "labelLoja";
             this.labelLoja.Size = new System.Drawing.Size(245, 20);
             this.labelLoja.TabIndex = 21;
@@ -145,7 +167,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(490, 90);
+            this.textBox1.Location = new System.Drawing.Point(1399, 113);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(381, 27);
             this.textBox1.TabIndex = 20;
@@ -154,7 +176,7 @@
             // 
             this.labelModeloVeiculo.AutoSize = true;
             this.labelModeloVeiculo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelModeloVeiculo.Location = new System.Drawing.Point(490, 120);
+            this.labelModeloVeiculo.Location = new System.Drawing.Point(1399, 143);
             this.labelModeloVeiculo.Name = "labelModeloVeiculo";
             this.labelModeloVeiculo.Size = new System.Drawing.Size(138, 20);
             this.labelModeloVeiculo.TabIndex = 23;
@@ -162,7 +184,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(490, 143);
+            this.textBox2.Location = new System.Drawing.Point(1399, 166);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(381, 27);
             this.textBox2.TabIndex = 22;
@@ -171,7 +193,7 @@
             // 
             this.labelCategoriaDoVeiculo.AutoSize = true;
             this.labelCategoriaDoVeiculo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCategoriaDoVeiculo.Location = new System.Drawing.Point(490, 173);
+            this.labelCategoriaDoVeiculo.Location = new System.Drawing.Point(1399, 196);
             this.labelCategoriaDoVeiculo.Name = "labelCategoriaDoVeiculo";
             this.labelCategoriaDoVeiculo.Size = new System.Drawing.Size(152, 20);
             this.labelCategoriaDoVeiculo.TabIndex = 25;
@@ -179,7 +201,7 @@
             // 
             // maskedTextBoxPlacaVeiculo
             // 
-            this.maskedTextBoxPlacaVeiculo.Location = new System.Drawing.Point(490, 249);
+            this.maskedTextBoxPlacaVeiculo.Location = new System.Drawing.Point(1399, 272);
             this.maskedTextBoxPlacaVeiculo.Mask = "999-9999";
             this.maskedTextBoxPlacaVeiculo.Name = "maskedTextBoxPlacaVeiculo";
             this.maskedTextBoxPlacaVeiculo.Size = new System.Drawing.Size(125, 27);
@@ -189,7 +211,7 @@
             // 
             this.labelPlacaVeiculo.AutoSize = true;
             this.labelPlacaVeiculo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPlacaVeiculo.Location = new System.Drawing.Point(490, 226);
+            this.labelPlacaVeiculo.Location = new System.Drawing.Point(1399, 249);
             this.labelPlacaVeiculo.Name = "labelPlacaVeiculo";
             this.labelPlacaVeiculo.Size = new System.Drawing.Size(121, 20);
             this.labelPlacaVeiculo.TabIndex = 27;
@@ -197,7 +219,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(621, 249);
+            this.textBox4.Location = new System.Drawing.Point(1530, 272);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(250, 27);
             this.textBox4.TabIndex = 28;
@@ -206,7 +228,7 @@
             // 
             this.labelRenavam.AutoSize = true;
             this.labelRenavam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelRenavam.Location = new System.Drawing.Point(621, 226);
+            this.labelRenavam.Location = new System.Drawing.Point(1530, 249);
             this.labelRenavam.Name = "labelRenavam";
             this.labelRenavam.Size = new System.Drawing.Size(150, 20);
             this.labelRenavam.TabIndex = 29;
@@ -215,7 +237,7 @@
             // comboBoxCategoriaVeiculo
             // 
             this.comboBoxCategoriaVeiculo.FormattingEnabled = true;
-            this.comboBoxCategoriaVeiculo.Location = new System.Drawing.Point(489, 195);
+            this.comboBoxCategoriaVeiculo.Location = new System.Drawing.Point(1398, 218);
             this.comboBoxCategoriaVeiculo.Name = "comboBoxCategoriaVeiculo";
             this.comboBoxCategoriaVeiculo.Size = new System.Drawing.Size(151, 28);
             this.comboBoxCategoriaVeiculo.TabIndex = 30;
@@ -224,7 +246,7 @@
             // 
             this.labelAnoFabricacao.AutoSize = true;
             this.labelAnoFabricacao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAnoFabricacao.Location = new System.Drawing.Point(490, 279);
+            this.labelAnoFabricacao.Location = new System.Drawing.Point(1399, 302);
             this.labelAnoFabricacao.Name = "labelAnoFabricacao";
             this.labelAnoFabricacao.Size = new System.Drawing.Size(139, 20);
             this.labelAnoFabricacao.TabIndex = 31;
@@ -234,7 +256,7 @@
             // 
             this.labelaAnoModelo.AutoSize = true;
             this.labelaAnoModelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelaAnoModelo.Location = new System.Drawing.Point(621, 279);
+            this.labelaAnoModelo.Location = new System.Drawing.Point(1530, 302);
             this.labelaAnoModelo.Name = "labelaAnoModelo";
             this.labelaAnoModelo.Size = new System.Drawing.Size(117, 20);
             this.labelaAnoModelo.TabIndex = 32;
@@ -242,21 +264,21 @@
             // 
             // textBoxAnoFabricacao
             // 
-            this.textBoxAnoFabricacao.Location = new System.Drawing.Point(490, 302);
+            this.textBoxAnoFabricacao.Location = new System.Drawing.Point(1399, 325);
             this.textBoxAnoFabricacao.Name = "textBoxAnoFabricacao";
             this.textBoxAnoFabricacao.Size = new System.Drawing.Size(125, 27);
             this.textBoxAnoFabricacao.TabIndex = 33;
             // 
             // textBoxAnoModelo
             // 
-            this.textBoxAnoModelo.Location = new System.Drawing.Point(621, 302);
+            this.textBoxAnoModelo.Location = new System.Drawing.Point(1530, 325);
             this.textBoxAnoModelo.Name = "textBoxAnoModelo";
             this.textBoxAnoModelo.Size = new System.Drawing.Size(125, 27);
             this.textBoxAnoModelo.TabIndex = 34;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(995, 640);
+            this.buttonCancelar.Location = new System.Drawing.Point(1690, 640);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 36;
@@ -265,7 +287,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(895, 640);
+            this.buttonSalvar.Location = new System.Drawing.Point(1590, 640);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvar.TabIndex = 35;
@@ -275,7 +297,7 @@
             // checkBoxTravaEletrica
             // 
             this.checkBoxTravaEletrica.AutoSize = true;
-            this.checkBoxTravaEletrica.Location = new System.Drawing.Point(489, 441);
+            this.checkBoxTravaEletrica.Location = new System.Drawing.Point(1398, 464);
             this.checkBoxTravaEletrica.Name = "checkBoxTravaEletrica";
             this.checkBoxTravaEletrica.Size = new System.Drawing.Size(119, 24);
             this.checkBoxTravaEletrica.TabIndex = 37;
@@ -286,7 +308,7 @@
             // checkBoxVidrosEletricos
             // 
             this.checkBoxVidrosEletricos.AutoSize = true;
-            this.checkBoxVidrosEletricos.Location = new System.Drawing.Point(489, 471);
+            this.checkBoxVidrosEletricos.Location = new System.Drawing.Point(1398, 494);
             this.checkBoxVidrosEletricos.Name = "checkBoxVidrosEletricos";
             this.checkBoxVidrosEletricos.Size = new System.Drawing.Size(133, 24);
             this.checkBoxVidrosEletricos.TabIndex = 38;
@@ -296,7 +318,7 @@
             // checkBoxDirecaoHidraulica
             // 
             this.checkBoxDirecaoHidraulica.AutoSize = true;
-            this.checkBoxDirecaoHidraulica.Location = new System.Drawing.Point(489, 501);
+            this.checkBoxDirecaoHidraulica.Location = new System.Drawing.Point(1398, 524);
             this.checkBoxDirecaoHidraulica.Name = "checkBoxDirecaoHidraulica";
             this.checkBoxDirecaoHidraulica.Size = new System.Drawing.Size(155, 24);
             this.checkBoxDirecaoHidraulica.TabIndex = 39;
@@ -306,7 +328,7 @@
             // checkBoxCombustivelGasolina
             // 
             this.checkBoxCombustivelGasolina.AutoSize = true;
-            this.checkBoxCombustivelGasolina.Location = new System.Drawing.Point(668, 531);
+            this.checkBoxCombustivelGasolina.Location = new System.Drawing.Point(1574, 524);
             this.checkBoxCombustivelGasolina.Name = "checkBoxCombustivelGasolina";
             this.checkBoxCombustivelGasolina.Size = new System.Drawing.Size(177, 24);
             this.checkBoxCombustivelGasolina.TabIndex = 40;
@@ -316,7 +338,7 @@
             // checkBoxCombustivelAlcool
             // 
             this.checkBoxCombustivelAlcool.AutoSize = true;
-            this.checkBoxCombustivelAlcool.Location = new System.Drawing.Point(867, 441);
+            this.checkBoxCombustivelAlcool.Location = new System.Drawing.Point(1574, 584);
             this.checkBoxCombustivelAlcool.Name = "checkBoxCombustivelAlcool";
             this.checkBoxCombustivelAlcool.Size = new System.Drawing.Size(163, 24);
             this.checkBoxCombustivelAlcool.TabIndex = 41;
@@ -326,7 +348,7 @@
             // checkBoxCambioAutomatico
             // 
             this.checkBoxCambioAutomatico.AutoSize = true;
-            this.checkBoxCambioAutomatico.Location = new System.Drawing.Point(489, 561);
+            this.checkBoxCambioAutomatico.Location = new System.Drawing.Point(1398, 584);
             this.checkBoxCambioAutomatico.Name = "checkBoxCambioAutomatico";
             this.checkBoxCambioAutomatico.Size = new System.Drawing.Size(165, 24);
             this.checkBoxCambioAutomatico.TabIndex = 42;
@@ -336,7 +358,7 @@
             // checkBoxDirecaoEletrica
             // 
             this.checkBoxDirecaoEletrica.AutoSize = true;
-            this.checkBoxDirecaoEletrica.Location = new System.Drawing.Point(489, 531);
+            this.checkBoxDirecaoEletrica.Location = new System.Drawing.Point(1398, 554);
             this.checkBoxDirecaoEletrica.Name = "checkBoxDirecaoEletrica";
             this.checkBoxDirecaoEletrica.Size = new System.Drawing.Size(136, 24);
             this.checkBoxDirecaoEletrica.TabIndex = 43;
@@ -346,7 +368,7 @@
             // checkBoxComputadorDeBordo
             // 
             this.checkBoxComputadorDeBordo.AutoSize = true;
-            this.checkBoxComputadorDeBordo.Location = new System.Drawing.Point(668, 501);
+            this.checkBoxComputadorDeBordo.Location = new System.Drawing.Point(1574, 494);
             this.checkBoxComputadorDeBordo.Name = "checkBoxComputadorDeBordo";
             this.checkBoxComputadorDeBordo.Size = new System.Drawing.Size(181, 24);
             this.checkBoxComputadorDeBordo.TabIndex = 44;
@@ -356,7 +378,7 @@
             // checkBoxBancosEmCouro
             // 
             this.checkBoxBancosEmCouro.AutoSize = true;
-            this.checkBoxBancosEmCouro.Location = new System.Drawing.Point(668, 441);
+            this.checkBoxBancosEmCouro.Location = new System.Drawing.Point(1398, 614);
             this.checkBoxBancosEmCouro.Name = "checkBoxBancosEmCouro";
             this.checkBoxBancosEmCouro.Size = new System.Drawing.Size(147, 24);
             this.checkBoxBancosEmCouro.TabIndex = 45;
@@ -366,7 +388,7 @@
             // checkBoxCombustivelDiesel
             // 
             this.checkBoxCombustivelDiesel.AutoSize = true;
-            this.checkBoxCombustivelDiesel.Location = new System.Drawing.Point(668, 561);
+            this.checkBoxCombustivelDiesel.Location = new System.Drawing.Point(1574, 554);
             this.checkBoxCombustivelDiesel.Name = "checkBoxCombustivelDiesel";
             this.checkBoxCombustivelDiesel.Size = new System.Drawing.Size(161, 24);
             this.checkBoxCombustivelDiesel.TabIndex = 46;
@@ -376,7 +398,7 @@
             // checkBoxCombustivelFlex
             // 
             this.checkBoxCombustivelFlex.AutoSize = true;
-            this.checkBoxCombustivelFlex.Location = new System.Drawing.Point(867, 471);
+            this.checkBoxCombustivelFlex.Location = new System.Drawing.Point(1574, 614);
             this.checkBoxCombustivelFlex.Name = "checkBoxCombustivelFlex";
             this.checkBoxCombustivelFlex.Size = new System.Drawing.Size(146, 24);
             this.checkBoxCombustivelFlex.TabIndex = 47;
@@ -386,7 +408,7 @@
             // checkBoxArCondicionado
             // 
             this.checkBoxArCondicionado.AutoSize = true;
-            this.checkBoxArCondicionado.Location = new System.Drawing.Point(668, 471);
+            this.checkBoxArCondicionado.Location = new System.Drawing.Point(1574, 464);
             this.checkBoxArCondicionado.Name = "checkBoxArCondicionado";
             this.checkBoxArCondicionado.Size = new System.Drawing.Size(141, 24);
             this.checkBoxArCondicionado.TabIndex = 48;
@@ -396,7 +418,7 @@
             // radioButtonLicenciamentoEmDia
             // 
             this.radioButtonLicenciamentoEmDia.AutoSize = true;
-            this.radioButtonLicenciamentoEmDia.Location = new System.Drawing.Point(489, 375);
+            this.radioButtonLicenciamentoEmDia.Location = new System.Drawing.Point(1398, 398);
             this.radioButtonLicenciamentoEmDia.Name = "radioButtonLicenciamentoEmDia";
             this.radioButtonLicenciamentoEmDia.Size = new System.Drawing.Size(176, 24);
             this.radioButtonLicenciamentoEmDia.TabIndex = 49;
@@ -407,7 +429,7 @@
             // radioButtonLicenciamentoEmAtraso
             // 
             this.radioButtonLicenciamentoEmAtraso.AutoSize = true;
-            this.radioButtonLicenciamentoEmAtraso.Location = new System.Drawing.Point(685, 375);
+            this.radioButtonLicenciamentoEmAtraso.Location = new System.Drawing.Point(1594, 398);
             this.radioButtonLicenciamentoEmAtraso.Name = "radioButtonLicenciamentoEmAtraso";
             this.radioButtonLicenciamentoEmAtraso.Size = new System.Drawing.Size(196, 24);
             this.radioButtonLicenciamentoEmAtraso.TabIndex = 50;
@@ -415,11 +437,86 @@
             this.radioButtonLicenciamentoEmAtraso.Text = "Licenciamento em atraso";
             this.radioButtonLicenciamentoEmAtraso.UseVisualStyleBackColor = true;
             // 
+            // ColumnVeiculo
+            // 
+            this.ColumnVeiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnVeiculo.HeaderText = "Veículo";
+            this.ColumnVeiculo.MinimumWidth = 6;
+            this.ColumnVeiculo.Name = "ColumnVeiculo";
+            this.ColumnVeiculo.ReadOnly = true;
+            this.ColumnVeiculo.Width = 86;
+            // 
+            // ColumnCategoria
+            // 
+            this.ColumnCategoria.HeaderText = "Categoria";
+            this.ColumnCategoria.MinimumWidth = 6;
+            this.ColumnCategoria.Name = "ColumnCategoria";
+            this.ColumnCategoria.ReadOnly = true;
+            this.ColumnCategoria.Width = 95;
+            // 
+            // ColumnPlaca
+            // 
+            this.ColumnPlaca.HeaderText = "Placa";
+            this.ColumnPlaca.MinimumWidth = 6;
+            this.ColumnPlaca.Name = "ColumnPlaca";
+            this.ColumnPlaca.ReadOnly = true;
+            this.ColumnPlaca.Width = 85;
+            // 
+            // ColumnRenavam
+            // 
+            this.ColumnRenavam.HeaderText = "Nº Renavam";
+            this.ColumnRenavam.MinimumWidth = 6;
+            this.ColumnRenavam.Name = "ColumnRenavam";
+            this.ColumnRenavam.ReadOnly = true;
+            this.ColumnRenavam.Width = 125;
+            // 
+            // ColumnAnoModelo
+            // 
+            this.ColumnAnoModelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnAnoModelo.HeaderText = "Ano Modelo";
+            this.ColumnAnoModelo.MinimumWidth = 6;
+            this.ColumnAnoModelo.Name = "ColumnAnoModelo";
+            this.ColumnAnoModelo.ReadOnly = true;
+            this.ColumnAnoModelo.Width = 121;
+            // 
+            // ColumnAnoFabricacao
+            // 
+            this.ColumnAnoFabricacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnAnoFabricacao.HeaderText = "Ano Fabricação";
+            this.ColumnAnoFabricacao.MinimumWidth = 6;
+            this.ColumnAnoFabricacao.Name = "ColumnAnoFabricacao";
+            this.ColumnAnoFabricacao.ReadOnly = true;
+            this.ColumnAnoFabricacao.Width = 140;
+            // 
+            // ColumnProprietario
+            // 
+            this.ColumnProprietario.HeaderText = "Proprietário";
+            this.ColumnProprietario.MinimumWidth = 6;
+            this.ColumnProprietario.Name = "ColumnProprietario";
+            this.ColumnProprietario.ReadOnly = true;
+            this.ColumnProprietario.Width = 350;
+            // 
+            // ColumnLicenciamento
+            // 
+            this.ColumnLicenciamento.HeaderText = "Licenciamento";
+            this.ColumnLicenciamento.MinimumWidth = 6;
+            this.ColumnLicenciamento.Name = "ColumnLicenciamento";
+            this.ColumnLicenciamento.ReadOnly = true;
+            this.ColumnLicenciamento.Width = 125;
+            // 
+            // ColumnOpcionais
+            // 
+            this.ColumnOpcionais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnOpcionais.HeaderText = "Opcionais";
+            this.ColumnOpcionais.MinimumWidth = 6;
+            this.ColumnOpcionais.Name = "ColumnOpcionais";
+            this.ColumnOpcionais.ReadOnly = true;
+            // 
             // CarroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 681);
+            this.ClientSize = new System.Drawing.Size(1796, 681);
             this.Controls.Add(this.radioButtonLicenciamentoEmAtraso);
             this.Controls.Add(this.radioButtonLicenciamentoEmDia);
             this.Controls.Add(this.checkBoxArCondicionado);
@@ -504,5 +601,14 @@
         private CheckBox checkBoxArCondicionado;
         private RadioButton radioButtonLicenciamentoEmDia;
         private RadioButton radioButtonLicenciamentoEmAtraso;
+        private DataGridViewTextBoxColumn ColumnVeiculo;
+        private DataGridViewTextBoxColumn ColumnCategoria;
+        private DataGridViewTextBoxColumn ColumnPlaca;
+        private DataGridViewTextBoxColumn ColumnRenavam;
+        private DataGridViewTextBoxColumn ColumnAnoModelo;
+        private DataGridViewTextBoxColumn ColumnAnoFabricacao;
+        private DataGridViewTextBoxColumn ColumnProprietario;
+        private DataGridViewTextBoxColumn ColumnLicenciamento;
+        private DataGridViewTextBoxColumn ColumnOpcionais;
     }
 }
