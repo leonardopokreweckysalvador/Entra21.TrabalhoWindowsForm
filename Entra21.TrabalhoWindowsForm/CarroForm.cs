@@ -78,6 +78,34 @@ namespace Entra21.TrabalhoWindowsForm
             var combustivelDiesel = checkBoxCombustivelDiesel.Checked;
             var combustivelAlcool = checkBoxCombustivelAlcool.Checked;
             var combustivelFlex = checkBoxCombustivelFlex.Checked;
+
+            var informacoesValidar = ValidarInformacoes(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+
+            if (informacoesValidar == false)
+                return;
+
+            if (dataGridViewCarroForm.SelectedRows.Count == 0)
+            {
+                CadastrarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+            }
+
+            PreencherDataGridViewCarro();
+
+            LimparCampos();
+        }
+
+        private void LimparCampos()
+        {
+            textBoxProprietario.Text = string.Empty;
+            textBoxLocalizacaoVeiculo.Text = string.Empty;
+            textBoxModeloVeiculo.Text = string.Empty;
+            comboBoxCategoriaVeiculo.Text = string.Empty;
+            maskedTextBoxPlacaVeiculo.Text = string.Empty;
+            textBoxRenavam.Text = string.Empty;
+            dateTimePickerAnoFabricacao.Text = string.Empty;
+            dateTimePickerAnoModelo.Text = string.Empty;
+            radioButtonLicenciamentoEmAtraso.Checked = bool.;
+            radioButtonLicenciamentoEmDia.Text = string.Empty;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Entra21.TrabalhoWindowsForm
         public string Placa;
         public DateTime AnoFabricacao;
         public DateTime AnoModelo;
+        public string localizacaoVeiculo;
 
     }
 }
