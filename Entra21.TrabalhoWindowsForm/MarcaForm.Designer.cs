@@ -44,6 +44,11 @@
             this.dateTimePickerDataDeFundacaoMarca = new System.Windows.Forms.DateTimePicker();
             this.radioButtonSim = new System.Windows.Forms.RadioButton();
             this.radioButtonNao = new System.Windows.Forms.RadioButton();
+            this.ColumnNomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGrupoProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPaisDeOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataDeFundacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPossuiManutecaoNacional = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +72,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(603, 418);
+            this.buttonSalvar.Location = new System.Drawing.Point(1360, 418);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvar.TabIndex = 2;
@@ -76,7 +81,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(703, 418);
+            this.buttonCancelar.Location = new System.Drawing.Point(1460, 418);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 3;
@@ -85,19 +90,28 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnNomeMarca,
+            this.ColumnGrupoProprietario,
+            this.ColumnPaisDeOrigem,
+            this.ColumnDataDeFundacao,
+            this.ColumnPossuiManutecaoNacional});
             this.dataGridView1.Location = new System.Drawing.Point(12, 37);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(421, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(1178, 398);
             this.dataGridView1.TabIndex = 4;
             // 
             // labelNomeMarca
             // 
             this.labelNomeMarca.AutoSize = true;
             this.labelNomeMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNomeMarca.Location = new System.Drawing.Point(439, 37);
+            this.labelNomeMarca.Location = new System.Drawing.Point(1196, 37);
             this.labelNomeMarca.Name = "labelNomeMarca";
             this.labelNomeMarca.Size = new System.Drawing.Size(120, 20);
             this.labelNomeMarca.TabIndex = 5;
@@ -107,7 +121,7 @@
             // 
             this.labelGrupoProprietarioMarca.AutoSize = true;
             this.labelGrupoProprietarioMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelGrupoProprietarioMarca.Location = new System.Drawing.Point(439, 90);
+            this.labelGrupoProprietarioMarca.Location = new System.Drawing.Point(1196, 90);
             this.labelGrupoProprietarioMarca.Name = "labelGrupoProprietarioMarca";
             this.labelGrupoProprietarioMarca.Size = new System.Drawing.Size(209, 20);
             this.labelGrupoProprietarioMarca.TabIndex = 6;
@@ -117,7 +131,7 @@
             // 
             this.labelPaisOrigemMarca.AutoSize = true;
             this.labelPaisOrigemMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPaisOrigemMarca.Location = new System.Drawing.Point(439, 143);
+            this.labelPaisOrigemMarca.Location = new System.Drawing.Point(1196, 143);
             this.labelPaisOrigemMarca.Name = "labelPaisOrigemMarca";
             this.labelPaisOrigemMarca.Size = new System.Drawing.Size(180, 20);
             this.labelPaisOrigemMarca.TabIndex = 7;
@@ -127,7 +141,7 @@
             // 
             this.labelAnoFundacaoMarca.AutoSize = true;
             this.labelAnoFundacaoMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAnoFundacaoMarca.Location = new System.Drawing.Point(439, 196);
+            this.labelAnoFundacaoMarca.Location = new System.Drawing.Point(1196, 196);
             this.labelAnoFundacaoMarca.Name = "labelAnoFundacaoMarca";
             this.labelAnoFundacaoMarca.Size = new System.Drawing.Size(200, 20);
             this.labelAnoFundacaoMarca.TabIndex = 8;
@@ -137,7 +151,7 @@
             // 
             this.labelMarcaNacionalOuImportada.AutoSize = true;
             this.labelMarcaNacionalOuImportada.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMarcaNacionalOuImportada.Location = new System.Drawing.Point(439, 249);
+            this.labelMarcaNacionalOuImportada.Location = new System.Drawing.Point(1196, 249);
             this.labelMarcaNacionalOuImportada.Name = "labelMarcaNacionalOuImportada";
             this.labelMarcaNacionalOuImportada.Size = new System.Drawing.Size(279, 20);
             this.labelMarcaNacionalOuImportada.TabIndex = 9;
@@ -145,28 +159,28 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(439, 60);
+            this.textBox1.Location = new System.Drawing.Point(1196, 60);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 27);
             this.textBox1.TabIndex = 10;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(439, 113);
+            this.textBox2.Location = new System.Drawing.Point(1196, 113);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(222, 27);
             this.textBox2.TabIndex = 11;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(439, 166);
+            this.textBox3.Location = new System.Drawing.Point(1196, 166);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(222, 27);
             this.textBox3.TabIndex = 12;
             // 
             // dateTimePickerDataDeFundacaoMarca
             // 
-            this.dateTimePickerDataDeFundacaoMarca.Location = new System.Drawing.Point(439, 219);
+            this.dateTimePickerDataDeFundacaoMarca.Location = new System.Drawing.Point(1196, 219);
             this.dateTimePickerDataDeFundacaoMarca.Name = "dateTimePickerDataDeFundacaoMarca";
             this.dateTimePickerDataDeFundacaoMarca.Size = new System.Drawing.Size(318, 27);
             this.dateTimePickerDataDeFundacaoMarca.TabIndex = 13;
@@ -174,7 +188,7 @@
             // radioButtonSim
             // 
             this.radioButtonSim.AutoSize = true;
-            this.radioButtonSim.Location = new System.Drawing.Point(439, 272);
+            this.radioButtonSim.Location = new System.Drawing.Point(1196, 272);
             this.radioButtonSim.Name = "radioButtonSim";
             this.radioButtonSim.Size = new System.Drawing.Size(55, 24);
             this.radioButtonSim.TabIndex = 14;
@@ -185,7 +199,7 @@
             // radioButtonNao
             // 
             this.radioButtonNao.AutoSize = true;
-            this.radioButtonNao.Location = new System.Drawing.Point(562, 272);
+            this.radioButtonNao.Location = new System.Drawing.Point(1319, 272);
             this.radioButtonNao.Name = "radioButtonNao";
             this.radioButtonNao.Size = new System.Drawing.Size(58, 24);
             this.radioButtonNao.TabIndex = 15;
@@ -193,11 +207,55 @@
             this.radioButtonNao.Text = "Não";
             this.radioButtonNao.UseVisualStyleBackColor = true;
             // 
+            // ColumnNomeMarca
+            // 
+            this.ColumnNomeMarca.HeaderText = "Marca";
+            this.ColumnNomeMarca.MinimumWidth = 6;
+            this.ColumnNomeMarca.Name = "ColumnNomeMarca";
+            this.ColumnNomeMarca.ReadOnly = true;
+            this.ColumnNomeMarca.Width = 125;
+            // 
+            // ColumnGrupoProprietario
+            // 
+            this.ColumnGrupoProprietario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnGrupoProprietario.HeaderText = "Grupo Proprietário da Marca";
+            this.ColumnGrupoProprietario.MinimumWidth = 6;
+            this.ColumnGrupoProprietario.Name = "ColumnGrupoProprietario";
+            this.ColumnGrupoProprietario.ReadOnly = true;
+            this.ColumnGrupoProprietario.Width = 250;
+            // 
+            // ColumnPaisDeOrigem
+            // 
+            this.ColumnPaisDeOrigem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnPaisDeOrigem.HeaderText = "País de Origem da Marca";
+            this.ColumnPaisDeOrigem.MinimumWidth = 6;
+            this.ColumnPaisDeOrigem.Name = "ColumnPaisDeOrigem";
+            this.ColumnPaisDeOrigem.ReadOnly = true;
+            this.ColumnPaisDeOrigem.Width = 250;
+            // 
+            // ColumnDataDeFundacao
+            // 
+            this.ColumnDataDeFundacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnDataDeFundacao.HeaderText = "Data de Fundação da Marca";
+            this.ColumnDataDeFundacao.MinimumWidth = 6;
+            this.ColumnDataDeFundacao.Name = "ColumnDataDeFundacao";
+            this.ColumnDataDeFundacao.ReadOnly = true;
+            this.ColumnDataDeFundacao.Width = 250;
+            // 
+            // ColumnPossuiManutecaoNacional
+            // 
+            this.ColumnPossuiManutecaoNacional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnPossuiManutecaoNacional.HeaderText = "Possui Manutenção Nacional?";
+            this.ColumnPossuiManutecaoNacional.MinimumWidth = 6;
+            this.ColumnPossuiManutecaoNacional.Name = "ColumnPossuiManutecaoNacional";
+            this.ColumnPossuiManutecaoNacional.ReadOnly = true;
+            this.ColumnPossuiManutecaoNacional.Width = 250;
+            // 
             // MarcaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1560, 450);
             this.Controls.Add(this.radioButtonNao);
             this.Controls.Add(this.radioButtonSim);
             this.Controls.Add(this.dateTimePickerDataDeFundacaoMarca);
@@ -240,5 +298,10 @@
         private DateTimePicker dateTimePickerDataDeFundacaoMarca;
         private RadioButton radioButtonSim;
         private RadioButton radioButtonNao;
+        private DataGridViewTextBoxColumn ColumnNomeMarca;
+        private DataGridViewTextBoxColumn ColumnGrupoProprietario;
+        private DataGridViewTextBoxColumn ColumnPaisDeOrigem;
+        private DataGridViewTextBoxColumn ColumnDataDeFundacao;
+        private DataGridViewTextBoxColumn ColumnPossuiManutecaoNacional;
     }
 }
