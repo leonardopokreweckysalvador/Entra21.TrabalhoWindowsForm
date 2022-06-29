@@ -18,7 +18,7 @@ namespace Entra21.TrabalhoWindowsForm
         public EnderecoForm()
         {
             InitializeComponent();
-            
+
             enderecoServico = new EnderecoServico();
 
             PreencherDataGridViewEndereco();
@@ -29,7 +29,7 @@ namespace Entra21.TrabalhoWindowsForm
         {
             LimparCampos();
         }
-        
+
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var cep = maskedTextBoxCep.Text;
@@ -46,13 +46,34 @@ namespace Entra21.TrabalhoWindowsForm
                 return;
 
             if (dataGridViewEndereco.SelectedRows.Count == 0)
-            {
                 CadastrarEndereco(cep, estado, cidade, bairro, logradouro, numero, complemento);
-            }
+            else
+                EditarEndereco(cep, estado, cidade, bairro, logradouro, numero, complemento);
 
             PreencherDataGridViewEndereco();
 
             LimparCampos();
+        }
+
+        private void EditarEndereco(string cep, string estado, string cidade, string bairro, string logradouro, string numero, string complemento)
+        {
+            var linhaSelelcionada = dataGridViewEndereco.SelectedRows[0];
+
+            var codigoSelecionado = Convert.ToInt32(linhaSelelcionada.Cells[0].Value);
+
+            var endereco = new Endereco()
+            {
+                Codigo = codigoSelecionado,
+                Cep = cep,
+                Estado = estado,
+                Cidade = cidade,
+                Bairro = bairro,
+                Logradouro = logradouro,
+                Numero = numero,
+                Complemento = complemento
+            };
+
+            enderecoServico.Editar(endereco);
         }
 
         private void maskedTextBoxCep_Leave(object sender, EventArgs e)
@@ -60,17 +81,12 @@ namespace Entra21.TrabalhoWindowsForm
             ObterDadosCep();
         }
 
-        private void EnderecoForm_Load(object sender, EventArgs e)
-        {
-
-        }
-       
         private void buttonApagar_Click(object sender, EventArgs e)
         {
             if (dataGridViewEndereco.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecione um registro para remover.");
-                
+
                 return;
             }
 
@@ -119,7 +135,7 @@ namespace Entra21.TrabalhoWindowsForm
             textBoxBairro.Text = endereco.Bairro;
             textBoxLogradouro.Text = endereco.Logradouro;
             textBoxNumero.Text = endereco.Numero;
-            textBoxComplemento.Text = endereco.Complemento; 
+            textBoxComplemento.Text = endereco.Complemento;
 
         }
 
@@ -133,19 +149,20 @@ namespace Entra21.TrabalhoWindowsForm
             textBoxLogradouro.Text = string.Empty;
             textBoxNumero.Text = string.Empty;
             textBoxComplemento.Text = string.Empty;
+            dataGridViewEndereco.ClearSelection();
         }
 
         private void PreencherDataGridViewEndereco()
-        {         
+        {
             var enderecos = enderecoServico.ObterTodos();
-            
+
             dataGridViewEndereco.Rows.Clear();
 
             for (var i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];
 
-                dataGridViewEndereco.Rows.Add(new object []
+                dataGridViewEndereco.Rows.Add(new object[]
                 {
                     endereco.Codigo,
                     endereco.Cep,
@@ -257,6 +274,11 @@ namespace Entra21.TrabalhoWindowsForm
                 textBoxLogradouro.Text = dadosEndereco.Logradouro;
 
             }
+        }
+
+        private void EnderecoForm_Load(object sender, EventArgs e)
+        {
+            PreencherDataGridViewEndereco();
         }
     }
 }
