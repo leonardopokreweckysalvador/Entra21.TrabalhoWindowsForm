@@ -155,7 +155,7 @@ namespace Entra21.TrabalhoWindowsForm
             textBoxProprietario.Text = string.Empty;
             textBoxLocalizacaoVeiculo.Text = string.Empty;
             textBoxModeloVeiculo.Text = string.Empty;
-            comboBoxCategoriaVeiculo.Text = ResetText();
+            comboBoxCategoriaVeiculo.ResetText(); 
             maskedTextBoxPlacaVeiculo.Text = string.Empty;
             textBoxRenavam.Text = string.Empty;
             dateTimePickerAnoFabricacao.Text = string.Empty;
