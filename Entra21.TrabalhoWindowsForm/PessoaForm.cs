@@ -76,7 +76,15 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void LimparCampos()
         {
-
+            textBoxNome.Clear();
+            dateTimePickerDataNascimento.Checked = false;
+            comboBoxEndereco.ResetText();
+            comboBoxSexo.ResetText();
+            maskedTextBoxCpf.Text = string.Empty;
+            maskedTextBoxRg.Text = string.Empty;
+            checkBoxCarro.Checked = false;
+            checkBoxMoto.Checked = false;
+            dataGridView1.ClearSelection();
         }
 
         private void PessoaForm_Load(object sender, EventArgs e)

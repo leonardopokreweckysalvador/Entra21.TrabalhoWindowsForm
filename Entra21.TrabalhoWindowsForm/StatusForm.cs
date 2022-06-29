@@ -55,7 +55,15 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void LimparCampos()
         {
-
+            dateTimePickerDataCadastro.Checked = false;
+            comboBoxNomeCompleto.ResetText();
+            textBoxProfissao.Clear();
+            textBoxEmpresaTrabalho.Clear();
+            maskedTextBoxSalario.Text = string.Empty;
+            radioButtonNomeLimpo1.Checked = false;
+            radioButtonNomeLimpo2.Checked = false;
+            maskedTextBoxLimiteFinanceiro.Text = string.Empty;
+            dataGridView1.ClearSelection();
         }
 
         private void ListarStatuses()
