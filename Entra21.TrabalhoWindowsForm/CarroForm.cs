@@ -129,24 +129,24 @@ namespace Entra21.TrabalhoWindowsForm
             }
             if (categoriaVeiculo == -1)
             {
-                MessageBox.Show("Selecione uma categoria de veículo!")
+                MessageBox.Show("Selecione uma categoria de veículo!");
                 comboBoxCategoriaVeiculo.Focus();
                 return false;
             }
             if (placaVeiculo.Replace("-", "").Trim().Length == 0)
             {
-                MessageBox.Show("Digite uma placa de veículo válida!")
+                MessageBox.Show("Digite uma placa de veículo válida!");
                 maskedTextBoxPlacaVeiculo.Focus();
                 return false;
             }
             else if (placaVeiculo.Replace("-", "").Trim().Length < 7)
             {
-                MessageBox.Show("Digite uma placa de veículo válida!")
+                MessageBox.Show("Digite uma placa de veículo válida!");
             }
             if (renavam.Replace("-", "").Trim().Length == 0)
             {
-                MessageBox.Show("Digite um renavam válido!")
-                
+                MessageBox.Show("Digite um renavam válido!");
+                textBox
             }
             return true; 
         }
