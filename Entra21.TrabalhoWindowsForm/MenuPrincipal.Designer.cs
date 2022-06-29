@@ -31,7 +31,7 @@
             this.buttonEndereco = new System.Windows.Forms.Button();
             this.buttonpPessoa = new System.Windows.Forms.Button();
             this.buttonStatus = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonMarcas = new System.Windows.Forms.Button();
             this.buttonCarros = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -68,15 +68,15 @@
             this.buttonStatus.UseVisualStyleBackColor = true;
             this.buttonStatus.Click += new System.EventHandler(this.buttonStatus_Click);
             // 
-            // button1
+            // buttonMarcas
             // 
-            this.button1.Location = new System.Drawing.Point(502, 169);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 133);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Pessoa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonMarcas.Location = new System.Drawing.Point(502, 169);
+            this.buttonMarcas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonMarcas.Name = "buttonMarcas";
+            this.buttonMarcas.Size = new System.Drawing.Size(202, 133);
+            this.buttonMarcas.TabIndex = 3;
+            this.buttonMarcas.Text = "Marcas";
+            this.buttonMarcas.UseVisualStyleBackColor = true;
             // 
             // buttonCarros
             // 
@@ -94,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 325);
             this.Controls.Add(this.buttonCarros);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonMarcas);
             this.Controls.Add(this.buttonStatus);
             this.Controls.Add(this.buttonpPessoa);
             this.Controls.Add(this.buttonEndereco);
@@ -110,7 +110,7 @@
         private Button buttonEndereco;
         private Button buttonpPessoa;
         private Button buttonStatus;
-        private Button button1;
+        private Button buttonMarcas;
         private Button buttonCarros;
     }
 }
