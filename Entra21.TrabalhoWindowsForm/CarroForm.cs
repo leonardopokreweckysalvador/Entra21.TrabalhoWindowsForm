@@ -143,7 +143,11 @@ namespace Entra21.TrabalhoWindowsForm
             {
                 MessageBox.Show("Digite uma placa de veículo válida!")
             }
-            if (renavam)
+            if (renavam.Replace("-", "").Trim().Length == 0)
+            {
+                MessageBox.Show("Digite um renavam válido!")
+                
+            }
             return true; 
         }
 
