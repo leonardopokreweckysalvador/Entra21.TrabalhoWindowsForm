@@ -107,5 +107,15 @@ namespace Entra21.TrabalhoWindowsForm
         {
             ListarPessoas();
         }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
