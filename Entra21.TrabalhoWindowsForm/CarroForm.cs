@@ -83,6 +83,8 @@ namespace Entra21.TrabalhoWindowsForm
             {
                 //CadastrarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
             }
+            else
+                //EditarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoHidraulica, direcaoEletrica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
 
             PreencherDataGridViewCarro();
 
