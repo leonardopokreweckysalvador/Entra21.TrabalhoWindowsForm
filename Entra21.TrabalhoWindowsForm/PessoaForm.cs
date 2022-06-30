@@ -24,7 +24,25 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma Pessoa para remover");
+                return;
+            }
 
+            var resposta = MessageBox.Show("Deseja realmente apagar a Pessoa cadastrada", "Aviso", MessageBoxButtons.YesNo);
+            if (resposta != DialogResult.Yes)
+            {
+                MessageBox.Show("A pessoa foi salva no sistema.");
+                return;
+            }
+
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var pessoa = pessoaServico.ObterPorCodigo(codigo);
+            pessoaServico.Apagar(codigo);
+            PreencherDataGridViewComPessoa();
+            dataGridView1.ClearSelection();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -34,7 +52,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-
+            ApresentarDadosParaEdicao();
         }
 
         private void ApresentarDadosParaEdicao()
@@ -48,22 +66,36 @@ namespace Entra21.TrabalhoWindowsForm
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             var pessoa = pessoaServico.ObterPorCodigo(codigo);
             textBoxNome.Text = pessoa.Nome;
-            //dateTimePickerDataNascimento. = pessoa.DataNascimento;
+            dateTimePickerDataNascimento.Value = pessoa.DataNascimento;
             comboBoxEndereco.SelectedItem = pessoa.Endereco;
             comboBoxSexo.SelectedItem = pessoa.Sexo;
             maskedTextBoxCpf.Text = pessoa.Cpf;
             maskedTextBoxRg.Text = pessoa.Rg;
             checkBoxCarro.Checked = pessoa.PossuiCarro;
             checkBoxMoto.Checked = pessoa.PossuiMoto;
-
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-
+            var nome = textBoxNome.Text;
+            var dataNascimento = dateTimePickerDataNascimento.Value;
+            var codigo = pessoaServico.ObterUltimoCodigo() + 1;
+            var endereco = comboBoxEndereco.SelectedItem;
+            var sexo = Convert.ToString(comboBoxSexo.SelectedItem);
+            var cpf = maskedTextBoxCpf.Text;
+            var rg = maskedTextBoxRg.Text;
+            var possuiCarro = checkBoxCarro.Checked;
+            var possuiMoto = checkBoxMoto.Checked;
+            if (dataGridView1.SelectedRows.Count == 0)
+                AdicionarPessoa(nome, dataNascimento, codigo, sexo, cpf, rg, possuiCarro, possuiMoto);
+            else
+                //EditarDados(nome, dataNascimento, endereco, sexo, cpf, rg, possuiCarro, possuiMoto);
+            PreencherDataGridViewComPessoa();
+            LimparCampos();
         }
 
-        private void AdicionarPessoa(string nome, DateTime dataNascimento, int codigo, string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
+        private void AdicionarPessoa(string nome, DateTime dataNascimento, int codigo,
+            string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
         {
             var pessoa = new Pessoa()
             {
@@ -83,7 +115,8 @@ namespace Entra21.TrabalhoWindowsForm
             ListarPessoas();
         }
 
-        private void EditarDados(string nome, DateTime dataNascimento, Endereco endereco, string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
+        private void EditarDados(string nome, DateTime dataNascimento, Endereco endereco,
+            string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
         {
             var pessoa = new Pessoa();
             pessoa.Nome = nome;
@@ -98,6 +131,19 @@ namespace Entra21.TrabalhoWindowsForm
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             pessoa.Codigo = codigo;
             pessoaServico.Editar(pessoa);
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNome.Clear();
+            dateTimePickerDataNascimento.Checked = false;
+            comboBoxEndereco.ResetText();
+            comboBoxSexo.ResetText();
+            maskedTextBoxCpf.Text = string.Empty;
+            maskedTextBoxRg.Text = string.Empty;
+            checkBoxCarro.Checked = false;
+            checkBoxMoto.Checked = false;
+            dataGridView1.ClearSelection();
         }
 
         private void ListarPessoas()
@@ -123,17 +169,14 @@ namespace Entra21.TrabalhoWindowsForm
             }
         }
 
-        private void LimparCampos()
+        private void PreencherComboBoxComEndereco()
         {
-            textBoxNome.Clear();
-            dateTimePickerDataNascimento.Checked = false;
-            comboBoxEndereco.ResetText();
-            comboBoxSexo.ResetText();
-            maskedTextBoxCpf.Text = string.Empty;
-            maskedTextBoxRg.Text = string.Empty;
-            checkBoxCarro.Checked = false;
-            checkBoxMoto.Checked = false;
-            dataGridView1.ClearSelection();
+
+        }
+
+        private void PreencherDataGridViewComPessoa()
+        {
+
         }
 
         private void PessoaForm_Load(object sender, EventArgs e)

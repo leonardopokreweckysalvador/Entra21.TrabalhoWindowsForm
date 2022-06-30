@@ -24,7 +24,25 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um status para remover");
+                return;
+            }
 
+            var resposta = MessageBox.Show("Deseja realmente apagar o Status", "Aviso", MessageBoxButtons.YesNo);
+            if (resposta != DialogResult.Yes)
+            {
+                MessageBox.Show("O seu registro foi salvo.");
+                return;
+            }
+
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var status = statusServico.ObterPorCodigo(codigo);
+            statusServico.Apagar(codigo);
+            PreencherDataGridViewComStatus();
+            dataGridView1.ClearSelection();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -34,15 +52,49 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-
+            ApresentarDadosParaEdicao();
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-
+            var dataCadastro = dateTimePickerDataCadastro.Value;
+            var nome = Convert.ToString(comboBoxNomeCompleto.SelectedItem);
+            var profissao = textBoxProfissao.Text;
+            var empresaTrabalho = textBoxEmpresaTrabalho.Text;
+            var salario = Convert.ToDouble(maskedTextBoxSalario.Text);
+            var nomeLimpo = radioButtonNomeLimpo1.Checked;
+            var limiteFinanceiro = Convert.ToDouble(maskedTextBoxLimiteFinanceiro.Text);
+            if (dataGridView1.SelectedRows.Count == 0)
+                AdicionarStatus(dataCadastro, nome, profissao, empresaTrabalho, salario, nomeLimpo, limiteFinanceiro);
+            else
+                EditarDados(dataCadastro, nome, profissao, empresaTrabalho, salario, nomeLimpo, limiteFinanceiro);
+            PreencherDataGridViewComStatus();
+            LimparCampos();
         }
 
-        private void AdicionarStatus(int codigo, DateTime dataCadastro, string nome, string profissao,
+        private void ApresentarDadosParaEdicao()
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um endereço para editar");
+                return;
+            }
+
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var status = statusServico.ObterPorCodigo(codigo);
+
+            //dateTimePickerDataCadastro =
+            comboBoxNomeCompleto.SelectedItem = status.Pessoa;
+            textBoxProfissao.Text = status.Profissao;
+            textBoxEmpresaTrabalho.Text = status.EmpresaTrabalho;
+            maskedTextBoxSalario.Text = Convert.ToString(status.Salario);
+            radioButtonNomeLimpo1.Checked = status.NomeLimpo;
+            radioButtonNomeLimpo2.Checked = status.NomeLimpo;
+            maskedTextBoxLimiteFinanceiro.Text = Convert.ToString(status.LimiteFinanceiro);
+        }
+
+        private void AdicionarStatus(DateTime dataCadastro, string nome, string profissao,
             string empresaTrabalho, double salario, bool nomeLimpo, double limiteFinanceiro)
         {
             var status = new Status()
@@ -62,12 +114,12 @@ namespace Entra21.TrabalhoWindowsForm
             ListarStatuses();
         }
 
-        private void EditarDados(DateTime dataCadastro, Pessoa pessoa, string profissao,
+        private void EditarDados(DateTime dataCadastro, string nome, string profissao,
             string empresaTrabalho, double salario, bool nomeLimpo, double limiteFinanceiro)
         {
             var status = new Status();
             status.DataCadastro = dataCadastro;
-            status.Pessoa = pessoa;
+            status.Pessoa = pessoaServico.ObterPorNomePessoa(nome);
             status.Profissao = profissao;
             status.EmpresaTrabalho = empresaTrabalho;
             status.Salario = salario;
@@ -115,6 +167,16 @@ namespace Entra21.TrabalhoWindowsForm
             }
 
             dataGridView1.ClearSelection();
+        }
+
+        private void PreencherComboBoxComOsNomesDasPessoas()
+        {
+
+        }
+
+        private void PreencherDataGridViewComStatus()
+        {
+
         }
 
         private void StatusForm_Load(object sender, EventArgs e)
