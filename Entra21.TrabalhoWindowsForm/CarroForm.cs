@@ -81,10 +81,10 @@ namespace Entra21.TrabalhoWindowsForm
 
             if (dataGridViewCarroForm.SelectedRows.Count == 0)
             {
-                //CadastrarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+                CadastrarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
             }
             else
-                //EditarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoHidraulica, direcaoEletrica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+                EditarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoHidraulica, direcaoEletrica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
 
             PreencherDataGridViewCarro();
 
@@ -195,7 +195,7 @@ namespace Entra21.TrabalhoWindowsForm
             carro.Proprietario = proprietarioVeiculo;
             carro.LocalizacaoVeiculo = localizacaoVeiculo;
             carro.ModeloVeiculo = modeloVeiculo;
-            //carro.Categoria = categoriaVeiculo;
+            carro.Categoria = categoriaVeiculo;
             carro.Placa = placaVeiculo;
             carro.Renavam = renavam;
             carro.AnoFabricacao = anoFabricacao;
@@ -248,7 +248,7 @@ namespace Entra21.TrabalhoWindowsForm
             //textBoxProprietario.Text = carro.Proprietario;
             textBoxLocalizacaoVeiculo.Text = carro.LocalizacaoVeiculo;
             textBoxModeloVeiculo.Text = carro.ModeloVeiculo;
-            //comboBoxCategoriaVeiculo.Text = carro.Categoria;
+            comboBoxCategoriaVeiculo.Text = carro.Categoria;
             maskedTextBoxPlacaVeiculo.Text = carro.Placa;
             textBoxRenavam.Text = carro.Renavam;
             dateTimePickerAnoFabricacao.Text = Convert.ToString(carro.AnoFabricacao);
@@ -278,7 +278,7 @@ namespace Entra21.TrabalhoWindowsForm
                 Proprietario = proprietarioVeiculo,
                 LocalizacaoVeiculo = localizacaoVeiculo,
                 ModeloVeiculo = modeloVeiculo,
-                //Categoria = categoriaVeiculo,
+                Categoria = categoriaVeiculo,
                 Placa = placaVeiculo,
                 Renavam = renavam,
                 AnoFabricacao = anoFabricacao,
