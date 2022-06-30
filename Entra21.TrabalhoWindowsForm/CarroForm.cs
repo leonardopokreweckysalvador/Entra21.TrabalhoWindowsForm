@@ -220,5 +220,20 @@ namespace Entra21.TrabalhoWindowsForm
         {
             PreencherDataGridViewCarro();
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosEditar();
+        }
+
+        private void ApresentarDadosEditar()
+        {
+
+        }
     }
 }
