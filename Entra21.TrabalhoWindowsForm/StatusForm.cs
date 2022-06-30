@@ -14,12 +14,17 @@ namespace Entra21.TrabalhoWindowsForm
     {
         private StatusServico statusServico;
         private PessoaServico pessoaServico;
+        private EnderecoServico enderecoServico;
 
         public StatusForm()
         {
             InitializeComponent();
             statusServico = new StatusServico();
-            ListarStatuses();
+            pessoaServico = new PessoaServico();
+            enderecoServico = new EnderecoServico();
+            PreencherDataGridViewComStatus();
+            PreencherComboBoxComOsEnderecos();
+            PreencherComboBoxComOsNomesDasPessoas();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -61,9 +66,9 @@ namespace Entra21.TrabalhoWindowsForm
             var nome = Convert.ToString(comboBoxNomeCompleto.SelectedItem);
             var profissao = textBoxProfissao.Text;
             var empresaTrabalho = textBoxEmpresaTrabalho.Text;
-            var salario = Convert.ToDouble(maskedTextBoxSalario.Text);
+            var salario = Convert.ToDouble(textBoxSalario.Text);
             var nomeLimpo = radioButtonNomeLimpo1.Checked;
-            var limiteFinanceiro = Convert.ToDouble(maskedTextBoxLimiteFinanceiro.Text);
+            var limiteFinanceiro = Convert.ToDouble(textBoxLimiteFinanceiro.Text);
             var endereco = comboBoxEndereco.SelectedItem;
             if (dataGridView1.SelectedRows.Count == 0)
                 AdicionarStatus(dataCadastro, nome, profissao, empresaTrabalho, salario, nomeLimpo, limiteFinanceiro);
@@ -85,14 +90,13 @@ namespace Entra21.TrabalhoWindowsForm
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             var status = statusServico.ObterPorCodigo(codigo);
 
-            //dateTimePickerDataCadastro =
             comboBoxNomeCompleto.SelectedItem = status.Pessoa;
             textBoxProfissao.Text = status.Profissao;
             textBoxEmpresaTrabalho.Text = status.EmpresaTrabalho;
-            maskedTextBoxSalario.Text = Convert.ToString(status.Salario);
+            textBoxSalario.Text = Convert.ToString(status.Salario);
             radioButtonNomeLimpo1.Checked = status.NomeLimpo;
             radioButtonNomeLimpo2.Checked = status.NomeLimpo;
-            maskedTextBoxLimiteFinanceiro.Text = Convert.ToString(status.LimiteFinanceiro);
+            textBoxLimiteFinanceiro.Text = Convert.ToString(status.LimiteFinanceiro);
         }
 
         private void AdicionarStatus(DateTime dataCadastro, string nome, string profissao,
@@ -140,10 +144,11 @@ namespace Entra21.TrabalhoWindowsForm
             comboBoxNomeCompleto.ResetText();
             textBoxProfissao.Clear();
             textBoxEmpresaTrabalho.Clear();
-            maskedTextBoxSalario.Text = string.Empty;
+            textBoxSalario.Text = string.Empty;
             radioButtonNomeLimpo1.Checked = false;
             radioButtonNomeLimpo2.Checked = false;
-            maskedTextBoxLimiteFinanceiro.Text = string.Empty;
+            textBoxLimiteFinanceiro.Text = string.Empty;
+            comboBoxEndereco.ResetText();
             dataGridView1.ClearSelection();
         }
 
@@ -172,17 +177,44 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void PreencherComboBoxComOsNomesDasPessoas()
         {
-
+            var pessoas = pessoaServico.ObterTodas();
+            for (var i = 0; i < pessoas.Count; i++)
+            {
+                var pessoa = pessoas[i];
+                comboBoxNomeCompleto.Items.Add(pessoa.Nome);
+            }
         }
 
         private void PreencherComboBoxComOsEnderecos()
         {
-
+            var enderecos = enderecoServico.ObterTodos();
+            for (var i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+                comboBoxEndereco.Items.Add(endereco.Logradouro);
+            }
         }
 
         private void PreencherDataGridViewComStatus()
         {
-
+            var statuses = statusServico.ObterTodos();
+            dataGridView1.Rows.Clear();
+            for (var i = 0; i < statuses.Count; i++)
+            {
+                var status = statuses[i];
+                dataGridView1.Rows.Add(new object[]
+                {
+                    status.Codigo,
+                    status.DataCadastro,
+                    status.Pessoa,
+                    status.Profissao,
+                    status.EmpresaTrabalho,
+                    status.Salario,
+                    status.NomeLimpo,
+                    status.LimiteFinanceiro,
+                    status.Endereco
+                });
+            }
         }
 
         private void StatusForm_Load(object sender, EventArgs e)
