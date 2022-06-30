@@ -43,9 +43,9 @@
             this.labelPaisOrigemMarca = new System.Windows.Forms.Label();
             this.labelAnoFundacaoMarca = new System.Windows.Forms.Label();
             this.labelMarcaNacionalOuImportada = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxNomeMarca = new System.Windows.Forms.TextBox();
+            this.textBoxGrupoProprietarioMarca = new System.Windows.Forms.TextBox();
+            this.textBoxPaisDeOrigem = new System.Windows.Forms.TextBox();
             this.dateTimePickerDataDeFundacaoMarca = new System.Windows.Forms.DateTimePicker();
             this.radioButtonSim = new System.Windows.Forms.RadioButton();
             this.radioButtonNao = new System.Windows.Forms.RadioButton();
@@ -78,6 +78,7 @@
             this.buttonSalvar.TabIndex = 2;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonCancelar
             // 
@@ -201,26 +202,26 @@
             this.labelMarcaNacionalOuImportada.TabIndex = 9;
             this.labelMarcaNacionalOuImportada.Text = "A marca possui manutenção no Brasil?";
             // 
-            // textBox1
+            // textBoxNomeMarca
             // 
-            this.textBox1.Location = new System.Drawing.Point(1196, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 27);
-            this.textBox1.TabIndex = 10;
+            this.textBoxNomeMarca.Location = new System.Drawing.Point(1196, 60);
+            this.textBoxNomeMarca.Name = "textBoxNomeMarca";
+            this.textBoxNomeMarca.Size = new System.Drawing.Size(222, 27);
+            this.textBoxNomeMarca.TabIndex = 10;
             // 
-            // textBox2
+            // textBoxGrupoProprietarioMarca
             // 
-            this.textBox2.Location = new System.Drawing.Point(1196, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 27);
-            this.textBox2.TabIndex = 11;
+            this.textBoxGrupoProprietarioMarca.Location = new System.Drawing.Point(1196, 113);
+            this.textBoxGrupoProprietarioMarca.Name = "textBoxGrupoProprietarioMarca";
+            this.textBoxGrupoProprietarioMarca.Size = new System.Drawing.Size(222, 27);
+            this.textBoxGrupoProprietarioMarca.TabIndex = 11;
             // 
-            // textBox3
+            // textBoxPaisDeOrigem
             // 
-            this.textBox3.Location = new System.Drawing.Point(1196, 166);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(222, 27);
-            this.textBox3.TabIndex = 12;
+            this.textBoxPaisDeOrigem.Location = new System.Drawing.Point(1196, 166);
+            this.textBoxPaisDeOrigem.Name = "textBoxPaisDeOrigem";
+            this.textBoxPaisDeOrigem.Size = new System.Drawing.Size(222, 27);
+            this.textBoxPaisDeOrigem.TabIndex = 12;
             // 
             // dateTimePickerDataDeFundacaoMarca
             // 
@@ -259,9 +260,9 @@
             this.Controls.Add(this.radioButtonNao);
             this.Controls.Add(this.radioButtonSim);
             this.Controls.Add(this.dateTimePickerDataDeFundacaoMarca);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPaisDeOrigem);
+            this.Controls.Add(this.textBoxGrupoProprietarioMarca);
+            this.Controls.Add(this.textBoxNomeMarca);
             this.Controls.Add(this.labelMarcaNacionalOuImportada);
             this.Controls.Add(this.labelAnoFundacaoMarca);
             this.Controls.Add(this.labelPaisOrigemMarca);
@@ -292,9 +293,9 @@
         private Label labelPaisOrigemMarca;
         private Label labelAnoFundacaoMarca;
         private Label labelMarcaNacionalOuImportada;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textBoxNomeMarca;
+        private TextBox textBoxGrupoProprietarioMarca;
+        private TextBox textBoxPaisDeOrigem;
         private DateTimePicker dateTimePickerDataDeFundacaoMarca;
         private RadioButton radioButtonSim;
         private RadioButton radioButtonNao;
