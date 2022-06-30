@@ -266,5 +266,37 @@ namespace Entra21.TrabalhoWindowsForm
             checkBoxTravaEletrica.Checked = carro.TravaEletrica;
             checkBoxVidrosEletricos.Checked = carro.VidrosEletricos;
         }
+        private void EditarCarro(Pessoa proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        {
+            var linhaSelecionada = dataGridViewCarroForm.SelectedRows[0];
+            var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var carro = new Carro()
+            {
+                Codigo = codigoSelecionado,
+                Proprietario = proprietarioVeiculo,
+                LocalizacaoVeiculo = localizacaoVeiculo,
+                ModeloVeiculo = modeloVeiculo,
+                //Categoria = categoriaVeiculo,
+                Placa = placaVeiculo,
+                Renavam = renavam,
+                AnoFabricacao = anoFabricacao,
+                AnoModelo = anoModelo,
+                LicenciamentoEmDia = licenciamentoEmDia,
+                LincenciamentoEmAtraso = licenciamentoEmAtraso,
+                TravaEletrica = travaEletrica,
+                VidrosEletricos = vidrosEletricos,
+                DirecaoEletrica = direcaoEletrica,
+                DirecaoHidraulica = direcaoHidraulica,
+                CambioAutomatico = cambioAutomatico,
+                BancosEmCouro = bancosEmCouro,
+                ArCondicionado = arCondicionado,
+                ComputadorDeBordo = computadorDeBordo,
+                CombustivelAlcool = combustivelAlcool,
+                CombustivelDiesel = combustivelDiesel,
+                CombustivelGasolina = combustivelGasolina,
+                CombustivelFlex = combustivelFlex
+            };
+            carroServico.Editar(carro);
+        }
     }
 }
