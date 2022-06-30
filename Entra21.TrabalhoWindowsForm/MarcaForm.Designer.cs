@@ -278,6 +278,7 @@
             this.Controls.Add(this.buttonEditar);
             this.Name = "MarcaForm";
             this.Text = "MarcaForm";
+            this.Load += new System.EventHandler(this.MarcaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

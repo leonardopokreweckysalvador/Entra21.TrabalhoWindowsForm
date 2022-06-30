@@ -206,5 +206,10 @@ namespace Entra21.TrabalhoWindowsForm
             marcaServico.Apagar(marca);
             PreencherDataGridViewMarca();
         }
+
+        private void MarcaForm_Load(object sender, EventArgs e)
+        {
+            PreencherDataGridViewMarca();
+        }
     }
 }
