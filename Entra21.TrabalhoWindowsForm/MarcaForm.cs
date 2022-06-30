@@ -65,7 +65,7 @@ namespace Entra21.TrabalhoWindowsForm
                 CadastrarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
             }
             else
-               // EditarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
+                EditarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
 
             PreencherDataGridViewMarca();
             //LimparCampos();
@@ -124,6 +124,23 @@ namespace Entra21.TrabalhoWindowsForm
             marca.ManutecaoImportada = manutencaoImportada;
 
             marcaServico.Adicionar(marca);
+        }
+
+        private void EditarMarca(string nomeMarca, string grupoProprietarioMarca, string paisOrigemmarca, DateTime dataFundacaoMarca, bool manutencaoNacional, bool manutencaoImportada)
+        {
+            var linhaSelecionada = dataGridViewMarca.SelectedRows[0];
+            var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var marca = new Marca()
+            {
+                Codigo = codigoSelecionado,
+                Nome = nomeMarca,
+                Grupo = grupoProprietarioMarca,
+                Pais = paisOrigemmarca,
+                AnoFundacao = dataFundacaoMarca,
+                ManutecaoNacional = manutencaoNacional,
+                ManutecaoImportada = manutencaoImportada
+            };
+            marcaServico.Editar(marca);
         }
     }
 }
