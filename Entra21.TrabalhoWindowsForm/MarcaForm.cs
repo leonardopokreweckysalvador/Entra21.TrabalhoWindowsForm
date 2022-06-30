@@ -55,20 +55,102 @@ namespace Entra21.TrabalhoWindowsForm
             var manutencaoNacional = radioButtonSim.Checked;
             var manutencaoImportada = radioButtonNao.Checked;
 
-            //var informacoesValidar = ValidarInformacoes(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
+            var informacoesValidar = ValidarInformacoes(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
 
-            //if (informacoesValidar == false)
+            if (informacoesValidar == false)
                 return;
 
             if (dataGridViewMarca.SelectedRows.Count == 0)
             {
-                //CadastrarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
+                CadastrarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
             }
             else
-               // EditarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
+                EditarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
 
             PreencherDataGridViewMarca();
-            //LimparCampos();
+            LimparCampos();
+        }
+
+        private bool ValidarInformacoes(string nomeMarca, string grupoProprietarioMarca, string paisOrigemmarca, DateTime dataFundacaoMarca, bool manutencaoNacional, bool manutencaoImportada)
+        {
+            if (nomeMarca.Trim().Length ==0)
+            {
+                MessageBox.Show("Digite um nome de marca válido!");
+                textBoxNomeMarca.Focus();
+                return false;
+            }
+            else if (nomeMarca.Trim().Length < 3)
+            {
+                MessageBox.Show("Digite um nome de marca válido!");
+                textBoxNomeMarca.Focus();
+                return false;
+            }
+            if (grupoProprietarioMarca.Trim().Length == 0)
+            {
+                MessageBox.Show("Digite um Grupo Proprietário de marca válido!");
+                textBoxGrupoProprietarioMarca.Focus();
+                return false;
+            }
+            else if (grupoProprietarioMarca.Trim().Length < 2)
+            {
+                MessageBox.Show("Digite um Grupo Proprietário de marca válido!");
+                textBoxGrupoProprietarioMarca.Focus();
+                return false;
+            }
+            if (paisOrigemmarca.Trim().Length == 0)
+            {
+                MessageBox.Show("Digite um País válido!");
+                textBoxPaisDeOrigem.Focus();
+                return false;
+            }
+            else if (paisOrigemmarca.Trim().Length < 4)
+            {
+                MessageBox.Show("Digite um País válido!");
+                textBoxPaisDeOrigem.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void CadastrarMarca(string nomeMarca, string grupoProprietarioMarca, string paisOrigemMarca, DateTime dataFundacaoMarca, bool manutencaoNacional, bool manutencaoImportada)
+        {
+            var marca = new Marca();
+            marca.Codigo = marcaServico.ObterUltimoCodigo() + 1;
+            marca.Nome = nomeMarca;
+            marca.Grupo = grupoProprietarioMarca;
+            marca.Pais = paisOrigemMarca;
+            marca.AnoFundacao = dataFundacaoMarca;
+            marca.ManutecaoNacional = manutencaoNacional;
+            marca.ManutecaoImportada = manutencaoImportada;
+
+            marcaServico.Adicionar(marca);
+        }
+
+        private void EditarMarca(string nomeMarca, string grupoProprietarioMarca, string paisOrigemmarca, DateTime dataFundacaoMarca, bool manutencaoNacional, bool manutencaoImportada)
+        {
+            var linhaSelecionada = dataGridViewMarca.SelectedRows[0];
+            var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var marca = new Marca()
+            {
+                Codigo = codigoSelecionado,
+                Nome = nomeMarca,
+                Grupo = grupoProprietarioMarca,
+                Pais = paisOrigemmarca,
+                AnoFundacao = dataFundacaoMarca,
+                ManutecaoNacional = manutencaoNacional,
+                ManutecaoImportada = manutencaoImportada
+            };
+            marcaServico.Editar(marca);
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNomeMarca.Text = string.Empty;
+            textBoxGrupoProprietarioMarca.Text = string.Empty;
+            textBoxPaisDeOrigem.Text = string.Empty;
+            dateTimePickerDataDeFundacaoMarca.Value = Convert.ToDateTime(string.Empty);
+            radioButtonNao.Checked = false;
+            radioButtonSim.Checked = false;
         }
     }
 }
