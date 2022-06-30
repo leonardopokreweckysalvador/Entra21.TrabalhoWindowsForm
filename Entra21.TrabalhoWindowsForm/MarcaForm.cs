@@ -55,9 +55,9 @@ namespace Entra21.TrabalhoWindowsForm
             var manutencaoNacional = radioButtonSim.Checked;
             var manutencaoImportada = radioButtonNao.Checked;
 
-            //var informacoesValidar = ValidarInformacoes(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
+            var informacoesValidar = ValidarInformacoes(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
 
-            //if (informacoesValidar == false)
+            if (informacoesValidar == false)
                 return;
 
             if (dataGridViewMarca.SelectedRows.Count == 0)
@@ -69,6 +69,47 @@ namespace Entra21.TrabalhoWindowsForm
 
             PreencherDataGridViewMarca();
             //LimparCampos();
+        }
+
+        private bool ValidarInformacoes(string nomeMarca, string grupoProprietarioMarca, string paisOrigemmarca, DateTime dataFundacaoMarca, bool manutencaoNacional, bool manutencaoImportada)
+        {
+            if (nomeMarca.Trim().Length ==0)
+            {
+                MessageBox.Show("Digite um nome de marca válido!");
+                textBoxNomeMarca.Focus();
+                return false;
+            }
+            else if (nomeMarca.Trim().Length < 3)
+            {
+                MessageBox.Show("Digite um nome de marca válido!");
+                textBoxNomeMarca.Focus();
+                return false;
+            }
+            if (grupoProprietarioMarca.Trim().Length == 0)
+            {
+                MessageBox.Show("Digite um Grupo Proprietário de marca válido!");
+                textBoxGrupoProprietarioMarca.Focus();
+                return false;
+            }
+            else if (grupoProprietarioMarca.Trim().Length < 2)
+            {
+                MessageBox.Show("Digite um Grupo Proprietário de marca válido!");
+                textBoxGrupoProprietarioMarca.Focus();
+                return false;
+            }
+            if (paisOrigemmarca.Trim().Length == 0)
+            {
+                MessageBox.Show("Digite um País válido!");
+                textBoxPaisDeOrigem.Focus();
+                return false;
+            }
+            else if (paisOrigemmarca.Trim().Length < 4)
+            {
+                MessageBox.Show("Digite um País válido!");
+                textBoxPaisDeOrigem.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }
