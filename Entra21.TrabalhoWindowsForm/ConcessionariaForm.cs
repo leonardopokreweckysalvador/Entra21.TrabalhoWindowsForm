@@ -154,6 +154,33 @@ namespace Entra21.TrabalhoWindowsForm
             dataGridViewConcessionaria.ClearSelection();
         }
 
+        private void ApresentarDadosConcessionaria()
+        {
+            if (dataGridViewConcessionaria.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um registro para editar");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var concecionaria = concessionariaServico.ObterPorCodigo(codigo);
+
+            textBoxNome.Text = concecionaria.Nome;
+            maskedTextBoxCnpj.Text = concecionaria.Cnpj;
+            textBoxRazaoSocial.Text = concecionaria.RazaoSocial;
+            comboBoxEndereco.SelectedItem = concecionaria.Proprietario;
+            comboBoxEndereco.SelectedItem = concecionaria.Endereco;
+            dateTimePickerDataAbertura.Text = concecionaria.DataAbertura;
+            dateTimePickerHoraAbre.Text = concecionaria.HoraAbre;
+            dateTimePickerHoraFecha.Text = concecionaria.HoraFecha;
+            radioButtonAbreFinalSemana.Checked = concecionaria.AbreFinalSemana;
+
+        }
+
+
         private void ConcessionariaForm_Load(object sender, EventArgs e)
         {
             preencherDataGridViewConcessionaria();
