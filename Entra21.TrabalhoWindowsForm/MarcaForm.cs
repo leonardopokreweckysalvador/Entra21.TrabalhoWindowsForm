@@ -185,7 +185,26 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            if (dataGridViewMarca.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecionece uma marca para remover.");
+                return;
+            }
 
+            var confirmarApagar = MessageBox.Show("Tem certeza que deseja apagar essa marca?", "Atenção", MessageBoxButtons.YesNo);
+
+            if (confirmarApagar != DialogResult.Yes)
+            {
+                MessageBox.Show("A marca não foi removida do sistema!");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewMarca.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var marca = marcaServico.ObterPorCodigo(codigo);
+
+            marcaServico.Apagar(marca);
+            PreencherDataGridViewMarca();
         }
     }
 }
