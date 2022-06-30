@@ -16,5 +16,6 @@ namespace Entra21.TrabalhoWindowsForm
         public double Salario;
         public bool NomeLimpo;
         public double LimiteFinanceiro;
+        public Endereco Endereco;
     }
 }

@@ -19,7 +19,8 @@ namespace Entra21.TrabalhoWindowsForm
         {
             InitializeComponent();
             pessoaServico = new PessoaServico();
-            ListarPessoas();
+            enderecoServico = new EnderecoServico();
+            PreencherDataGridViewComPessoa();            
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -67,7 +68,6 @@ namespace Entra21.TrabalhoWindowsForm
             var pessoa = pessoaServico.ObterPorCodigo(codigo);
             textBoxNome.Text = pessoa.Nome;
             dateTimePickerDataNascimento.Value = pessoa.DataNascimento;
-            comboBoxEndereco.SelectedItem = pessoa.Endereco;
             comboBoxSexo.SelectedItem = pessoa.Sexo;
             maskedTextBoxCpf.Text = pessoa.Cpf;
             maskedTextBoxRg.Text = pessoa.Rg;
@@ -80,7 +80,6 @@ namespace Entra21.TrabalhoWindowsForm
             var nome = textBoxNome.Text;
             var dataNascimento = dateTimePickerDataNascimento.Value;
             var codigo = pessoaServico.ObterUltimoCodigo() + 1;
-            var endereco = comboBoxEndereco.SelectedItem;
             var sexo = Convert.ToString(comboBoxSexo.SelectedItem);
             var cpf = maskedTextBoxCpf.Text;
             var rg = maskedTextBoxRg.Text;
@@ -89,8 +88,8 @@ namespace Entra21.TrabalhoWindowsForm
             if (dataGridView1.SelectedRows.Count == 0)
                 AdicionarPessoa(nome, dataNascimento, codigo, sexo, cpf, rg, possuiCarro, possuiMoto);
             else
-                //EditarDados(nome, dataNascimento, endereco, sexo, cpf, rg, possuiCarro, possuiMoto);
-            PreencherDataGridViewComPessoa();
+                EditarDados(nome, dataNascimento, sexo, cpf, rg, possuiCarro, possuiMoto);
+                PreencherDataGridViewComPessoa();
             LimparCampos();
         }
 
@@ -102,7 +101,6 @@ namespace Entra21.TrabalhoWindowsForm
                 Codigo = pessoaServico.ObterUltimoCodigo() + 1,
                 Nome = nome,
                 DataNascimento = dataNascimento,
-                Endereco = enderecoServico.ObterPorCodigo(codigo),
                 Sexo = sexo,
                 Cpf = cpf,
                 Rg = rg,
@@ -115,13 +113,11 @@ namespace Entra21.TrabalhoWindowsForm
             ListarPessoas();
         }
 
-        private void EditarDados(string nome, DateTime dataNascimento, Endereco endereco,
-            string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
+        private void EditarDados(string nome, DateTime dataNascimento, string sexo, string cpf, string rg, bool possuiCarro, bool possuiMoto)
         {
             var pessoa = new Pessoa();
             pessoa.Nome = nome;
             pessoa.DataNascimento = dataNascimento;
-            pessoa.Endereco = endereco;
             pessoa.Sexo = sexo;
             pessoa.Cpf = cpf;
             pessoa.Rg = rg;
@@ -137,7 +133,6 @@ namespace Entra21.TrabalhoWindowsForm
         {
             textBoxNome.Clear();
             dateTimePickerDataNascimento.Checked = false;
-            comboBoxEndereco.ResetText();
             comboBoxSexo.ResetText();
             maskedTextBoxCpf.Text = string.Empty;
             maskedTextBoxRg.Text = string.Empty;
@@ -158,7 +153,6 @@ namespace Entra21.TrabalhoWindowsForm
                     pessoa.Codigo,
                     pessoa.Nome,
                     pessoa.DataNascimento,
-                    pessoa.Endereco,
                     pessoa.Sexo,
                     pessoa.Cpf,
                     pessoa.Rg,
@@ -169,14 +163,27 @@ namespace Entra21.TrabalhoWindowsForm
             }
         }
 
-        private void PreencherComboBoxComEndereco()
-        {
-
-        }
-
         private void PreencherDataGridViewComPessoa()
         {
+            var pessoas = pessoaServico.ObterTodas();
+            dataGridView1.Rows.Clear();
+            for (var i = 0; i < pessoas.Count; i++)
+            {
+                var pessoa = pessoas[i];
+                dataGridView1.Rows.Add(new object[]
+                {
+                    pessoa.Codigo,
+                    pessoa.Nome,
+                    pessoa.DataNascimento,
+                    pessoa.Sexo,
+                    pessoa.Cpf,
+                    pessoa.Rg,
+                    pessoa.PossuiCarro,
+                    pessoa.PossuiMoto
+                });
+            }
 
+            dataGridView1.ClearSelection();
         }
 
         private void PessoaForm_Load(object sender, EventArgs e)

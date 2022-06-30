@@ -42,7 +42,6 @@ namespace Entra21.TrabalhoWindowsForm
             var pessoa = ObterPorCodigo(pessoaEditar.Codigo);
             pessoa.Nome = pessoaEditar.Nome;
             pessoa.DataNascimento = pessoaEditar.DataNascimento;
-            pessoa.Endereco = pessoaEditar.Endereco;
             pessoa.Sexo = pessoaEditar.Sexo;
             pessoa.Cpf = pessoaEditar.Cpf;
             pessoa.Rg = pessoaEditar.Rg;

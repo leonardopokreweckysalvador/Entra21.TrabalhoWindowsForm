@@ -64,6 +64,7 @@ namespace Entra21.TrabalhoWindowsForm
             var salario = Convert.ToDouble(maskedTextBoxSalario.Text);
             var nomeLimpo = radioButtonNomeLimpo1.Checked;
             var limiteFinanceiro = Convert.ToDouble(maskedTextBoxLimiteFinanceiro.Text);
+            var endereco = comboBoxEndereco.SelectedItem;
             if (dataGridView1.SelectedRows.Count == 0)
                 AdicionarStatus(dataCadastro, nome, profissao, empresaTrabalho, salario, nomeLimpo, limiteFinanceiro);
             else
@@ -170,6 +171,11 @@ namespace Entra21.TrabalhoWindowsForm
         }
 
         private void PreencherComboBoxComOsNomesDasPessoas()
+        {
+
+        }
+
+        private void PreencherComboBoxComOsEnderecos()
         {
 
         }
