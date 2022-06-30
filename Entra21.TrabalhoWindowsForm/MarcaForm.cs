@@ -68,7 +68,7 @@ namespace Entra21.TrabalhoWindowsForm
                 EditarMarca(nomeMarca, grupoProprietarioMarca, paisOrigemMarca, dataFundacaoMarca, manutencaoNacional, manutencaoImportada);
 
             PreencherDataGridViewMarca();
-            //LimparCampos();
+            LimparCampos();
         }
 
         private bool ValidarInformacoes(string nomeMarca, string grupoProprietarioMarca, string paisOrigemmarca, DateTime dataFundacaoMarca, bool manutencaoNacional, bool manutencaoImportada)
@@ -141,6 +141,16 @@ namespace Entra21.TrabalhoWindowsForm
                 ManutecaoImportada = manutencaoImportada
             };
             marcaServico.Editar(marca);
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNomeMarca.Text = string.Empty;
+            textBoxGrupoProprietarioMarca.Text = string.Empty;
+            textBoxPaisDeOrigem.Text = string.Empty;
+            dateTimePickerDataDeFundacaoMarca.Value = Convert.ToDateTime(string.Empty);
+            radioButtonNao.Checked = false;
+            radioButtonSim.Checked = false;
         }
     }
 }
