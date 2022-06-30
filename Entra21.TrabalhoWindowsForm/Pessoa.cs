@@ -11,7 +11,6 @@ namespace Entra21.TrabalhoWindowsForm
         public int Codigo;
         public string Nome;
         public DateTime DataNascimento;
-        public Endereco Endereco;
         public string Sexo;
         public string Cpf;
         public string Rg;

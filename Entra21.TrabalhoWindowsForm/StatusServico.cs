@@ -48,6 +48,7 @@ namespace Entra21.TrabalhoWindowsForm
             status.Salario = statusEditar.Salario;
             status.NomeLimpo = statusEditar.NomeLimpo;
             status.LimiteFinanceiro = statusEditar.LimiteFinanceiro;
+            status.Endereco = statusEditar.Endereco;
             SalvarArquivo();
         }
 
