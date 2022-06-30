@@ -13,5 +13,7 @@ namespace Entra21.TrabalhoWindowsForm
         public DateTime AnoFundacao;
         public string Grupo;
         public string Pais;
+        public bool ManutecaoNacional;
+        public bool ManutecaoImportada;
     }
 }

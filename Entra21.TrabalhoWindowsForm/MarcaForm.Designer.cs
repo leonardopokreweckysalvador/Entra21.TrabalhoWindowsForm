@@ -32,7 +32,7 @@
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMarca = new System.Windows.Forms.DataGridView();
             this.ColumnNomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGrupoProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPaisDeOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             this.dateTimePickerDataDeFundacaoMarca = new System.Windows.Forms.DateTimePicker();
             this.radioButtonSim = new System.Windows.Forms.RadioButton();
             this.radioButtonNao = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonEditar
@@ -88,24 +88,24 @@
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewMarca
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewMarca.AllowUserToAddRows = false;
+            this.dataGridViewMarca.AllowUserToDeleteRows = false;
+            this.dataGridViewMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMarca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNomeMarca,
             this.ColumnGrupoProprietario,
             this.ColumnPaisDeOrigem,
             this.ColumnDataDeFundacao,
             this.ColumnPossuiManutecaoNacional});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1178, 398);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridViewMarca.Location = new System.Drawing.Point(12, 37);
+            this.dataGridViewMarca.Name = "dataGridViewMarca";
+            this.dataGridViewMarca.ReadOnly = true;
+            this.dataGridViewMarca.RowHeadersWidth = 51;
+            this.dataGridViewMarca.RowTemplate.Height = 29;
+            this.dataGridViewMarca.Size = new System.Drawing.Size(1178, 398);
+            this.dataGridViewMarca.TabIndex = 4;
             // 
             // ColumnNomeMarca
             // 
@@ -267,14 +267,14 @@
             this.Controls.Add(this.labelPaisOrigemMarca);
             this.Controls.Add(this.labelGrupoProprietarioMarca);
             this.Controls.Add(this.labelNomeMarca);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewMarca);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonEditar);
             this.Name = "MarcaForm";
             this.Text = "MarcaForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,7 +286,7 @@
         private Button buttonApagar;
         private Button buttonSalvar;
         private Button buttonCancelar;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewMarca;
         private Label labelNomeMarca;
         private Label labelGrupoProprietarioMarca;
         private Label labelPaisOrigemMarca;
