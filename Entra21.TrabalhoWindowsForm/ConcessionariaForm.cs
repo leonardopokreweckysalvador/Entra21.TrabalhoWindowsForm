@@ -29,6 +29,28 @@ namespace Entra21.TrabalhoWindowsForm
             PreencherComboBoxComOsNomesPessoas();
 
             PreencherComboBoxComOsLogradouroEndereco();
+
+            preencherDataGridViewEndereco();
+
+        }
+
+        private void preencherDataGridViewEndereco()
+        {
+            var enderecos = enderecoServico.ObterTodos();
+
+            dataGridViewConcessionaria.Rows.Clear();
+
+            for (var i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+                if (checkBoxApertoFinalSemana.Checked == true)
+                {
+                    dataGridViewConcessionaria.Rows.Add(new object[]
+                    {
+
+                    });
+                }
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -41,26 +63,26 @@ namespace Entra21.TrabalhoWindowsForm
             var nome = textBoxNome.Text;
             var cnpj = maskedTextBoxCnpj.Text;
             var razaoSocial = textBoxRazaoSocial.Text;
-            //Pessoa proprietario = comboBoxProprietario.SelectedItem;
-            //Endereco endereco = comboBoxEndereco.SelectedItem;
+            var proprietario = Convert.ToString(comboBoxProprietario.SelectedItem);
+            var endereco = Convert.ToString(comboBoxEndereco.SelectedItem);
             var dataAbertura = dateTimePickerDataAbertura.Value;
             var horaAbre = dateTimePickerHoraAbre.Value;
             var horaFecha = dateTimePickerHoraFecha.Value;
             var abreFinalSemana = radioButtonAbreFinalSemana.Checked;
 
-            //var dadosValidar = ValidarDados(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
+            var dadosValidar = ValidarDados(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
 
-           // if (dadosValidar == false) return;
+            if (dadosValidar == false) return;
 
-            //CadastrarConcessionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
+            CadastrarConcessionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
 
         }
 
-        private void CadastrarConcessionaria(string nome, string cnpj, string razaoSocial, Pessoa proprietario, Endereco endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
+        private void CadastrarConcessionaria(string nome, string cnpj, string razaoSocial, string? proprietario, string? endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
         {
             var concessionaria = new Concessionaria();
 
-            concessionaria.Codigo = concessionariaServico.ObterUltimoCodigo();
+            concessionaria.Codigo = concessionariaServico.ObterUltimoCodigo() +1;
             concessionaria.Nome = nome;
             concessionaria.Cnpj = cnpj;
             concessionaria.RazaoSocial = razaoSocial;
@@ -68,8 +90,8 @@ namespace Entra21.TrabalhoWindowsForm
             concessionaria.HoraAbre = horaAbre;
             concessionaria.HoraFecha = horaFecha;
             concessionaria.AbreFinalSemana = abreFinalSemana;
-            concessionaria.Proprietario = proprietario;
-            concessionaria.Endereco = endereco;
+            concessionaria.Proprietario = pessoaServico.ObterPorNomePessoa(proprietario) ;
+            concessionaria.Endereco =  enderecoServico.ObterPorLogredouro(endereco);
 
             concessionariaServico.Adicionar(concessionaria);
 
@@ -95,8 +117,8 @@ namespace Entra21.TrabalhoWindowsForm
             for (var i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];
-                comboBoxEndereco.Items.Add($"{endereco.Logradouro}   {endereco.Numero}");
-
+                comboBoxEndereco.Items.Add(endereco.Logradouro + ", " + endereco.Numero );
+                
             }
         }
 
