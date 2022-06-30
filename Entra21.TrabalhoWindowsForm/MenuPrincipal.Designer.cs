@@ -74,6 +74,7 @@
             this.buttonMarcas.TabIndex = 3;
             this.buttonMarcas.Text = "Marcas";
             this.buttonMarcas.UseVisualStyleBackColor = true;
+            this.buttonMarcas.Click += new System.EventHandler(this.buttonMarcas_Click);
             // 
             // buttonCarros
             // 
@@ -83,6 +84,7 @@
             this.buttonCarros.TabIndex = 4;
             this.buttonCarros.Text = "Carros";
             this.buttonCarros.UseVisualStyleBackColor = true;
+            this.buttonCarros.Click += new System.EventHandler(this.buttonCarros_Click);
             // 
             // buttonConcessionaria
             // 
