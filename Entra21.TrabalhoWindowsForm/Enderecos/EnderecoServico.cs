@@ -52,7 +52,7 @@ namespace Entra21.TrabalhoWindowsForm
                     endereco.Bairro = enderecoAlterar.Bairro;
                     endereco.Logradouro = enderecoAlterar.Logradouro;
                     endereco.Numero = enderecoAlterar.Numero;
-                    endereco.Complemento = enderecoAlterar.Complemento; 
+                    endereco.Complemento = enderecoAlterar.Complemento;
 
                     SalvarArquivo();
                     return;
@@ -103,6 +103,22 @@ namespace Entra21.TrabalhoWindowsForm
                 if (endereco.Codigo > ultimoCodigo) ultimoCodigo = endereco.Codigo;
             }
             return ultimoCodigo;
+        }
+
+        internal Endereco ObterPorLogredouro(string? enderecoLogradouro)
+        {
+            
+            var localVirgula = enderecoLogradouro.IndexOf(",");
+            var logradouro = enderecoLogradouro.Substring(0, localVirgula ).Trim();
+            var numero = enderecoLogradouro.Substring((localVirgula + 1), enderecoLogradouro.Length - (localVirgula+1)).Trim();
+
+            for (var i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+                if (endereco.Logradouro == logradouro && endereco.Numero == numero) return endereco;
+
+            }
+            return null;
         }
     }
 }
