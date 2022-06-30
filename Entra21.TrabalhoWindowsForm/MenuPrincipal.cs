@@ -34,5 +34,11 @@ namespace Entra21.TrabalhoWindowsForm
             var statusForm = new StatusForm();
             statusForm.ShowDialog();
         }
+
+        private void buttonConcessionaria_Click(object sender, EventArgs e)
+        {
+            var concessionariaForm = new ConcessionariaForm();
+            concessionariaForm.ShowDialog();
+        }
     }
 }

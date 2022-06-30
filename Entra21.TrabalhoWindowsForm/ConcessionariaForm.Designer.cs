@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewConcessionaria = new System.Windows.Forms.DataGridView();
             this.labelNome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelCnpj = new System.Windows.Forms.Label();
             this.maskedTextBoxCnpj = new System.Windows.Forms.MaskedTextBox();
             this.labelRazaoSocial = new System.Windows.Forms.Label();
@@ -51,17 +51,18 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.checkBoxApertoFinalSemana = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConcessionaria)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewConcessionaria
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(571, 373);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewConcessionaria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewConcessionaria.Location = new System.Drawing.Point(12, 36);
+            this.dataGridViewConcessionaria.Name = "dataGridViewConcessionaria";
+            this.dataGridViewConcessionaria.RowTemplate.Height = 25;
+            this.dataGridViewConcessionaria.Size = new System.Drawing.Size(571, 373);
+            this.dataGridViewConcessionaria.TabIndex = 0;
             // 
             // labelNome
             // 
@@ -72,12 +73,12 @@
             this.labelNome.TabIndex = 1;
             this.labelNome.Text = "Nome";
             // 
-            // textBox1
+            // textBoxNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(607, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(341, 23);
-            this.textBox1.TabIndex = 2;
+            this.textBoxNome.Location = new System.Drawing.Point(607, 36);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(341, 23);
+            this.textBoxNome.TabIndex = 2;
             // 
             // labelCnpj
             // 
@@ -157,6 +158,7 @@
             // 
             // dateTimePickerDataAbertura
             // 
+            this.dateTimePickerDataAbertura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDataAbertura.Location = new System.Drawing.Point(607, 285);
             this.dateTimePickerDataAbertura.Name = "dateTimePickerDataAbertura";
             this.dateTimePickerDataAbertura.Size = new System.Drawing.Size(249, 23);
@@ -183,6 +185,7 @@
             // 
             // dateTimePickerHoraAbre
             // 
+            this.dateTimePickerHoraAbre.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerHoraAbre.Location = new System.Drawing.Point(608, 335);
             this.dateTimePickerHoraAbre.Name = "dateTimePickerHoraAbre";
             this.dateTimePickerHoraAbre.Size = new System.Drawing.Size(167, 23);
@@ -190,6 +193,7 @@
             // 
             // dateTimePickerHoraFecha
             // 
+            this.dateTimePickerHoraFecha.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerHoraFecha.Location = new System.Drawing.Point(781, 335);
             this.dateTimePickerHoraFecha.Name = "dateTimePickerHoraFecha";
             this.dateTimePickerHoraFecha.Size = new System.Drawing.Size(167, 23);
@@ -198,12 +202,15 @@
             // radioButtonAbreFinalSemana
             // 
             this.radioButtonAbreFinalSemana.AutoSize = true;
+            this.radioButtonAbreFinalSemana.Checked = true;
+            this.radioButtonAbreFinalSemana.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonAbreFinalSemana.Location = new System.Drawing.Point(607, 364);
             this.radioButtonAbreFinalSemana.Name = "radioButtonAbreFinalSemana";
-            this.radioButtonAbreFinalSemana.Size = new System.Drawing.Size(139, 19);
+            this.radioButtonAbreFinalSemana.Size = new System.Drawing.Size(141, 22);
             this.radioButtonAbreFinalSemana.TabIndex = 17;
             this.radioButtonAbreFinalSemana.TabStop = true;
             this.radioButtonAbreFinalSemana.Text = "Abre Final de Semana";
+            this.radioButtonAbreFinalSemana.UseCompatibleTextRendering = true;
             this.radioButtonAbreFinalSemana.UseVisualStyleBackColor = true;
             // 
             // radioButtonNaoAbreFinalSemana
@@ -213,7 +220,6 @@
             this.radioButtonNaoAbreFinalSemana.Name = "radioButtonNaoAbreFinalSemana";
             this.radioButtonNaoAbreFinalSemana.Size = new System.Drawing.Size(162, 19);
             this.radioButtonNaoAbreFinalSemana.TabIndex = 18;
-            this.radioButtonNaoAbreFinalSemana.TabStop = true;
             this.radioButtonNaoAbreFinalSemana.Text = "Não Abre final de Semana";
             this.radioButtonNaoAbreFinalSemana.UseVisualStyleBackColor = true;
             // 
@@ -225,6 +231,7 @@
             this.buttonSalvar.TabIndex = 19;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonCancelar
             // 
@@ -234,6 +241,7 @@
             this.buttonCancelar.TabIndex = 20;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonEditar
             // 
@@ -253,11 +261,23 @@
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
             // 
+            // checkBoxApertoFinalSemana
+            // 
+            this.checkBoxApertoFinalSemana.AutoSize = true;
+            this.checkBoxApertoFinalSemana.Location = new System.Drawing.Point(345, 426);
+            this.checkBoxApertoFinalSemana.Name = "checkBoxApertoFinalSemana";
+            this.checkBoxApertoFinalSemana.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxApertoFinalSemana.Size = new System.Drawing.Size(238, 19);
+            this.checkBoxApertoFinalSemana.TabIndex = 23;
+            this.checkBoxApertoFinalSemana.Text = "Concessionarias abertas final de semana";
+            this.checkBoxApertoFinalSemana.UseVisualStyleBackColor = true;
+            // 
             // ConcessionariaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.checkBoxApertoFinalSemana);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCancelar);
@@ -278,12 +298,12 @@
             this.Controls.Add(this.labelRazaoSocial);
             this.Controls.Add(this.maskedTextBoxCnpj);
             this.Controls.Add(this.labelCnpj);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelNome);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewConcessionaria);
             this.Name = "ConcessionariaForm";
             this.Text = "Concessionaria";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConcessionaria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,9 +311,9 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewConcessionaria;
         private Label labelNome;
-        private TextBox textBox1;
+        private TextBox textBoxNome;
         private Label labelCnpj;
         private MaskedTextBox maskedTextBoxCnpj;
         private Label labelRazaoSocial;
@@ -314,5 +334,6 @@
         private Button buttonCancelar;
         private Button buttonEditar;
         private Button buttonApagar;
+        private CheckBox checkBoxApertoFinalSemana;
     }
 }
