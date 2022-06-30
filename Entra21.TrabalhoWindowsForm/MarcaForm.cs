@@ -148,7 +148,7 @@ namespace Entra21.TrabalhoWindowsForm
             textBoxNomeMarca.Text = string.Empty;
             textBoxGrupoProprietarioMarca.Text = string.Empty;
             textBoxPaisDeOrigem.Text = string.Empty;
-            dateTimePickerDataDeFundacaoMarca.Value = Convert.ToDateTime(string.Empty);
+            dateTimePickerDataDeFundacaoMarca.Value = DateTime.Now;
             radioButtonNao.Checked = false;
             radioButtonSim.Checked = false;
         }

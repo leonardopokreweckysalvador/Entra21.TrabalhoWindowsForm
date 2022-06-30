@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProfissão = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEmpresaTrabalho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNomeLimpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLimiteFinanceiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
@@ -48,14 +56,8 @@
             this.radioButtonNomeLimpo1 = new System.Windows.Forms.RadioButton();
             this.maskedTextBoxLimiteFinanceiro = new System.Windows.Forms.MaskedTextBox();
             this.radioButtonNomeLimpo2 = new System.Windows.Forms.RadioButton();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProfissão = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEmpresaTrabalho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNomeLimpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLimiteFinanceiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelEndereco = new System.Windows.Forms.Label();
+            this.comboBoxEndereco = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,197 +75,14 @@
             this.ColumnSalario,
             this.ColumnNomeLimpo,
             this.ColumnLimiteFinanceiro});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 60);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 45);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1052, 524);
+            this.dataGridView1.Size = new System.Drawing.Size(920, 393);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // buttonApagar
-            // 
-            this.buttonApagar.Location = new System.Drawing.Point(980, 13);
-            this.buttonApagar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(86, 31);
-            this.buttonApagar.TabIndex = 1;
-            this.buttonApagar.Text = "Apagar";
-            this.buttonApagar.UseVisualStyleBackColor = true;
-            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Location = new System.Drawing.Point(887, 13);
-            this.buttonEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(86, 31);
-            this.buttonEditar.TabIndex = 2;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonSalvar
-            // 
-            this.buttonSalvar.Location = new System.Drawing.Point(1279, 553);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(86, 31);
-            this.buttonSalvar.TabIndex = 3;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.Location = new System.Drawing.Point(1372, 553);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(86, 31);
-            this.buttonCancelar.TabIndex = 4;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // labelDataCadastro
-            // 
-            this.labelDataCadastro.AutoSize = true;
-            this.labelDataCadastro.Location = new System.Drawing.Point(1081, 60);
-            this.labelDataCadastro.Name = "labelDataCadastro";
-            this.labelDataCadastro.Size = new System.Drawing.Size(126, 20);
-            this.labelDataCadastro.TabIndex = 5;
-            this.labelDataCadastro.Text = "Data do Cadastro";
-            // 
-            // labelPessoa
-            // 
-            this.labelPessoa.AutoSize = true;
-            this.labelPessoa.Location = new System.Drawing.Point(1081, 127);
-            this.labelPessoa.Name = "labelPessoa";
-            this.labelPessoa.Size = new System.Drawing.Size(118, 20);
-            this.labelPessoa.TabIndex = 6;
-            this.labelPessoa.Text = "Nome completo";
-            // 
-            // labelProfissao
-            // 
-            this.labelProfissao.AutoSize = true;
-            this.labelProfissao.Location = new System.Drawing.Point(1081, 193);
-            this.labelProfissao.Name = "labelProfissao";
-            this.labelProfissao.Size = new System.Drawing.Size(69, 20);
-            this.labelProfissao.TabIndex = 7;
-            this.labelProfissao.Text = "Profissão";
-            // 
-            // labelEmpresaTrabalho
-            // 
-            this.labelEmpresaTrabalho.AutoSize = true;
-            this.labelEmpresaTrabalho.Location = new System.Drawing.Point(1081, 261);
-            this.labelEmpresaTrabalho.Name = "labelEmpresaTrabalho";
-            this.labelEmpresaTrabalho.Size = new System.Drawing.Size(136, 20);
-            this.labelEmpresaTrabalho.TabIndex = 8;
-            this.labelEmpresaTrabalho.Text = "Empresa (trabalho)";
-            // 
-            // labelSalario
-            // 
-            this.labelSalario.AutoSize = true;
-            this.labelSalario.Location = new System.Drawing.Point(1081, 329);
-            this.labelSalario.Name = "labelSalario";
-            this.labelSalario.Size = new System.Drawing.Size(55, 20);
-            this.labelSalario.TabIndex = 9;
-            this.labelSalario.Text = "Salário";
-            // 
-            // labelNomeLimpo
-            // 
-            this.labelNomeLimpo.AutoSize = true;
-            this.labelNomeLimpo.Location = new System.Drawing.Point(1081, 397);
-            this.labelNomeLimpo.Name = "labelNomeLimpo";
-            this.labelNomeLimpo.Size = new System.Drawing.Size(105, 20);
-            this.labelNomeLimpo.TabIndex = 10;
-            this.labelNomeLimpo.Text = "Nome é limpo";
-            // 
-            // labelLimiteFinanceiro
-            // 
-            this.labelLimiteFinanceiro.AutoSize = true;
-            this.labelLimiteFinanceiro.Location = new System.Drawing.Point(1081, 452);
-            this.labelLimiteFinanceiro.Name = "labelLimiteFinanceiro";
-            this.labelLimiteFinanceiro.Size = new System.Drawing.Size(122, 20);
-            this.labelLimiteFinanceiro.TabIndex = 11;
-            this.labelLimiteFinanceiro.Text = "Limite Financeiro";
-            // 
-            // dateTimePickerDataCadastro
-            // 
-            this.dateTimePickerDataCadastro.Location = new System.Drawing.Point(1081, 84);
-            this.dateTimePickerDataCadastro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePickerDataCadastro.Name = "dateTimePickerDataCadastro";
-            this.dateTimePickerDataCadastro.Size = new System.Drawing.Size(375, 27);
-            this.dateTimePickerDataCadastro.TabIndex = 12;
-            // 
-            // comboBoxNomeCompleto
-            // 
-            this.comboBoxNomeCompleto.FormattingEnabled = true;
-            this.comboBoxNomeCompleto.Location = new System.Drawing.Point(1081, 151);
-            this.comboBoxNomeCompleto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBoxNomeCompleto.Name = "comboBoxNomeCompleto";
-            this.comboBoxNomeCompleto.Size = new System.Drawing.Size(375, 28);
-            this.comboBoxNomeCompleto.TabIndex = 13;
-            // 
-            // textBoxProfissao
-            // 
-            this.textBoxProfissao.Location = new System.Drawing.Point(1081, 217);
-            this.textBoxProfissao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxProfissao.Name = "textBoxProfissao";
-            this.textBoxProfissao.Size = new System.Drawing.Size(375, 27);
-            this.textBoxProfissao.TabIndex = 14;
-            // 
-            // textBoxEmpresaTrabalho
-            // 
-            this.textBoxEmpresaTrabalho.Location = new System.Drawing.Point(1081, 285);
-            this.textBoxEmpresaTrabalho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxEmpresaTrabalho.Name = "textBoxEmpresaTrabalho";
-            this.textBoxEmpresaTrabalho.Size = new System.Drawing.Size(375, 27);
-            this.textBoxEmpresaTrabalho.TabIndex = 15;
-            // 
-            // maskedTextBoxSalario
-            // 
-            this.maskedTextBoxSalario.Location = new System.Drawing.Point(1081, 353);
-            this.maskedTextBoxSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.maskedTextBoxSalario.Mask = "$";
-            this.maskedTextBoxSalario.Name = "maskedTextBoxSalario";
-            this.maskedTextBoxSalario.Size = new System.Drawing.Size(375, 27);
-            this.maskedTextBoxSalario.TabIndex = 16;
-            // 
-            // radioButtonNomeLimpo1
-            // 
-            this.radioButtonNomeLimpo1.AutoSize = true;
-            this.radioButtonNomeLimpo1.Location = new System.Drawing.Point(1081, 421);
-            this.radioButtonNomeLimpo1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButtonNomeLimpo1.Name = "radioButtonNomeLimpo1";
-            this.radioButtonNomeLimpo1.Size = new System.Drawing.Size(55, 24);
-            this.radioButtonNomeLimpo1.TabIndex = 17;
-            this.radioButtonNomeLimpo1.TabStop = true;
-            this.radioButtonNomeLimpo1.Text = "Sim";
-            this.radioButtonNomeLimpo1.UseVisualStyleBackColor = true;
-            // 
-            // maskedTextBoxLimiteFinanceiro
-            // 
-            this.maskedTextBoxLimiteFinanceiro.Location = new System.Drawing.Point(1082, 476);
-            this.maskedTextBoxLimiteFinanceiro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.maskedTextBoxLimiteFinanceiro.Mask = "$";
-            this.maskedTextBoxLimiteFinanceiro.Name = "maskedTextBoxLimiteFinanceiro";
-            this.maskedTextBoxLimiteFinanceiro.Size = new System.Drawing.Size(374, 27);
-            this.maskedTextBoxLimiteFinanceiro.TabIndex = 18;
-            // 
-            // radioButtonNomeLimpo2
-            // 
-            this.radioButtonNomeLimpo2.AutoSize = true;
-            this.radioButtonNomeLimpo2.Location = new System.Drawing.Point(1151, 421);
-            this.radioButtonNomeLimpo2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButtonNomeLimpo2.Name = "radioButtonNomeLimpo2";
-            this.radioButtonNomeLimpo2.Size = new System.Drawing.Size(58, 24);
-            this.radioButtonNomeLimpo2.TabIndex = 19;
-            this.radioButtonNomeLimpo2.TabStop = true;
-            this.radioButtonNomeLimpo2.Text = "Não";
-            this.radioButtonNomeLimpo2.UseVisualStyleBackColor = true;
             // 
             // ColumnCodigo
             // 
@@ -329,11 +148,201 @@
             this.ColumnLimiteFinanceiro.ReadOnly = true;
             this.ColumnLimiteFinanceiro.Width = 125;
             // 
+            // buttonApagar
+            // 
+            this.buttonApagar.Location = new System.Drawing.Point(858, 10);
+            this.buttonApagar.Name = "buttonApagar";
+            this.buttonApagar.Size = new System.Drawing.Size(75, 23);
+            this.buttonApagar.TabIndex = 1;
+            this.buttonApagar.Text = "Apagar";
+            this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Location = new System.Drawing.Point(776, 10);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditar.TabIndex = 2;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(1119, 415);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvar.TabIndex = 3;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.Location = new System.Drawing.Point(1200, 415);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.TabIndex = 4;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // labelDataCadastro
+            // 
+            this.labelDataCadastro.AutoSize = true;
+            this.labelDataCadastro.Location = new System.Drawing.Point(946, 45);
+            this.labelDataCadastro.Name = "labelDataCadastro";
+            this.labelDataCadastro.Size = new System.Drawing.Size(98, 15);
+            this.labelDataCadastro.TabIndex = 5;
+            this.labelDataCadastro.Text = "Data do Cadastro";
+            // 
+            // labelPessoa
+            // 
+            this.labelPessoa.AutoSize = true;
+            this.labelPessoa.Location = new System.Drawing.Point(946, 95);
+            this.labelPessoa.Name = "labelPessoa";
+            this.labelPessoa.Size = new System.Drawing.Size(94, 15);
+            this.labelPessoa.TabIndex = 6;
+            this.labelPessoa.Text = "Nome completo";
+            // 
+            // labelProfissao
+            // 
+            this.labelProfissao.AutoSize = true;
+            this.labelProfissao.Location = new System.Drawing.Point(946, 182);
+            this.labelProfissao.Name = "labelProfissao";
+            this.labelProfissao.Size = new System.Drawing.Size(55, 15);
+            this.labelProfissao.TabIndex = 7;
+            this.labelProfissao.Text = "Profissão";
+            // 
+            // labelEmpresaTrabalho
+            // 
+            this.labelEmpresaTrabalho.AutoSize = true;
+            this.labelEmpresaTrabalho.Location = new System.Drawing.Point(946, 233);
+            this.labelEmpresaTrabalho.Name = "labelEmpresaTrabalho";
+            this.labelEmpresaTrabalho.Size = new System.Drawing.Size(107, 15);
+            this.labelEmpresaTrabalho.TabIndex = 8;
+            this.labelEmpresaTrabalho.Text = "Empresa (trabalho)";
+            // 
+            // labelSalario
+            // 
+            this.labelSalario.AutoSize = true;
+            this.labelSalario.Location = new System.Drawing.Point(946, 284);
+            this.labelSalario.Name = "labelSalario";
+            this.labelSalario.Size = new System.Drawing.Size(42, 15);
+            this.labelSalario.TabIndex = 9;
+            this.labelSalario.Text = "Salário";
+            // 
+            // labelNomeLimpo
+            // 
+            this.labelNomeLimpo.AutoSize = true;
+            this.labelNomeLimpo.Location = new System.Drawing.Point(946, 327);
+            this.labelNomeLimpo.Name = "labelNomeLimpo";
+            this.labelNomeLimpo.Size = new System.Drawing.Size(83, 15);
+            this.labelNomeLimpo.TabIndex = 10;
+            this.labelNomeLimpo.Text = "Nome é limpo";
+            // 
+            // labelLimiteFinanceiro
+            // 
+            this.labelLimiteFinanceiro.AutoSize = true;
+            this.labelLimiteFinanceiro.Location = new System.Drawing.Point(946, 368);
+            this.labelLimiteFinanceiro.Name = "labelLimiteFinanceiro";
+            this.labelLimiteFinanceiro.Size = new System.Drawing.Size(98, 15);
+            this.labelLimiteFinanceiro.TabIndex = 11;
+            this.labelLimiteFinanceiro.Text = "Limite Financeiro";
+            // 
+            // dateTimePickerDataCadastro
+            // 
+            this.dateTimePickerDataCadastro.Location = new System.Drawing.Point(946, 63);
+            this.dateTimePickerDataCadastro.Name = "dateTimePickerDataCadastro";
+            this.dateTimePickerDataCadastro.Size = new System.Drawing.Size(329, 23);
+            this.dateTimePickerDataCadastro.TabIndex = 12;
+            // 
+            // comboBoxNomeCompleto
+            // 
+            this.comboBoxNomeCompleto.FormattingEnabled = true;
+            this.comboBoxNomeCompleto.Location = new System.Drawing.Point(946, 113);
+            this.comboBoxNomeCompleto.Name = "comboBoxNomeCompleto";
+            this.comboBoxNomeCompleto.Size = new System.Drawing.Size(329, 23);
+            this.comboBoxNomeCompleto.TabIndex = 13;
+            // 
+            // textBoxProfissao
+            // 
+            this.textBoxProfissao.Location = new System.Drawing.Point(946, 200);
+            this.textBoxProfissao.Name = "textBoxProfissao";
+            this.textBoxProfissao.Size = new System.Drawing.Size(329, 23);
+            this.textBoxProfissao.TabIndex = 14;
+            // 
+            // textBoxEmpresaTrabalho
+            // 
+            this.textBoxEmpresaTrabalho.Location = new System.Drawing.Point(946, 251);
+            this.textBoxEmpresaTrabalho.Name = "textBoxEmpresaTrabalho";
+            this.textBoxEmpresaTrabalho.Size = new System.Drawing.Size(329, 23);
+            this.textBoxEmpresaTrabalho.TabIndex = 15;
+            // 
+            // maskedTextBoxSalario
+            // 
+            this.maskedTextBoxSalario.Location = new System.Drawing.Point(946, 302);
+            this.maskedTextBoxSalario.Mask = "$";
+            this.maskedTextBoxSalario.Name = "maskedTextBoxSalario";
+            this.maskedTextBoxSalario.Size = new System.Drawing.Size(329, 23);
+            this.maskedTextBoxSalario.TabIndex = 16;
+            // 
+            // radioButtonNomeLimpo1
+            // 
+            this.radioButtonNomeLimpo1.AutoSize = true;
+            this.radioButtonNomeLimpo1.Location = new System.Drawing.Point(946, 345);
+            this.radioButtonNomeLimpo1.Name = "radioButtonNomeLimpo1";
+            this.radioButtonNomeLimpo1.Size = new System.Drawing.Size(45, 19);
+            this.radioButtonNomeLimpo1.TabIndex = 17;
+            this.radioButtonNomeLimpo1.TabStop = true;
+            this.radioButtonNomeLimpo1.Text = "Sim";
+            this.radioButtonNomeLimpo1.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxLimiteFinanceiro
+            // 
+            this.maskedTextBoxLimiteFinanceiro.Location = new System.Drawing.Point(947, 386);
+            this.maskedTextBoxLimiteFinanceiro.Mask = "$";
+            this.maskedTextBoxLimiteFinanceiro.Name = "maskedTextBoxLimiteFinanceiro";
+            this.maskedTextBoxLimiteFinanceiro.Size = new System.Drawing.Size(328, 23);
+            this.maskedTextBoxLimiteFinanceiro.TabIndex = 18;
+            // 
+            // radioButtonNomeLimpo2
+            // 
+            this.radioButtonNomeLimpo2.AutoSize = true;
+            this.radioButtonNomeLimpo2.Location = new System.Drawing.Point(1007, 345);
+            this.radioButtonNomeLimpo2.Name = "radioButtonNomeLimpo2";
+            this.radioButtonNomeLimpo2.Size = new System.Drawing.Size(47, 19);
+            this.radioButtonNomeLimpo2.TabIndex = 19;
+            this.radioButtonNomeLimpo2.TabStop = true;
+            this.radioButtonNomeLimpo2.Text = "Não";
+            this.radioButtonNomeLimpo2.UseVisualStyleBackColor = true;
+            // 
+            // labelEndereco
+            // 
+            this.labelEndereco.AutoSize = true;
+            this.labelEndereco.Location = new System.Drawing.Point(946, 139);
+            this.labelEndereco.Name = "labelEndereco";
+            this.labelEndereco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelEndereco.Size = new System.Drawing.Size(56, 15);
+            this.labelEndereco.TabIndex = 20;
+            this.labelEndereco.Text = "Endereço";
+            // 
+            // comboBoxEndereco
+            // 
+            this.comboBoxEndereco.FormattingEnabled = true;
+            this.comboBoxEndereco.Location = new System.Drawing.Point(947, 156);
+            this.comboBoxEndereco.Name = "comboBoxEndereco";
+            this.comboBoxEndereco.Size = new System.Drawing.Size(328, 23);
+            this.comboBoxEndereco.TabIndex = 21;
+            // 
             // StatusForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1472, 600);
+            this.ClientSize = new System.Drawing.Size(1300, 450);
+            this.Controls.Add(this.comboBoxEndereco);
+            this.Controls.Add(this.labelEndereco);
             this.Controls.Add(this.radioButtonNomeLimpo2);
             this.Controls.Add(this.maskedTextBoxLimiteFinanceiro);
             this.Controls.Add(this.radioButtonNomeLimpo1);
@@ -354,7 +363,6 @@
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "StatusForm";
             this.Text = "StatusForm";
             this.Load += new System.EventHandler(this.StatusForm_Load);
@@ -394,5 +402,7 @@
         private DataGridViewTextBoxColumn ColumnSalario;
         private DataGridViewTextBoxColumn ColumnNomeLimpo;
         private DataGridViewTextBoxColumn ColumnLimiteFinanceiro;
+        private Label labelEndereco;
+        private ComboBox comboBoxEndereco;
     }
 }

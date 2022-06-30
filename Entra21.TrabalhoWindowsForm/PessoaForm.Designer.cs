@@ -33,7 +33,6 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.labelNome = new System.Windows.Forms.Label();
             this.labelDataNascimento = new System.Windows.Forms.Label();
-            this.labelEndereco = new System.Windows.Forms.Label();
             this.labelSexo = new System.Windows.Forms.Label();
             this.labelCpf = new System.Windows.Forms.Label();
             this.labelRg = new System.Windows.Forms.Label();
@@ -44,14 +43,12 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxRg = new System.Windows.Forms.MaskedTextBox();
-            this.comboBoxEndereco = new System.Windows.Forms.ComboBox();
             this.checkBoxCarro = new System.Windows.Forms.CheckBox();
             this.checkBoxMoto = new System.Windows.Forms.CheckBox();
             this.labelPossuiVeiculo = new System.Windows.Forms.Label();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEndereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,28 +66,25 @@
             this.ColumnCodigo,
             this.ColumnNome,
             this.ColumnDataNascimento,
-            this.ColumnEndereço,
             this.ColumnSexo,
             this.ColumnCpf,
             this.ColumnRg,
             this.ColumnPossuiCarro,
             this.ColumnPossuiMoto});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 51);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1180, 476);
+            this.dataGridView1.Size = new System.Drawing.Size(931, 357);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonApagar
             // 
-            this.buttonApagar.Location = new System.Drawing.Point(1108, 13);
-            this.buttonApagar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonApagar.Location = new System.Drawing.Point(869, 9);
             this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(86, 31);
+            this.buttonApagar.Size = new System.Drawing.Size(75, 23);
             this.buttonApagar.TabIndex = 1;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
@@ -98,10 +92,9 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(1016, 13);
-            this.buttonEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEditar.Location = new System.Drawing.Point(788, 9);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(86, 31);
+            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
@@ -110,63 +103,53 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(1210, 52);
+            this.labelNome.Location = new System.Drawing.Point(949, 40);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(50, 20);
+            this.labelNome.Size = new System.Drawing.Size(40, 15);
             this.labelNome.TabIndex = 3;
             this.labelNome.Text = "Nome";
             // 
             // labelDataNascimento
             // 
             this.labelDataNascimento.AutoSize = true;
-            this.labelDataNascimento.Location = new System.Drawing.Point(1210, 112);
+            this.labelDataNascimento.Location = new System.Drawing.Point(949, 85);
             this.labelDataNascimento.Name = "labelDataNascimento";
-            this.labelDataNascimento.Size = new System.Drawing.Size(145, 20);
+            this.labelDataNascimento.Size = new System.Drawing.Size(114, 15);
             this.labelDataNascimento.TabIndex = 4;
             this.labelDataNascimento.Text = "Data de Nascimento";
-            // 
-            // labelEndereco
-            // 
-            this.labelEndereco.AutoSize = true;
-            this.labelEndereco.Location = new System.Drawing.Point(1210, 176);
-            this.labelEndereco.Name = "labelEndereco";
-            this.labelEndereco.Size = new System.Drawing.Size(71, 20);
-            this.labelEndereco.TabIndex = 5;
-            this.labelEndereco.Text = "Endereço";
             // 
             // labelSexo
             // 
             this.labelSexo.AutoSize = true;
-            this.labelSexo.Location = new System.Drawing.Point(1210, 234);
+            this.labelSexo.Location = new System.Drawing.Point(949, 138);
             this.labelSexo.Name = "labelSexo";
-            this.labelSexo.Size = new System.Drawing.Size(41, 20);
+            this.labelSexo.Size = new System.Drawing.Size(32, 15);
             this.labelSexo.TabIndex = 6;
             this.labelSexo.Text = "Sexo";
             // 
             // labelCpf
             // 
             this.labelCpf.AutoSize = true;
-            this.labelCpf.Location = new System.Drawing.Point(1210, 297);
+            this.labelCpf.Location = new System.Drawing.Point(949, 185);
             this.labelCpf.Name = "labelCpf";
-            this.labelCpf.Size = new System.Drawing.Size(33, 20);
+            this.labelCpf.Size = new System.Drawing.Size(28, 15);
             this.labelCpf.TabIndex = 7;
             this.labelCpf.Text = "CPF";
             // 
             // labelRg
             // 
             this.labelRg.AutoSize = true;
-            this.labelRg.Location = new System.Drawing.Point(1210, 360);
+            this.labelRg.Location = new System.Drawing.Point(949, 232);
             this.labelRg.Name = "labelRg";
-            this.labelRg.Size = new System.Drawing.Size(28, 20);
+            this.labelRg.Size = new System.Drawing.Size(22, 15);
             this.labelRg.TabIndex = 8;
             this.labelRg.Text = "RG";
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(1210, 76);
-            this.textBoxNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxNome.Location = new System.Drawing.Point(949, 58);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(354, 27);
+            this.textBoxNome.Size = new System.Drawing.Size(310, 23);
             this.textBoxNome.TabIndex = 9;
             // 
             // dateTimePickerDataNascimento
@@ -174,10 +157,9 @@
             this.dateTimePickerDataNascimento.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerDataNascimento.Enabled = false;
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(1210, 136);
-            this.dateTimePickerDataNascimento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(949, 103);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
-            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(354, 27);
+            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(310, 23);
             this.dateTimePickerDataNascimento.TabIndex = 10;
             // 
             // comboBoxSexo
@@ -186,18 +168,16 @@
             this.comboBoxSexo.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.comboBoxSexo.Location = new System.Drawing.Point(1210, 258);
-            this.comboBoxSexo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxSexo.Location = new System.Drawing.Point(949, 156);
             this.comboBoxSexo.Name = "comboBoxSexo";
-            this.comboBoxSexo.Size = new System.Drawing.Size(354, 28);
+            this.comboBoxSexo.Size = new System.Drawing.Size(310, 23);
             this.comboBoxSexo.TabIndex = 14;
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(1386, 497);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSalvar.Location = new System.Drawing.Point(1103, 374);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(86, 31);
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 15;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -205,10 +185,9 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(1478, 497);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonCancelar.Location = new System.Drawing.Point(1183, 374);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(86, 31);
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 16;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -216,38 +195,26 @@
             // 
             // maskedTextBoxCpf
             // 
-            this.maskedTextBoxCpf.Location = new System.Drawing.Point(1210, 321);
-            this.maskedTextBoxCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(949, 203);
             this.maskedTextBoxCpf.Mask = "999.999.999-99";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            this.maskedTextBoxCpf.Size = new System.Drawing.Size(354, 27);
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(310, 23);
             this.maskedTextBoxCpf.TabIndex = 17;
             // 
             // maskedTextBoxRg
             // 
-            this.maskedTextBoxRg.Location = new System.Drawing.Point(1210, 384);
-            this.maskedTextBoxRg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.maskedTextBoxRg.Location = new System.Drawing.Point(949, 250);
             this.maskedTextBoxRg.Mask = "9.999.999";
             this.maskedTextBoxRg.Name = "maskedTextBoxRg";
-            this.maskedTextBoxRg.Size = new System.Drawing.Size(354, 27);
+            this.maskedTextBoxRg.Size = new System.Drawing.Size(310, 23);
             this.maskedTextBoxRg.TabIndex = 18;
-            // 
-            // comboBoxEndereco
-            // 
-            this.comboBoxEndereco.FormattingEnabled = true;
-            this.comboBoxEndereco.Location = new System.Drawing.Point(1210, 200);
-            this.comboBoxEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBoxEndereco.Name = "comboBoxEndereco";
-            this.comboBoxEndereco.Size = new System.Drawing.Size(354, 28);
-            this.comboBoxEndereco.TabIndex = 19;
             // 
             // checkBoxCarro
             // 
             this.checkBoxCarro.AutoSize = true;
-            this.checkBoxCarro.Location = new System.Drawing.Point(1211, 452);
-            this.checkBoxCarro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBoxCarro.Location = new System.Drawing.Point(950, 301);
             this.checkBoxCarro.Name = "checkBoxCarro";
-            this.checkBoxCarro.Size = new System.Drawing.Size(67, 24);
+            this.checkBoxCarro.Size = new System.Drawing.Size(55, 19);
             this.checkBoxCarro.TabIndex = 20;
             this.checkBoxCarro.Text = "Carro";
             this.checkBoxCarro.UseVisualStyleBackColor = true;
@@ -255,10 +222,9 @@
             // checkBoxMoto
             // 
             this.checkBoxMoto.AutoSize = true;
-            this.checkBoxMoto.Location = new System.Drawing.Point(1211, 485);
-            this.checkBoxMoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBoxMoto.Location = new System.Drawing.Point(950, 326);
             this.checkBoxMoto.Name = "checkBoxMoto";
-            this.checkBoxMoto.Size = new System.Drawing.Size(67, 24);
+            this.checkBoxMoto.Size = new System.Drawing.Size(55, 19);
             this.checkBoxMoto.TabIndex = 21;
             this.checkBoxMoto.Text = "Moto";
             this.checkBoxMoto.UseVisualStyleBackColor = true;
@@ -266,9 +232,9 @@
             // labelPossuiVeiculo
             // 
             this.labelPossuiVeiculo.AutoSize = true;
-            this.labelPossuiVeiculo.Location = new System.Drawing.Point(1210, 428);
+            this.labelPossuiVeiculo.Location = new System.Drawing.Point(949, 283);
             this.labelPossuiVeiculo.Name = "labelPossuiVeiculo";
-            this.labelPossuiVeiculo.Size = new System.Drawing.Size(100, 20);
+            this.labelPossuiVeiculo.Size = new System.Drawing.Size(82, 15);
             this.labelPossuiVeiculo.TabIndex = 22;
             this.labelPossuiVeiculo.Text = "Possui veículo";
             // 
@@ -278,6 +244,7 @@
             this.ColumnCodigo.MinimumWidth = 6;
             this.ColumnCodigo.Name = "ColumnCodigo";
             this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Visible = false;
             this.ColumnCodigo.Width = 125;
             // 
             // ColumnNome
@@ -295,14 +262,6 @@
             this.ColumnDataNascimento.Name = "ColumnDataNascimento";
             this.ColumnDataNascimento.ReadOnly = true;
             this.ColumnDataNascimento.Width = 125;
-            // 
-            // ColumnEndereço
-            // 
-            this.ColumnEndereço.HeaderText = "Endereço";
-            this.ColumnEndereço.MinimumWidth = 6;
-            this.ColumnEndereço.Name = "ColumnEndereço";
-            this.ColumnEndereço.ReadOnly = true;
-            this.ColumnEndereço.Width = 125;
             // 
             // ColumnSexo
             // 
@@ -346,13 +305,12 @@
             // 
             // PessoaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1578, 541);
+            this.ClientSize = new System.Drawing.Size(1270, 424);
             this.Controls.Add(this.labelPossuiVeiculo);
             this.Controls.Add(this.checkBoxMoto);
             this.Controls.Add(this.checkBoxCarro);
-            this.Controls.Add(this.comboBoxEndereco);
             this.Controls.Add(this.maskedTextBoxRg);
             this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonCancelar);
@@ -363,13 +321,11 @@
             this.Controls.Add(this.labelRg);
             this.Controls.Add(this.labelCpf);
             this.Controls.Add(this.labelSexo);
-            this.Controls.Add(this.labelEndereco);
             this.Controls.Add(this.labelDataNascimento);
             this.Controls.Add(this.labelNome);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PessoaForm";
             this.Text = "PessoaForm";
             this.Load += new System.EventHandler(this.PessoaForm_Load);
@@ -386,7 +342,6 @@
         private Button buttonEditar;
         private Label labelNome;
         private Label labelDataNascimento;
-        private Label labelEndereco;
         private Label labelSexo;
         private Label labelCpf;
         private Label labelRg;
@@ -397,14 +352,12 @@
         private Button buttonCancelar;
         private MaskedTextBox maskedTextBoxCpf;
         private MaskedTextBox maskedTextBoxRg;
-        private ComboBox comboBoxEndereco;
         private CheckBox checkBoxCarro;
         private CheckBox checkBoxMoto;
         private Label labelPossuiVeiculo;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnDataNascimento;
-        private DataGridViewTextBoxColumn ColumnEndereço;
         private DataGridViewTextBoxColumn ColumnSexo;
         private DataGridViewTextBoxColumn ColumnCpf;
         private DataGridViewTextBoxColumn ColumnRg;
