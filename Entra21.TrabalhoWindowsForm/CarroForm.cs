@@ -233,7 +233,38 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void ApresentarDadosEditar()
         {
+            if (dataGridViewCarroForm.SelectedRows.Count ==0)
+            {
+                MessageBox.Show("Selecione um carro para editar...");
+                return;
+            }
 
+            var linhaSelecionada = dataGridViewCarroForm.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var carro = carroServico.ObterPorCodigo(codigo);
+
+            //textBoxProprietario.Text = carro.Proprietario;
+            textBoxLocalizacaoVeiculo.Text = carro.LocalizacaoVeiculo;
+            textBoxModeloVeiculo.Text = carro.ModeloVeiculo;
+            //comboBoxCategoriaVeiculo.Text = carro.Categoria;
+            maskedTextBoxPlacaVeiculo.Text = carro.Placa;
+            textBoxRenavam.Text = carro.Renavam;
+            dateTimePickerAnoFabricacao.Text = Convert.ToString(carro.AnoFabricacao);
+            dateTimePickerAnoModelo.Text = Convert.ToString(carro.AnoModelo);
+            radioButtonLicenciamentoEmAtraso.Checked = carro.LincenciamentoEmAtraso;
+            radioButtonLicenciamentoEmDia.Checked = carro.LicenciamentoEmDia;
+            checkBoxArCondicionado.Checked = carro.ArCondicionado;
+            checkBoxBancosEmCouro.Checked = carro.BancosEmCouro;
+            checkBoxCambioAutomatico.Checked = carro.CambioAutomatico;
+            checkBoxCombustivelAlcool.Checked = carro.CombustivelAlcool;
+            checkBoxCombustivelDiesel.Checked = carro.CombustivelDiesel;
+            checkBoxCombustivelFlex.Checked = carro.CombustivelFlex;
+            checkBoxCombustivelGasolina.Checked = carro.CombustivelGasolina;
+            checkBoxComputadorDeBordo.Checked = carro.ComputadorDeBordo;
+            checkBoxDirecaoEletrica.Checked = carro.DirecaoEletrica;
+            checkBoxDirecaoHidraulica.Checked = carro.DirecaoHidraulica;
+            checkBoxTravaEletrica.Checked = carro.TravaEletrica;
+            checkBoxVidrosEletricos.Checked = carro.VidrosEletricos;
         }
     }
 }
