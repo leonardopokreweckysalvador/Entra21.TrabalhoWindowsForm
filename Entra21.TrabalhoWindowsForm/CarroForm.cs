@@ -142,10 +142,20 @@ namespace Entra21.TrabalhoWindowsForm
             else if (placaVeiculo.Replace("-", "").Trim().Length < 7)
             {
                 MessageBox.Show("Digite uma placa de veículo válida!");
+                maskedTextBoxPlacaVeiculo.Focus();
+                return false;
             }
             if (renavam.Replace("-", "").Trim().Length == 0)
             {
                 MessageBox.Show("Digite um renavam válido!");
+                textBoxRenavam.Focus();
+                return false;
+            }
+            else if ((renavam.Replace("-", "").Trim().Length < 9))
+            {
+                MessageBox.Show("Digite um renavam válido!");
+                textBoxRenavam.Focus();
+                return false;
             }
             return true; 
         }
@@ -177,6 +187,11 @@ namespace Entra21.TrabalhoWindowsForm
         }
 
         private void CadastrarCarro(string proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        {
+
+        }
+
+        private void CarroForm_Load(object sender, EventArgs e)
         {
 
         }
