@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridViewCarroForm = new System.Windows.Forms.DataGridView();
+            this.ColumnVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRenavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAnoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAnoFabricacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLicenciamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnOpcionais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.labelOpcionais = new System.Windows.Forms.Label();
@@ -65,15 +74,6 @@
             this.radioButtonLicenciamentoEmAtraso = new System.Windows.Forms.RadioButton();
             this.dateTimePickerAnoFabricacao = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerAnoModelo = new System.Windows.Forms.DateTimePicker();
-            this.ColumnVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRenavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAnoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAnoFabricacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLicenciamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnOpcionais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarroForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +100,81 @@
             this.dataGridViewCarroForm.RowTemplate.Height = 29;
             this.dataGridViewCarroForm.Size = new System.Drawing.Size(949, 474);
             this.dataGridViewCarroForm.TabIndex = 0;
+            // 
+            // ColumnVeiculo
+            // 
+            this.ColumnVeiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnVeiculo.HeaderText = "Veículo";
+            this.ColumnVeiculo.MinimumWidth = 6;
+            this.ColumnVeiculo.Name = "ColumnVeiculo";
+            this.ColumnVeiculo.ReadOnly = true;
+            this.ColumnVeiculo.Width = 70;
+            // 
+            // ColumnCategoria
+            // 
+            this.ColumnCategoria.HeaderText = "Categoria";
+            this.ColumnCategoria.MinimumWidth = 6;
+            this.ColumnCategoria.Name = "ColumnCategoria";
+            this.ColumnCategoria.ReadOnly = true;
+            this.ColumnCategoria.Width = 95;
+            // 
+            // ColumnPlaca
+            // 
+            this.ColumnPlaca.HeaderText = "Placa";
+            this.ColumnPlaca.MinimumWidth = 6;
+            this.ColumnPlaca.Name = "ColumnPlaca";
+            this.ColumnPlaca.ReadOnly = true;
+            this.ColumnPlaca.Width = 85;
+            // 
+            // ColumnRenavam
+            // 
+            this.ColumnRenavam.HeaderText = "Nº Renavam";
+            this.ColumnRenavam.MinimumWidth = 6;
+            this.ColumnRenavam.Name = "ColumnRenavam";
+            this.ColumnRenavam.ReadOnly = true;
+            this.ColumnRenavam.Width = 125;
+            // 
+            // ColumnAnoModelo
+            // 
+            this.ColumnAnoModelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnAnoModelo.HeaderText = "Ano Modelo";
+            this.ColumnAnoModelo.MinimumWidth = 6;
+            this.ColumnAnoModelo.Name = "ColumnAnoModelo";
+            this.ColumnAnoModelo.ReadOnly = true;
+            this.ColumnAnoModelo.Width = 90;
+            // 
+            // ColumnAnoFabricacao
+            // 
+            this.ColumnAnoFabricacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnAnoFabricacao.HeaderText = "Ano Fabricação";
+            this.ColumnAnoFabricacao.MinimumWidth = 6;
+            this.ColumnAnoFabricacao.Name = "ColumnAnoFabricacao";
+            this.ColumnAnoFabricacao.ReadOnly = true;
+            this.ColumnAnoFabricacao.Width = 105;
+            // 
+            // ColumnProprietario
+            // 
+            this.ColumnProprietario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnProprietario.HeaderText = "Proprietário";
+            this.ColumnProprietario.MinimumWidth = 6;
+            this.ColumnProprietario.Name = "ColumnProprietario";
+            this.ColumnProprietario.ReadOnly = true;
+            // 
+            // ColumnLicenciamento
+            // 
+            this.ColumnLicenciamento.HeaderText = "Licenciamento";
+            this.ColumnLicenciamento.MinimumWidth = 6;
+            this.ColumnLicenciamento.Name = "ColumnLicenciamento";
+            this.ColumnLicenciamento.ReadOnly = true;
+            this.ColumnLicenciamento.Width = 125;
+            // 
+            // ColumnOpcionais
+            // 
+            this.ColumnOpcionais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnOpcionais.HeaderText = "Opcionais";
+            this.ColumnOpcionais.MinimumWidth = 6;
+            this.ColumnOpcionais.Name = "ColumnOpcionais";
+            this.ColumnOpcionais.ReadOnly = true;
             // 
             // buttonEditar
             // 
@@ -427,6 +502,7 @@
             // radioButtonLicenciamentoEmDia
             // 
             this.radioButtonLicenciamentoEmDia.AutoSize = true;
+            this.radioButtonLicenciamentoEmDia.Checked = true;
             this.radioButtonLicenciamentoEmDia.Location = new System.Drawing.Point(1223, 298);
             this.radioButtonLicenciamentoEmDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonLicenciamentoEmDia.Name = "radioButtonLicenciamentoEmDia";
@@ -444,7 +520,6 @@
             this.radioButtonLicenciamentoEmAtraso.Name = "radioButtonLicenciamentoEmAtraso";
             this.radioButtonLicenciamentoEmAtraso.Size = new System.Drawing.Size(158, 19);
             this.radioButtonLicenciamentoEmAtraso.TabIndex = 50;
-            this.radioButtonLicenciamentoEmAtraso.TabStop = true;
             this.radioButtonLicenciamentoEmAtraso.Text = "Licenciamento em atraso";
             this.radioButtonLicenciamentoEmAtraso.UseVisualStyleBackColor = true;
             // 
@@ -465,81 +540,6 @@
             this.dateTimePickerAnoModelo.Name = "dateTimePickerAnoModelo";
             this.dateTimePickerAnoModelo.Size = new System.Drawing.Size(92, 23);
             this.dateTimePickerAnoModelo.TabIndex = 52;
-            // 
-            // ColumnVeiculo
-            // 
-            this.ColumnVeiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnVeiculo.HeaderText = "Veículo";
-            this.ColumnVeiculo.MinimumWidth = 6;
-            this.ColumnVeiculo.Name = "ColumnVeiculo";
-            this.ColumnVeiculo.ReadOnly = true;
-            this.ColumnVeiculo.Width = 70;
-            // 
-            // ColumnCategoria
-            // 
-            this.ColumnCategoria.HeaderText = "Categoria";
-            this.ColumnCategoria.MinimumWidth = 6;
-            this.ColumnCategoria.Name = "ColumnCategoria";
-            this.ColumnCategoria.ReadOnly = true;
-            this.ColumnCategoria.Width = 95;
-            // 
-            // ColumnPlaca
-            // 
-            this.ColumnPlaca.HeaderText = "Placa";
-            this.ColumnPlaca.MinimumWidth = 6;
-            this.ColumnPlaca.Name = "ColumnPlaca";
-            this.ColumnPlaca.ReadOnly = true;
-            this.ColumnPlaca.Width = 85;
-            // 
-            // ColumnRenavam
-            // 
-            this.ColumnRenavam.HeaderText = "Nº Renavam";
-            this.ColumnRenavam.MinimumWidth = 6;
-            this.ColumnRenavam.Name = "ColumnRenavam";
-            this.ColumnRenavam.ReadOnly = true;
-            this.ColumnRenavam.Width = 125;
-            // 
-            // ColumnAnoModelo
-            // 
-            this.ColumnAnoModelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnAnoModelo.HeaderText = "Ano Modelo";
-            this.ColumnAnoModelo.MinimumWidth = 6;
-            this.ColumnAnoModelo.Name = "ColumnAnoModelo";
-            this.ColumnAnoModelo.ReadOnly = true;
-            this.ColumnAnoModelo.Width = 98;
-            // 
-            // ColumnAnoFabricacao
-            // 
-            this.ColumnAnoFabricacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnAnoFabricacao.HeaderText = "Ano Fabricação";
-            this.ColumnAnoFabricacao.MinimumWidth = 6;
-            this.ColumnAnoFabricacao.Name = "ColumnAnoFabricacao";
-            this.ColumnAnoFabricacao.ReadOnly = true;
-            this.ColumnAnoFabricacao.Width = 114;
-            // 
-            // ColumnProprietario
-            // 
-            this.ColumnProprietario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnProprietario.HeaderText = "Proprietário";
-            this.ColumnProprietario.MinimumWidth = 6;
-            this.ColumnProprietario.Name = "ColumnProprietario";
-            this.ColumnProprietario.ReadOnly = true;
-            // 
-            // ColumnLicenciamento
-            // 
-            this.ColumnLicenciamento.HeaderText = "Licenciamento";
-            this.ColumnLicenciamento.MinimumWidth = 6;
-            this.ColumnLicenciamento.Name = "ColumnLicenciamento";
-            this.ColumnLicenciamento.ReadOnly = true;
-            this.ColumnLicenciamento.Width = 125;
-            // 
-            // ColumnOpcionais
-            // 
-            this.ColumnOpcionais.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnOpcionais.HeaderText = "Opcionais";
-            this.ColumnOpcionais.MinimumWidth = 6;
-            this.ColumnOpcionais.Name = "ColumnOpcionais";
-            this.ColumnOpcionais.ReadOnly = true;
             // 
             // CarroForm
             // 
@@ -586,6 +586,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CarroForm";
             this.Text = "CarroForm";
+            this.Load += new System.EventHandler(this.CarroForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarroForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
