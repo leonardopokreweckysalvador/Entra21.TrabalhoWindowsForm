@@ -152,5 +152,35 @@ namespace Entra21.TrabalhoWindowsForm
             radioButtonNao.Checked = false;
             radioButtonSim.Checked = false;
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosEditar();
+        }
+
+        private void ApresentarDadosEditar()
+        {
+            if (dataGridViewMarca.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma marca para editar...");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewMarca.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var marca = marcaServico.ObterPorCodigo(codigo);
+
+            textBoxNomeMarca.Text = marca.Nome;
+            textBoxGrupoProprietarioMarca.Text = marca.Grupo;
+            textBoxPaisDeOrigem.Text = marca.Pais;
+            dateTimePickerDataDeFundacaoMarca.Text = Convert.ToString(marca.AnoFundacao);
+            radioButtonNao.Checked = marca.ManutecaoImportada;
+            radioButtonSim.Checked = marca.ManutecaoNacional;
+        }
     }
 }
