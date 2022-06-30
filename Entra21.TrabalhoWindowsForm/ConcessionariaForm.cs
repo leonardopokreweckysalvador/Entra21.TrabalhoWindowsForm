@@ -51,12 +51,12 @@ namespace Entra21.TrabalhoWindowsForm
                         concessionaria.Endereco,
                         concessionaria.Cnpj,
                         concessionaria.RazaoSocial,
-                        concessionaria.DataAbertura,
-                        concessionaria.HoraAbre,
-                        concessionaria.HoraFecha,
+                        concessionaria.DataAbertura.ToString("dd/MM/yyyy"),
+                        concessionaria.HoraAbre.ToString("HH:mm:ss"),
+                        concessionaria.HoraFecha.ToString("HH:mm:ss"),
                         concessionaria.AbreFinalSemana,
-                        concessionaria.Proprietario
-                });
+                        concessionaria.Proprietario.Nome
+                }); 
             }
         }
 
@@ -83,6 +83,9 @@ namespace Entra21.TrabalhoWindowsForm
 
             CadastrarConcessionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
 
+            preencherDataGridViewConcessionaria();
+
+            LimparCampos();
         }
 
         private void CadastrarConcessionaria(string nome, string cnpj, string razaoSocial, string? proprietario, string? endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
@@ -171,13 +174,15 @@ namespace Entra21.TrabalhoWindowsForm
             textBoxNome.Text = concecionaria.Nome;
             maskedTextBoxCnpj.Text = concecionaria.Cnpj;
             textBoxRazaoSocial.Text = concecionaria.RazaoSocial;
-            comboBoxEndereco.SelectedItem = concecionaria.Proprietario;
-            comboBoxEndereco.SelectedItem = concecionaria.Endereco;
-            dateTimePickerDataAbertura.Text = concecionaria.DataAbertura;
-            dateTimePickerHoraAbre.Text = concecionaria.HoraAbre;
-            dateTimePickerHoraFecha.Text = concecionaria.HoraFecha;
-            radioButtonAbreFinalSemana.Checked = concecionaria.AbreFinalSemana;
-
+            comboBoxProprietario.Text = concecionaria.Proprietario.Nome;
+            comboBoxEndereco.Text = concecionaria.Endereco.Logradouro + ", " + concecionaria.Endereco.Numero;
+            dateTimePickerDataAbertura.Text = Convert.ToString(concecionaria.DataAbertura);
+            dateTimePickerHoraAbre.Text = Convert.ToString(concecionaria.HoraAbre);
+            dateTimePickerHoraFecha.Text = Convert.ToString(concecionaria.HoraFecha);
+            if (concecionaria.AbreFinalSemana == true)
+                radioButtonAbreFinalSemana.Checked = concecionaria.AbreFinalSemana;
+            else
+                radioButtonNaoAbreFinalSemana.Checked = true;
         }
 
 
@@ -191,6 +196,11 @@ namespace Entra21.TrabalhoWindowsForm
             preencherDataGridViewConcessionaria();
 
             LimparCampos();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosConcessionaria();
         }
     }
 }
