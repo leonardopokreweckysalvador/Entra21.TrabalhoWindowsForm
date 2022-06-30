@@ -182,5 +182,10 @@ namespace Entra21.TrabalhoWindowsForm
             radioButtonNao.Checked = marca.ManutecaoImportada;
             radioButtonSim.Checked = marca.ManutecaoNacional;
         }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

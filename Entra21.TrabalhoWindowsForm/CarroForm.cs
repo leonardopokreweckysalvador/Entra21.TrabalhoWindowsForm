@@ -300,5 +300,29 @@ namespace Entra21.TrabalhoWindowsForm
             };
             carroServico.Editar(carro);
         }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewCarroForm.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um carro para remover.");
+                return;
+            }
+
+            var confirmarApagar = MessageBox.Show("Tem certeza que deseja apagar esse carro?", "Atenção", MessageBoxButtons.YesNo);
+
+            if (confirmarApagar != DialogResult.Yes)
+            {
+                MessageBox.Show("O carro não foi removido do sistema!");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewCarroForm.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var carro = carroServico.ObterPorCodigo(codigo);
+
+            carroServico.Apagar(carro);
+            PreencherDataGridViewCarro();
+        }
     }
 }
