@@ -188,12 +188,8 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void CadastrarCarro(string proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
-
-        }
-
-        private void CarroForm_Load(object sender, EventArgs e)
-        {
-
+            var carro = new Carro();
+            carro.Codigo = carroServico.ObterUltimoCodigo() + 1;
         }
     }
 }

@@ -502,6 +502,7 @@
             // radioButtonLicenciamentoEmDia
             // 
             this.radioButtonLicenciamentoEmDia.AutoSize = true;
+            this.radioButtonLicenciamentoEmDia.Checked = true;
             this.radioButtonLicenciamentoEmDia.Location = new System.Drawing.Point(1223, 298);
             this.radioButtonLicenciamentoEmDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonLicenciamentoEmDia.Name = "radioButtonLicenciamentoEmDia";
@@ -519,7 +520,6 @@
             this.radioButtonLicenciamentoEmAtraso.Name = "radioButtonLicenciamentoEmAtraso";
             this.radioButtonLicenciamentoEmAtraso.Size = new System.Drawing.Size(158, 19);
             this.radioButtonLicenciamentoEmAtraso.TabIndex = 50;
-            this.radioButtonLicenciamentoEmAtraso.TabStop = true;
             this.radioButtonLicenciamentoEmAtraso.Text = "Licenciamento em atraso";
             this.radioButtonLicenciamentoEmAtraso.UseVisualStyleBackColor = true;
             // 
@@ -586,7 +586,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CarroForm";
             this.Text = "CarroForm";
-            this.Load += new System.EventHandler(this.CarroForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarroForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
