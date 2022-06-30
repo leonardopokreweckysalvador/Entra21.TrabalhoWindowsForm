@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridViewConcessionaria = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataAbertura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraAbre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AbreFinalSemana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNome = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelCnpj = new System.Windows.Forms.Label();
@@ -57,12 +67,95 @@
             // 
             // dataGridViewConcessionaria
             // 
+            this.dataGridViewConcessionaria.AllowUserToAddRows = false;
+            this.dataGridViewConcessionaria.AllowUserToDeleteRows = false;
             this.dataGridViewConcessionaria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewConcessionaria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nome,
+            this.Endereco,
+            this.Cnpj,
+            this.RazaoSocial,
+            this.DataAbertura,
+            this.HoraAbre,
+            this.HoraFecha,
+            this.AbreFinalSemana,
+            this.Proprietario});
             this.dataGridViewConcessionaria.Location = new System.Drawing.Point(12, 36);
             this.dataGridViewConcessionaria.Name = "dataGridViewConcessionaria";
+            this.dataGridViewConcessionaria.ReadOnly = true;
             this.dataGridViewConcessionaria.RowTemplate.Height = 25;
+            this.dataGridViewConcessionaria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewConcessionaria.Size = new System.Drawing.Size(571, 373);
             this.dataGridViewConcessionaria.TabIndex = 0;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Endereco
+            // 
+            this.Endereco.HeaderText = "Endereco";
+            this.Endereco.Name = "Endereco";
+            this.Endereco.ReadOnly = true;
+            this.Endereco.Visible = false;
+            // 
+            // Cnpj
+            // 
+            this.Cnpj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Cnpj.HeaderText = "CNPJ";
+            this.Cnpj.Name = "Cnpj";
+            this.Cnpj.ReadOnly = true;
+            // 
+            // RazaoSocial
+            // 
+            this.RazaoSocial.HeaderText = "Razão Social";
+            this.RazaoSocial.Name = "RazaoSocial";
+            this.RazaoSocial.ReadOnly = true;
+            // 
+            // DataAbertura
+            // 
+            this.DataAbertura.HeaderText = "Data Abertura";
+            this.DataAbertura.Name = "DataAbertura";
+            this.DataAbertura.ReadOnly = true;
+            this.DataAbertura.Visible = false;
+            // 
+            // HoraAbre
+            // 
+            this.HoraAbre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.HoraAbre.HeaderText = "Hora Abre";
+            this.HoraAbre.Name = "HoraAbre";
+            this.HoraAbre.ReadOnly = true;
+            this.HoraAbre.Width = 90;
+            // 
+            // HoraFecha
+            // 
+            this.HoraFecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.HoraFecha.HeaderText = "Hora Fecha";
+            this.HoraFecha.Name = "HoraFecha";
+            this.HoraFecha.ReadOnly = true;
+            // 
+            // AbreFinalSemana
+            // 
+            this.AbreFinalSemana.HeaderText = "Abre Final Semana";
+            this.AbreFinalSemana.Name = "AbreFinalSemana";
+            this.AbreFinalSemana.ReadOnly = true;
+            this.AbreFinalSemana.Visible = false;
+            // 
+            // Proprietario
+            // 
+            this.Proprietario.HeaderText = "Proprietário";
+            this.Proprietario.Name = "Proprietario";
+            this.Proprietario.ReadOnly = true;
             // 
             // labelNome
             // 
@@ -271,6 +364,7 @@
             this.checkBoxApertoFinalSemana.TabIndex = 23;
             this.checkBoxApertoFinalSemana.Text = "Concessionarias abertas final de semana";
             this.checkBoxApertoFinalSemana.UseVisualStyleBackColor = true;
+            this.checkBoxApertoFinalSemana.Click += new System.EventHandler(this.checkBoxApertoFinalSemana_Click);
             // 
             // ConcessionariaForm
             // 
@@ -303,6 +397,7 @@
             this.Controls.Add(this.dataGridViewConcessionaria);
             this.Name = "ConcessionariaForm";
             this.Text = "Concessionaria";
+            this.Load += new System.EventHandler(this.ConcessionariaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConcessionaria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -335,5 +430,15 @@
         private Button buttonEditar;
         private Button buttonApagar;
         private CheckBox checkBoxApertoFinalSemana;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Endereco;
+        private DataGridViewTextBoxColumn Cnpj;
+        private DataGridViewTextBoxColumn RazaoSocial;
+        private DataGridViewTextBoxColumn DataAbertura;
+        private DataGridViewTextBoxColumn HoraAbre;
+        private DataGridViewTextBoxColumn HoraFecha;
+        private DataGridViewTextBoxColumn AbreFinalSemana;
+        private DataGridViewTextBoxColumn Proprietario;
     }
 }

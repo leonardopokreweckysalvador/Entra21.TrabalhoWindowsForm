@@ -30,26 +30,33 @@ namespace Entra21.TrabalhoWindowsForm
 
             PreencherComboBoxComOsLogradouroEndereco();
 
-            preencherDataGridViewEndereco();
+            preencherDataGridViewConcessionaria();
 
         }
 
-        private void preencherDataGridViewEndereco()
+        private void preencherDataGridViewConcessionaria()
         {
-            var enderecos = enderecoServico.ObterTodos();
+            var concessionarias = concessionariaServico.ObterTodos(checkBoxApertoFinalSemana.Checked);
 
             dataGridViewConcessionaria.Rows.Clear();
 
-            for (var i = 0; i < enderecos.Count; i++)
+            for (var i = 0; i < concessionarias.Count; i++)
             {
-                var endereco = enderecos[i];
-                if (checkBoxApertoFinalSemana.Checked == true)
-                {
-                    dataGridViewConcessionaria.Rows.Add(new object[]
-                    {
+                var concessionaria = concessionarias[i];
 
-                    });
-                }
+                dataGridViewConcessionaria.Rows.Add(new object[]
+                {
+                        concessionaria.Codigo,
+                        concessionaria.Nome,
+                        concessionaria.Endereco,
+                        concessionaria.Cnpj,
+                        concessionaria.RazaoSocial,
+                        concessionaria.DataAbertura,
+                        concessionaria.HoraAbre,
+                        concessionaria.HoraFecha,
+                        concessionaria.AbreFinalSemana,
+                        concessionaria.Proprietario
+                });
             }
         }
 
@@ -82,7 +89,7 @@ namespace Entra21.TrabalhoWindowsForm
         {
             var concessionaria = new Concessionaria();
 
-            concessionaria.Codigo = concessionariaServico.ObterUltimoCodigo() +1;
+            concessionaria.Codigo = concessionariaServico.ObterUltimoCodigo() + 1;
             concessionaria.Nome = nome;
             concessionaria.Cnpj = cnpj;
             concessionaria.RazaoSocial = razaoSocial;
@@ -90,8 +97,8 @@ namespace Entra21.TrabalhoWindowsForm
             concessionaria.HoraAbre = horaAbre;
             concessionaria.HoraFecha = horaFecha;
             concessionaria.AbreFinalSemana = abreFinalSemana;
-            concessionaria.Proprietario = pessoaServico.ObterPorNomePessoa(proprietario) ;
-            concessionaria.Endereco =  enderecoServico.ObterPorLogredouro(endereco);
+            concessionaria.Proprietario = pessoaServico.ObterPorNomePessoa(proprietario);
+            concessionaria.Endereco = enderecoServico.ObterPorLogredouro(endereco);
 
             concessionariaServico.Adicionar(concessionaria);
 
@@ -117,8 +124,8 @@ namespace Entra21.TrabalhoWindowsForm
             for (var i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];
-                comboBoxEndereco.Items.Add(endereco.Logradouro + ", " + endereco.Numero );
-                
+                comboBoxEndereco.Items.Add(endereco.Logradouro + ", " + endereco.Numero);
+
             }
         }
 
@@ -147,7 +154,16 @@ namespace Entra21.TrabalhoWindowsForm
             dataGridViewConcessionaria.ClearSelection();
         }
 
+        private void ConcessionariaForm_Load(object sender, EventArgs e)
+        {
+            preencherDataGridViewConcessionaria();
+        }
 
+        private void checkBoxApertoFinalSemana_Click(object sender, EventArgs e)
+        {
+            preencherDataGridViewConcessionaria();
 
+            LimparCampos();
+        }
     }
 }

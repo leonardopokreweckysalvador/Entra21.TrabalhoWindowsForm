@@ -77,8 +77,22 @@ namespace Entra21.TrabalhoWindowsForm
             }
         }
 
-        public List<Concessionaria> ObterTodos()
+        public List<Concessionaria> ObterTodos(bool abreFinalSemanhe)
         {
+            if (abreFinalSemanhe == true)
+            {
+            var concessionariasAbreFinalSemanha = new List<Concessionaria>();
+                for (var i = 0; i < concessionarias.Count; i++)
+                {
+                    var concessionaria = concessionarias[i];
+                    if (concessionaria.AbreFinalSemana == true)
+                    {
+                        concessionariasAbreFinalSemanha.Add(concessionaria);
+                    }
+                }
+                return concessionariasAbreFinalSemanha;
+            }
+
             return concessionarias;
         }
 
