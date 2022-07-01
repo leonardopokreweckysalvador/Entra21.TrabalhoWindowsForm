@@ -106,6 +106,13 @@
             preencherDataGridViewConcessionaria();
         }
 
+        private void checkBoxApertoFinalSemana_Click(object sender, EventArgs e)
+        {
+            preencherDataGridViewConcessionaria();
+
+            LimparCampos();
+        }
+
         private Concessionaria RetornaConcessionariaSelecionada()
         {
             var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
@@ -406,12 +413,6 @@
                 radioButtonNaoAbreFinalSemana.Checked = true;
         }
 
-        private void checkBoxApertoFinalSemana_Click(object sender, EventArgs e)
-        {
-            preencherDataGridViewConcessionaria();
-
-            LimparCampos();
-        }
 
     }
 }
