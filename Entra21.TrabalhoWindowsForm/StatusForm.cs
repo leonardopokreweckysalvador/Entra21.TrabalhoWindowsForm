@@ -90,7 +90,7 @@ namespace Entra21.TrabalhoWindowsForm
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             var status = statusServico.ObterPorCodigo(codigo);
 
-            comboBoxNomeCompleto.SelectedItem = status.Pessoa;
+            comboBoxNomeCompleto.Text = status.Pessoa.Nome;
             textBoxProfissao.Text = status.Profissao;
             textBoxEmpresaTrabalho.Text = status.EmpresaTrabalho;
             textBoxSalario.Text = Convert.ToString(status.Salario);
@@ -206,13 +206,13 @@ namespace Entra21.TrabalhoWindowsForm
                 {
                     status.Codigo,
                     status.DataCadastro,
-                    status.Pessoa,
+                    status.Pessoa.Nome,
+                    status.Endereco,
                     status.Profissao,
                     status.EmpresaTrabalho,
                     status.Salario,
                     status.NomeLimpo,
                     status.LimiteFinanceiro,
-                    status.Endereco
                 });
             }
         }

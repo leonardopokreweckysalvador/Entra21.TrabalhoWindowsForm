@@ -53,6 +53,7 @@
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProfissão = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEmpresaTrabalho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +71,7 @@
             this.ColumnCodigo,
             this.ColumnDataCadastro,
             this.ColumnPessoa,
+            this.ColumnEndereco,
             this.ColumnProfissão,
             this.ColumnEmpresaTrabalho,
             this.ColumnSalario,
@@ -295,6 +297,12 @@
             this.ColumnPessoa.ReadOnly = true;
             this.ColumnPessoa.Width = 125;
             // 
+            // ColumnEndereco
+            // 
+            this.ColumnEndereco.HeaderText = "Endereco";
+            this.ColumnEndereco.Name = "ColumnEndereco";
+            this.ColumnEndereco.ReadOnly = true;
+            // 
             // ColumnProfissão
             // 
             this.ColumnProfissão.HeaderText = "Profissão";
@@ -398,6 +406,7 @@
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnDataCadastro;
         private DataGridViewTextBoxColumn ColumnPessoa;
+        private DataGridViewTextBoxColumn ColumnEndereco;
         private DataGridViewTextBoxColumn ColumnProfissão;
         private DataGridViewTextBoxColumn ColumnEmpresaTrabalho;
         private DataGridViewTextBoxColumn ColumnSalario;

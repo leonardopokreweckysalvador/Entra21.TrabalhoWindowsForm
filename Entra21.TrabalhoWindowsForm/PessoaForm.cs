@@ -132,7 +132,7 @@ namespace Entra21.TrabalhoWindowsForm
         private void LimparCampos()
         {
             textBoxNome.Clear();
-            dateTimePickerDataNascimento.Checked = false;
+            dateTimePickerDataNascimento.ResetText();
             comboBoxSexo.ResetText();
             maskedTextBoxCpf.Text = string.Empty;
             maskedTextBoxRg.Text = string.Empty;
@@ -174,7 +174,7 @@ namespace Entra21.TrabalhoWindowsForm
                 {
                     pessoa.Codigo,
                     pessoa.Nome,
-                    pessoa.DataNascimento,
+                    pessoa.DataNascimento.ToString("dd/MM/yyyy"),
                     pessoa.Sexo,
                     pessoa.Cpf,
                     pessoa.Rg,
