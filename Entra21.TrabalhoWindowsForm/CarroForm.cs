@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Entra21.TrabalhoWindowsForm
 {
+    //William Lima de Jesus
     public partial class CarroForm : Form
     {
         private CarroServico carroServico;
@@ -64,8 +65,8 @@ namespace Entra21.TrabalhoWindowsForm
             var localizacaoVeiculo = Convert.ToString(comboBoxLoja.SelectedItem);
             var modeloVeiculo = textBoxModeloVeiculo.Text;
             var marcaVeiculo = Convert.ToString(comboBoxMarcaVeiculo.SelectedItem);
-            var placaVeiculo = maskedTextBoxPlacaVeiculo.Text;
-            var renavam = textBoxRenavam.Text;
+            var placaVeiculo = textBoxPlacaVeiculo.Text;
+            var renavam = maskedTextBoxRenavamVeiculo.Text;
             var anoFabricacao = Convert.ToDateTime(dateTimePickerAnoFabricacao.Text);
             var anoModelo = Convert.ToDateTime(dateTimePickerAnoModelo.Text);
             var licenciamentoEmDia = radioButtonLicenciamentoEmDia.Checked;
@@ -83,7 +84,7 @@ namespace Entra21.TrabalhoWindowsForm
             var combustivelAlcool = checkBoxCombustivelAlcool.Checked;
             var combustivelFlex = checkBoxCombustivelFlex.Checked;
 
-            var informacoesValidar = ValidarInformacoes(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, marcaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+            var informacoesValidar = ValidarInformacoes(modeloVeiculo, marcaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
 
             if (informacoesValidar == false)
                 return;
@@ -100,7 +101,7 @@ namespace Entra21.TrabalhoWindowsForm
             LimparCampos();
         }
 
-        private bool ValidarInformacoes(object proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        private bool ValidarInformacoes(string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
             if (modeloVeiculo.Replace(" ", "").Trim().Length == 0)
             {
@@ -123,25 +124,39 @@ namespace Entra21.TrabalhoWindowsForm
             if (placaVeiculo.Replace("-", "").Trim().Length == 0)
             {
                 MessageBox.Show("Digite uma placa de veículo válida!");
-                maskedTextBoxPlacaVeiculo.Focus();
+                textBoxPlacaVeiculo.Focus();
                 return false;
             }
             else if (placaVeiculo.Replace("-", "").Trim().Length < 7)
             {
                 MessageBox.Show("Digite uma placa de veículo válida!");
-                maskedTextBoxPlacaVeiculo.Focus();
+                textBoxPlacaVeiculo.Focus();
                 return false;
             }
+
+            else if (placaVeiculo.Replace("-", "").Trim().Length > 7)
+            {
+                MessageBox.Show("Digite uma placa de veículo válida!");
+                textBoxPlacaVeiculo.Focus();
+                return false;
+            }
+
             if (renavam.Replace("-", "").Trim().Length == 0)
             {
                 MessageBox.Show("Digite um renavam válido!");
-                textBoxRenavam.Focus();
+                maskedTextBoxRenavamVeiculo.Focus();
                 return false;
             }
             else if ((renavam.Replace("-", "").Trim().Length < 9))
             {
                 MessageBox.Show("Digite um renavam válido!");
-                textBoxRenavam.Focus();
+                maskedTextBoxRenavamVeiculo.Focus();
+                return false;
+            }
+            else if ((renavam.Replace("-", "").Trim().Length > 9))
+            {
+                MessageBox.Show("Digite um renavam válido!");
+                maskedTextBoxRenavamVeiculo.Focus();
                 return false;
             }
             return true; 
@@ -153,8 +168,8 @@ namespace Entra21.TrabalhoWindowsForm
             comboBoxLoja.ResetText();
             textBoxModeloVeiculo.Text = string.Empty;
             comboBoxMarcaVeiculo.ResetText(); 
-            maskedTextBoxPlacaVeiculo.Text = string.Empty;
-            textBoxRenavam.Text = string.Empty;
+            textBoxPlacaVeiculo.Text = string.Empty;
+            maskedTextBoxRenavamVeiculo.Text = string.Empty;
             dateTimePickerAnoFabricacao.Text = string.Empty;
             dateTimePickerAnoModelo.Text = string.Empty;
             radioButtonLicenciamentoEmAtraso.Checked = false;
@@ -234,8 +249,8 @@ namespace Entra21.TrabalhoWindowsForm
             comboBoxLoja.Text = carro.LocalizacaoVeiculo.Nome;
             textBoxModeloVeiculo.Text = carro.ModeloVeiculo;
             comboBoxMarcaVeiculo.Text = carro.Marca.Nome;
-            maskedTextBoxPlacaVeiculo.Text = carro.Placa;
-            textBoxRenavam.Text = carro.Renavam;
+            textBoxPlacaVeiculo.Text = carro.Placa;
+            maskedTextBoxRenavamVeiculo.Text = carro.Renavam;
             dateTimePickerAnoFabricacao.Text = Convert.ToString(carro.AnoFabricacao);
             dateTimePickerAnoModelo.Text = Convert.ToString(carro.AnoModelo);
             radioButtonLicenciamentoEmAtraso.Checked = carro.LincenciamentoEmAtraso;
