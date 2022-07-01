@@ -17,7 +17,7 @@ namespace Entra21.TrabalhoWindowsForm
         public string Placa;
         public DateTime AnoFabricacao;
         public DateTime AnoModelo;
-        public string LocalizacaoVeiculo;
+        public Concessionaria LocalizacaoVeiculo;
         public bool LicenciamentoEmDia;
         public bool LincenciamentoEmAtraso;
         public bool TravaEletrica;

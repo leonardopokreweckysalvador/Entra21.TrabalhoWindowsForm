@@ -27,7 +27,9 @@ namespace Entra21.TrabalhoWindowsForm
             concessionariaServico = new ConcessionariaServico();
 
             PreencherComboBoxComOsNomesPessoas();
+            PreencherComboBoxComOsNomesConcessionarias();
             PreencherDataGridViewCarro();
+            PreencherComboBoxComOsNomesMarcas();
         }
 
         private void PreencherDataGridViewCarro()
@@ -44,7 +46,7 @@ namespace Entra21.TrabalhoWindowsForm
                 {
                     carro.Codigo,
                     carro.Proprietario,
-                    carro.Loja,
+                    carro.LocalizacaoVeiculo,
                     carro.Marca,
                     carro.Renavam,
                     carro.Placa,
@@ -100,30 +102,6 @@ namespace Entra21.TrabalhoWindowsForm
 
         private bool ValidarInformacoes(object proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
-            //if (proprietarioVeiculo.Trim().Length == 0)
-            //{
-            //    MessageBox.Show("Digite o nome completo do proprietário!");
-            //    comboBoxProprietario.Focus();
-            //    return false;
-            //}
-            //if (proprietarioVeiculo.Trim().Length < 6)
-            //{
-            //    MessageBox.Show("Digite o nome completo do proprietário!");
-            //    comboBoxProprietario.Focus();
-            //    return false;
-            //}
-            if (localizacaoVeiculo.Trim().Length == 0)
-            {
-                MessageBox.Show("Digite em qual unidade o veículo se encontra!");
-                comboBoxLoja.Focus();
-                return false;
-            }
-            else if(localizacaoVeiculo.Trim().Length < 5)
-            {
-                MessageBox.Show("Digite em qual unidade o veículo se encontra!");
-                comboBoxLoja.Focus();
-                return false;
-            }
             if (modeloVeiculo.Replace(" ", "").Trim().Length == 0)
             {
                 MessageBox.Show("Digite um modelo de veículo válido!");
@@ -195,12 +173,12 @@ namespace Entra21.TrabalhoWindowsForm
             checkBoxVidrosEletricos.Checked = false;
         }
 
-        private void CadastrarCarro(string? proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string? marcaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        private void CadastrarCarro(string? proprietarioVeiculo, string? localizacaoVeiculo, string modeloVeiculo, string? marcaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
             var carro = new Carro();
             carro.Codigo = carroServico.ObterUltimoCodigo() + 1;
             carro.Proprietario = pessoaServico.ObterPorNomePessoa(proprietarioVeiculo);
-            carro.LocalizacaoVeiculo = concessionariaServico.o;
+            carro.LocalizacaoVeiculo = concessionariaServico.ObterPorNomeConcessionária(localizacaoVeiculo);
             carro.ModeloVeiculo = modeloVeiculo;
             carro.Marca = marcaServico.ObterPorNomeMarca(marcaVeiculo);
             carro.Placa = placaVeiculo;
@@ -253,7 +231,7 @@ namespace Entra21.TrabalhoWindowsForm
             var carro = carroServico.ObterPorCodigo(codigo);
 
             comboBoxProprietario.Text = carro.Proprietario.Nome;
-            comboBoxLoja.Text = carro.LocalizacaoVeiculo;
+            comboBoxLoja.Text = carro.LocalizacaoVeiculo.Nome;
             textBoxModeloVeiculo.Text = carro.ModeloVeiculo;
             comboBoxMarcaVeiculo.Text = carro.Marca.Nome;
             maskedTextBoxPlacaVeiculo.Text = carro.Placa;
@@ -275,7 +253,7 @@ namespace Entra21.TrabalhoWindowsForm
             checkBoxTravaEletrica.Checked = carro.TravaEletrica;
             checkBoxVidrosEletricos.Checked = carro.VidrosEletricos;
         }
-        private void EditarCarro(string? proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string? marcaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        private void EditarCarro(string? proprietarioVeiculo, string? localizacaoVeiculo, string modeloVeiculo, string? marcaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
             var linhaSelecionada = dataGridViewCarroForm.SelectedRows[0];
             var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
@@ -283,7 +261,7 @@ namespace Entra21.TrabalhoWindowsForm
             {
                 Codigo = codigoSelecionado,
                 Proprietario = pessoaServico.ObterPorNomePessoa(proprietarioVeiculo),
-                LocalizacaoVeiculo = localizacaoVeiculo,
+                LocalizacaoVeiculo = concessionariaServico.ObterPorNomeConcessionária(localizacaoVeiculo),
                 ModeloVeiculo = modeloVeiculo,
                 Marca = marcaServico.ObterPorNomeMarca(marcaVeiculo),
                 Placa = placaVeiculo,
@@ -340,6 +318,28 @@ namespace Entra21.TrabalhoWindowsForm
             {
                 var pessoa = pessoas[i];
                 comboBoxProprietario.Items.Add(pessoa.Nome);
+            }
+        }
+
+        private void PreencherComboBoxComOsNomesConcessionarias()
+        {
+            var concessionarias = concessionariaServico.ObterTodos();
+
+            for (var i = 0; i < concessionarias.Count; i++)
+            {
+                var concessionaria = concessionarias[i];
+                comboBoxLoja.Items.Add(concessionaria.Nome);
+            }
+        }
+
+        private void PreencherComboBoxComOsNomesMarcas()
+        {
+            var marcas = marcaServico.ObterTodos();
+
+            for (var i = 0; i < marcas.Count; i++)
+            {
+                var marca = marcas[i];
+                comboBoxMarcaVeiculo.Items.Add(marca.Nome);
             }
         }
     }
