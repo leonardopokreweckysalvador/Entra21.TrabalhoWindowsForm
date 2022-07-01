@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.TrabalhoWindowsForm
+﻿namespace Entra21.TrabalhoWindowsForm
 {
     //William Lima de Jesus
     internal class Marca

@@ -67,7 +67,7 @@
             this.maskedTextBoxRenavamVeiculo = new System.Windows.Forms.MaskedTextBox();
             this.ColumnCódigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRenavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAnoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +86,7 @@
             this.dataGridViewCarroForm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCódigo,
             this.ColumnVeiculo,
-            this.ColumnCategoria,
+            this.ColumnMarca,
             this.ColumnPlaca,
             this.ColumnRenavam,
             this.ColumnAnoModelo,
@@ -467,13 +467,13 @@
             this.ColumnVeiculo.ReadOnly = true;
             this.ColumnVeiculo.Width = 86;
             // 
-            // ColumnCategoria
+            // ColumnMarca
             // 
-            this.ColumnCategoria.HeaderText = "Categoria";
-            this.ColumnCategoria.MinimumWidth = 6;
-            this.ColumnCategoria.Name = "ColumnCategoria";
-            this.ColumnCategoria.ReadOnly = true;
-            this.ColumnCategoria.Width = 95;
+            this.ColumnMarca.HeaderText = "Marca";
+            this.ColumnMarca.MinimumWidth = 6;
+            this.ColumnMarca.Name = "ColumnMarca";
+            this.ColumnMarca.ReadOnly = true;
+            this.ColumnMarca.Width = 95;
             // 
             // ColumnPlaca
             // 
@@ -627,7 +627,7 @@
         private MaskedTextBox maskedTextBoxRenavamVeiculo;
         private DataGridViewTextBoxColumn ColumnCódigo;
         private DataGridViewTextBoxColumn ColumnVeiculo;
-        private DataGridViewTextBoxColumn ColumnCategoria;
+        private DataGridViewTextBoxColumn ColumnMarca;
         private DataGridViewTextBoxColumn ColumnPlaca;
         private DataGridViewTextBoxColumn ColumnRenavam;
         private DataGridViewTextBoxColumn ColumnAnoModelo;
