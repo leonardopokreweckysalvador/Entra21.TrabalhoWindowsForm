@@ -11,7 +11,7 @@ namespace Entra21.TrabalhoWindowsForm
     {
         private string ArquivoLocal = "status.json";
         private List<Status> statuses;
-
+        
         public StatusServico()
         {
             statuses = new List<Status>();
@@ -85,7 +85,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         public int ObterUltimoCodigo()
         {
-            var ultimoCodigo = int.MinValue;
+            var ultimoCodigo = 0;
             for (var i = 0; i < statuses.Count; i++)
             {
                 var status = statuses[i];

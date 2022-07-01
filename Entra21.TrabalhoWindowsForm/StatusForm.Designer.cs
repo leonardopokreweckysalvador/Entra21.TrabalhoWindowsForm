@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProfissão = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEmpresaTrabalho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNomeLimpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLimiteFinanceiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
@@ -52,12 +44,21 @@
             this.comboBoxNomeCompleto = new System.Windows.Forms.ComboBox();
             this.textBoxProfissao = new System.Windows.Forms.TextBox();
             this.textBoxEmpresaTrabalho = new System.Windows.Forms.TextBox();
-            this.maskedTextBoxSalario = new System.Windows.Forms.MaskedTextBox();
             this.radioButtonNomeLimpo1 = new System.Windows.Forms.RadioButton();
-            this.maskedTextBoxLimiteFinanceiro = new System.Windows.Forms.MaskedTextBox();
             this.radioButtonNomeLimpo2 = new System.Windows.Forms.RadioButton();
             this.labelEndereco = new System.Windows.Forms.Label();
             this.comboBoxEndereco = new System.Windows.Forms.ComboBox();
+            this.textBoxSalario = new System.Windows.Forms.TextBox();
+            this.textBoxLimiteFinanceiro = new System.Windows.Forms.TextBox();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProfissão = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEmpresaTrabalho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNomeLimpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLimiteFinanceiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@
             this.ColumnCodigo,
             this.ColumnDataCadastro,
             this.ColumnPessoa,
+            this.ColumnEndereco,
             this.ColumnProfissão,
             this.ColumnEmpresaTrabalho,
             this.ColumnSalario,
@@ -83,70 +85,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(920, 393);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.HeaderText = "Código";
-            this.ColumnCodigo.MinimumWidth = 6;
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            this.ColumnCodigo.Width = 125;
-            // 
-            // ColumnDataCadastro
-            // 
-            this.ColumnDataCadastro.HeaderText = "Data do Cadastro";
-            this.ColumnDataCadastro.MinimumWidth = 6;
-            this.ColumnDataCadastro.Name = "ColumnDataCadastro";
-            this.ColumnDataCadastro.ReadOnly = true;
-            this.ColumnDataCadastro.Width = 125;
-            // 
-            // ColumnPessoa
-            // 
-            this.ColumnPessoa.HeaderText = "Pessoa";
-            this.ColumnPessoa.MinimumWidth = 6;
-            this.ColumnPessoa.Name = "ColumnPessoa";
-            this.ColumnPessoa.ReadOnly = true;
-            this.ColumnPessoa.Width = 125;
-            // 
-            // ColumnProfissão
-            // 
-            this.ColumnProfissão.HeaderText = "Profissão";
-            this.ColumnProfissão.MinimumWidth = 6;
-            this.ColumnProfissão.Name = "ColumnProfissão";
-            this.ColumnProfissão.ReadOnly = true;
-            this.ColumnProfissão.Width = 125;
-            // 
-            // ColumnEmpresaTrabalho
-            // 
-            this.ColumnEmpresaTrabalho.HeaderText = "Empresa (trabalho)";
-            this.ColumnEmpresaTrabalho.MinimumWidth = 6;
-            this.ColumnEmpresaTrabalho.Name = "ColumnEmpresaTrabalho";
-            this.ColumnEmpresaTrabalho.ReadOnly = true;
-            this.ColumnEmpresaTrabalho.Width = 125;
-            // 
-            // ColumnSalario
-            // 
-            this.ColumnSalario.HeaderText = "Salário";
-            this.ColumnSalario.MinimumWidth = 6;
-            this.ColumnSalario.Name = "ColumnSalario";
-            this.ColumnSalario.ReadOnly = true;
-            this.ColumnSalario.Width = 125;
-            // 
-            // ColumnNomeLimpo
-            // 
-            this.ColumnNomeLimpo.HeaderText = "Nome é Limpo";
-            this.ColumnNomeLimpo.MinimumWidth = 6;
-            this.ColumnNomeLimpo.Name = "ColumnNomeLimpo";
-            this.ColumnNomeLimpo.ReadOnly = true;
-            this.ColumnNomeLimpo.Width = 125;
-            // 
-            // ColumnLimiteFinanceiro
-            // 
-            this.ColumnLimiteFinanceiro.HeaderText = "Limite Financeiro";
-            this.ColumnLimiteFinanceiro.MinimumWidth = 6;
-            this.ColumnLimiteFinanceiro.Name = "ColumnLimiteFinanceiro";
-            this.ColumnLimiteFinanceiro.ReadOnly = true;
-            this.ColumnLimiteFinanceiro.Width = 125;
             // 
             // buttonApagar
             // 
@@ -280,14 +218,6 @@
             this.textBoxEmpresaTrabalho.Size = new System.Drawing.Size(329, 23);
             this.textBoxEmpresaTrabalho.TabIndex = 15;
             // 
-            // maskedTextBoxSalario
-            // 
-            this.maskedTextBoxSalario.Location = new System.Drawing.Point(946, 302);
-            this.maskedTextBoxSalario.Mask = "$";
-            this.maskedTextBoxSalario.Name = "maskedTextBoxSalario";
-            this.maskedTextBoxSalario.Size = new System.Drawing.Size(329, 23);
-            this.maskedTextBoxSalario.TabIndex = 16;
-            // 
             // radioButtonNomeLimpo1
             // 
             this.radioButtonNomeLimpo1.AutoSize = true;
@@ -298,14 +228,6 @@
             this.radioButtonNomeLimpo1.TabStop = true;
             this.radioButtonNomeLimpo1.Text = "Sim";
             this.radioButtonNomeLimpo1.UseVisualStyleBackColor = true;
-            // 
-            // maskedTextBoxLimiteFinanceiro
-            // 
-            this.maskedTextBoxLimiteFinanceiro.Location = new System.Drawing.Point(947, 386);
-            this.maskedTextBoxLimiteFinanceiro.Mask = "$";
-            this.maskedTextBoxLimiteFinanceiro.Name = "maskedTextBoxLimiteFinanceiro";
-            this.maskedTextBoxLimiteFinanceiro.Size = new System.Drawing.Size(328, 23);
-            this.maskedTextBoxLimiteFinanceiro.TabIndex = 18;
             // 
             // radioButtonNomeLimpo2
             // 
@@ -336,17 +258,102 @@
             this.comboBoxEndereco.Size = new System.Drawing.Size(328, 23);
             this.comboBoxEndereco.TabIndex = 21;
             // 
+            // textBoxSalario
+            // 
+            this.textBoxSalario.Location = new System.Drawing.Point(947, 302);
+            this.textBoxSalario.Name = "textBoxSalario";
+            this.textBoxSalario.Size = new System.Drawing.Size(328, 23);
+            this.textBoxSalario.TabIndex = 22;
+            // 
+            // textBoxLimiteFinanceiro
+            // 
+            this.textBoxLimiteFinanceiro.Location = new System.Drawing.Point(947, 386);
+            this.textBoxLimiteFinanceiro.Name = "textBoxLimiteFinanceiro";
+            this.textBoxLimiteFinanceiro.Size = new System.Drawing.Size(328, 23);
+            this.textBoxLimiteFinanceiro.TabIndex = 23;
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "Código";
+            this.ColumnCodigo.MinimumWidth = 6;
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Visible = false;
+            this.ColumnCodigo.Width = 125;
+            // 
+            // ColumnDataCadastro
+            // 
+            this.ColumnDataCadastro.HeaderText = "Data do Cadastro";
+            this.ColumnDataCadastro.MinimumWidth = 6;
+            this.ColumnDataCadastro.Name = "ColumnDataCadastro";
+            this.ColumnDataCadastro.ReadOnly = true;
+            this.ColumnDataCadastro.Width = 125;
+            // 
+            // ColumnPessoa
+            // 
+            this.ColumnPessoa.HeaderText = "Pessoa";
+            this.ColumnPessoa.MinimumWidth = 6;
+            this.ColumnPessoa.Name = "ColumnPessoa";
+            this.ColumnPessoa.ReadOnly = true;
+            this.ColumnPessoa.Width = 125;
+            // 
+            // ColumnEndereco
+            // 
+            this.ColumnEndereco.HeaderText = "Endereco";
+            this.ColumnEndereco.Name = "ColumnEndereco";
+            this.ColumnEndereco.ReadOnly = true;
+            // 
+            // ColumnProfissão
+            // 
+            this.ColumnProfissão.HeaderText = "Profissão";
+            this.ColumnProfissão.MinimumWidth = 6;
+            this.ColumnProfissão.Name = "ColumnProfissão";
+            this.ColumnProfissão.ReadOnly = true;
+            this.ColumnProfissão.Width = 125;
+            // 
+            // ColumnEmpresaTrabalho
+            // 
+            this.ColumnEmpresaTrabalho.HeaderText = "Empresa (trabalho)";
+            this.ColumnEmpresaTrabalho.MinimumWidth = 6;
+            this.ColumnEmpresaTrabalho.Name = "ColumnEmpresaTrabalho";
+            this.ColumnEmpresaTrabalho.ReadOnly = true;
+            this.ColumnEmpresaTrabalho.Width = 125;
+            // 
+            // ColumnSalario
+            // 
+            this.ColumnSalario.HeaderText = "Salário";
+            this.ColumnSalario.MinimumWidth = 6;
+            this.ColumnSalario.Name = "ColumnSalario";
+            this.ColumnSalario.ReadOnly = true;
+            this.ColumnSalario.Width = 125;
+            // 
+            // ColumnNomeLimpo
+            // 
+            this.ColumnNomeLimpo.HeaderText = "Nome é Limpo";
+            this.ColumnNomeLimpo.MinimumWidth = 6;
+            this.ColumnNomeLimpo.Name = "ColumnNomeLimpo";
+            this.ColumnNomeLimpo.ReadOnly = true;
+            this.ColumnNomeLimpo.Width = 125;
+            // 
+            // ColumnLimiteFinanceiro
+            // 
+            this.ColumnLimiteFinanceiro.HeaderText = "Limite Financeiro";
+            this.ColumnLimiteFinanceiro.MinimumWidth = 6;
+            this.ColumnLimiteFinanceiro.Name = "ColumnLimiteFinanceiro";
+            this.ColumnLimiteFinanceiro.ReadOnly = true;
+            this.ColumnLimiteFinanceiro.Width = 125;
+            // 
             // StatusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 450);
+            this.Controls.Add(this.textBoxLimiteFinanceiro);
+            this.Controls.Add(this.textBoxSalario);
             this.Controls.Add(this.comboBoxEndereco);
             this.Controls.Add(this.labelEndereco);
             this.Controls.Add(this.radioButtonNomeLimpo2);
-            this.Controls.Add(this.maskedTextBoxLimiteFinanceiro);
             this.Controls.Add(this.radioButtonNomeLimpo1);
-            this.Controls.Add(this.maskedTextBoxSalario);
             this.Controls.Add(this.textBoxEmpresaTrabalho);
             this.Controls.Add(this.textBoxProfissao);
             this.Controls.Add(this.comboBoxNomeCompleto);
@@ -390,19 +397,20 @@
         private ComboBox comboBoxNomeCompleto;
         private TextBox textBoxProfissao;
         private TextBox textBoxEmpresaTrabalho;
-        private MaskedTextBox maskedTextBoxSalario;
         private RadioButton radioButtonNomeLimpo1;
-        private MaskedTextBox maskedTextBoxLimiteFinanceiro;
         private RadioButton radioButtonNomeLimpo2;
+        private Label labelEndereco;
+        private ComboBox comboBoxEndereco;
+        private TextBox textBoxSalario;
+        private TextBox textBoxLimiteFinanceiro;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnDataCadastro;
         private DataGridViewTextBoxColumn ColumnPessoa;
+        private DataGridViewTextBoxColumn ColumnEndereco;
         private DataGridViewTextBoxColumn ColumnProfissão;
         private DataGridViewTextBoxColumn ColumnEmpresaTrabalho;
         private DataGridViewTextBoxColumn ColumnSalario;
         private DataGridViewTextBoxColumn ColumnNomeLimpo;
         private DataGridViewTextBoxColumn ColumnLimiteFinanceiro;
-        private Label labelEndereco;
-        private ComboBox comboBoxEndereco;
     }
 }

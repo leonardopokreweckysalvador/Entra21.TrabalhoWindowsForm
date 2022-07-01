@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPossuiCarro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPossuiMoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.labelNome = new System.Windows.Forms.Label();
@@ -46,14 +54,6 @@
             this.checkBoxCarro = new System.Windows.Forms.CheckBox();
             this.checkBoxMoto = new System.Windows.Forms.CheckBox();
             this.labelPossuiVeiculo = new System.Windows.Forms.Label();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPossuiCarro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPossuiMoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +79,71 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(931, 357);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "Código";
+            this.ColumnCodigo.MinimumWidth = 6;
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Visible = false;
+            this.ColumnCodigo.Width = 125;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.MinimumWidth = 6;
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            this.ColumnNome.Width = 125;
+            // 
+            // ColumnDataNascimento
+            // 
+            this.ColumnDataNascimento.HeaderText = "Data de nascimento";
+            this.ColumnDataNascimento.MinimumWidth = 6;
+            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
+            this.ColumnDataNascimento.ReadOnly = true;
+            this.ColumnDataNascimento.Width = 125;
+            // 
+            // ColumnSexo
+            // 
+            this.ColumnSexo.HeaderText = "Sexo";
+            this.ColumnSexo.MinimumWidth = 6;
+            this.ColumnSexo.Name = "ColumnSexo";
+            this.ColumnSexo.ReadOnly = true;
+            this.ColumnSexo.Width = 125;
+            // 
+            // ColumnCpf
+            // 
+            this.ColumnCpf.HeaderText = "CPF";
+            this.ColumnCpf.MinimumWidth = 6;
+            this.ColumnCpf.Name = "ColumnCpf";
+            this.ColumnCpf.ReadOnly = true;
+            this.ColumnCpf.Width = 125;
+            // 
+            // ColumnRg
+            // 
+            this.ColumnRg.HeaderText = "RG";
+            this.ColumnRg.MinimumWidth = 6;
+            this.ColumnRg.Name = "ColumnRg";
+            this.ColumnRg.ReadOnly = true;
+            this.ColumnRg.Width = 125;
+            // 
+            // ColumnPossuiCarro
+            // 
+            this.ColumnPossuiCarro.HeaderText = "Possui carro?";
+            this.ColumnPossuiCarro.MinimumWidth = 6;
+            this.ColumnPossuiCarro.Name = "ColumnPossuiCarro";
+            this.ColumnPossuiCarro.ReadOnly = true;
+            this.ColumnPossuiCarro.Width = 125;
+            // 
+            // ColumnPossuiMoto
+            // 
+            this.ColumnPossuiMoto.HeaderText = "Possui moto?";
+            this.ColumnPossuiMoto.MinimumWidth = 6;
+            this.ColumnPossuiMoto.Name = "ColumnPossuiMoto";
+            this.ColumnPossuiMoto.ReadOnly = true;
+            this.ColumnPossuiMoto.Width = 125;
             // 
             // buttonApagar
             // 
@@ -154,8 +219,8 @@
             // 
             // dateTimePickerDataNascimento
             // 
+            this.dateTimePickerDataNascimento.Checked = false;
             this.dateTimePickerDataNascimento.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerDataNascimento.Enabled = false;
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(949, 103);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
@@ -200,6 +265,7 @@
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(310, 23);
             this.maskedTextBoxCpf.TabIndex = 17;
+            this.maskedTextBoxCpf.ValidatingType = typeof(int);
             // 
             // maskedTextBoxRg
             // 
@@ -237,71 +303,6 @@
             this.labelPossuiVeiculo.Size = new System.Drawing.Size(82, 15);
             this.labelPossuiVeiculo.TabIndex = 22;
             this.labelPossuiVeiculo.Text = "Possui veículo";
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.HeaderText = "Código";
-            this.ColumnCodigo.MinimumWidth = 6;
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            this.ColumnCodigo.Visible = false;
-            this.ColumnCodigo.Width = 125;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.MinimumWidth = 6;
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            this.ColumnNome.Width = 125;
-            // 
-            // ColumnDataNascimento
-            // 
-            this.ColumnDataNascimento.HeaderText = "Data de nascimento";
-            this.ColumnDataNascimento.MinimumWidth = 6;
-            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
-            this.ColumnDataNascimento.ReadOnly = true;
-            this.ColumnDataNascimento.Width = 125;
-            // 
-            // ColumnSexo
-            // 
-            this.ColumnSexo.HeaderText = "Sexo";
-            this.ColumnSexo.MinimumWidth = 6;
-            this.ColumnSexo.Name = "ColumnSexo";
-            this.ColumnSexo.ReadOnly = true;
-            this.ColumnSexo.Width = 125;
-            // 
-            // ColumnCpf
-            // 
-            this.ColumnCpf.HeaderText = "CPF";
-            this.ColumnCpf.MinimumWidth = 6;
-            this.ColumnCpf.Name = "ColumnCpf";
-            this.ColumnCpf.ReadOnly = true;
-            this.ColumnCpf.Width = 125;
-            // 
-            // ColumnRg
-            // 
-            this.ColumnRg.HeaderText = "RG";
-            this.ColumnRg.MinimumWidth = 6;
-            this.ColumnRg.Name = "ColumnRg";
-            this.ColumnRg.ReadOnly = true;
-            this.ColumnRg.Width = 125;
-            // 
-            // ColumnPossuiCarro
-            // 
-            this.ColumnPossuiCarro.HeaderText = "Possui carro?";
-            this.ColumnPossuiCarro.MinimumWidth = 6;
-            this.ColumnPossuiCarro.Name = "ColumnPossuiCarro";
-            this.ColumnPossuiCarro.ReadOnly = true;
-            this.ColumnPossuiCarro.Width = 125;
-            // 
-            // ColumnPossuiMoto
-            // 
-            this.ColumnPossuiMoto.HeaderText = "Possui moto?";
-            this.ColumnPossuiMoto.MinimumWidth = 6;
-            this.ColumnPossuiMoto.Name = "ColumnPossuiMoto";
-            this.ColumnPossuiMoto.ReadOnly = true;
-            this.ColumnPossuiMoto.Width = 125;
             // 
             // PessoaForm
             // 
