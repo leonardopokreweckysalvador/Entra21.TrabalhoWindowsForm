@@ -1,17 +1,13 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entra21.TrabalhoWindowsForm
 {
+    //Gustavo Lemos
     internal class StatusServico
     {
         private string ArquivoLocal = "status.json";
         private List<Status> statuses;
-        
+
         public StatusServico()
         {
             statuses = new List<Status>();

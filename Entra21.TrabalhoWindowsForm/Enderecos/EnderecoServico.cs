@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Entra21.TrabalhoWindowsForm
 {
+    //Leonardo Pokrewecky Salvador
     internal class EnderecoServico
     {
         private string LocalArquivo = "enderecos.json";
@@ -107,10 +106,10 @@ namespace Entra21.TrabalhoWindowsForm
 
         internal Endereco ObterPorLogredouro(string? enderecoLogradouro)
         {
-            
+
             var localVirgula = enderecoLogradouro.IndexOf(",");
-            var logradouro = enderecoLogradouro.Substring(0, localVirgula ).Trim();
-            var numero = enderecoLogradouro.Substring((localVirgula + 1), enderecoLogradouro.Length - (localVirgula+1)).Trim();
+            var logradouro = enderecoLogradouro.Substring(0, localVirgula).Trim();
+            var numero = enderecoLogradouro.Substring((localVirgula + 1), enderecoLogradouro.Length - (localVirgula + 1)).Trim();
 
             for (var i = 0; i < enderecos.Count; i++)
             {

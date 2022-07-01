@@ -1,5 +1,6 @@
 ﻿namespace Entra21.TrabalhoWindowsForm
 {
+    //Leonardo Pokrewecky Salvador
     internal class Endereco
     {
         public int Codigo;

@@ -2,6 +2,7 @@
 
 namespace Entra21.TrabalhoWindowsForm
 {
+    //Leonardo Pokrewecky Salvador
     public partial class EnderecoForm : Form
     {
         private EnderecoServico enderecoServico;
@@ -74,7 +75,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            
+
             if (dataGridViewEndereco.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecione um registro para remover.");

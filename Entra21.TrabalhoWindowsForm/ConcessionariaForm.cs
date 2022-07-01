@@ -1,5 +1,6 @@
 ﻿namespace Entra21.TrabalhoWindowsForm
 {
+    //Leonardo Pokrewecky Salvador
     public partial class ConcessionariaForm : Form
     {
         private ConcessionariaServico concessionariaServico;
@@ -99,7 +100,7 @@
 
             if (validar == DialogResult.Cancel) return;
 
-           var concessionaria = RetornaConcessionariaSelecionada();
+            var concessionaria = RetornaConcessionariaSelecionada();
 
             concessionariaServico.Apagar(concessionaria);
 
@@ -311,7 +312,7 @@
 
             try
             {
-                if (dateTimePickerHoraAbre == dateTimePickerHoraFecha )
+                if (dateTimePickerHoraAbre == dateTimePickerHoraFecha)
                 {
                     MessageBox.Show("Preencha as horas corretamente ");
 
