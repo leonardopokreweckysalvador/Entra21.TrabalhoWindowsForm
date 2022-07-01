@@ -92,7 +92,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         public int ObterUltimoCodigo()
         {
-            var ultimoCodigo = int.MinValue;
+            var ultimoCodigo = 0;
             for (var i = 0; i < marcas.Count; i++)
             {
                 var marca = marcas[i];
@@ -100,6 +100,16 @@ namespace Entra21.TrabalhoWindowsForm
                     ultimoCodigo = marca.Codigo;
             }
             return ultimoCodigo;
+        }
+        public Marca ObterPorNomeMarca(string nomeMarca)
+        {
+            for(var i = 0; i < marcas.Count; i++)
+            {
+                var marca = marcas[i];
+                if (marca.Nome == nomeMarca)
+                    return marca;
+            }
+            return null;
         }
     }
 }

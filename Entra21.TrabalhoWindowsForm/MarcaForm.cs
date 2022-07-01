@@ -36,9 +36,9 @@ namespace Entra21.TrabalhoWindowsForm
                 {
                     marca.Codigo,
                     marca.Nome,
-                    marca.AnoFundacao,
                     marca.Grupo,
                     marca.Pais,
+                    marca.AnoFundacao.ToString("dd/MM/yyyy"),
                     marca.ManutecaoNacional,
                     marca.ManutecaoImportada
                 });

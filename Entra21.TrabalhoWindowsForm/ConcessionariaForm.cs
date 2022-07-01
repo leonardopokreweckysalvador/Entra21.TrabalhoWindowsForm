@@ -51,11 +51,11 @@ namespace Entra21.TrabalhoWindowsForm
                         concessionaria.Endereco,
                         concessionaria.Cnpj,
                         concessionaria.RazaoSocial,
-                        concessionaria.DataAbertura,
-                        concessionaria.HoraAbre,
-                        concessionaria.HoraFecha,
+                        concessionaria.DataAbertura.ToString("dd/MM/yyyy"),
+                        concessionaria.HoraAbre.ToString("HH:mm:ss"),
+                        concessionaria.HoraFecha.ToString("HH:mm:ss"),
                         concessionaria.AbreFinalSemana,
-                        concessionaria.Proprietario
+                        concessionaria.Proprietario.Nome
                 });
             }
         }
@@ -81,7 +81,36 @@ namespace Entra21.TrabalhoWindowsForm
 
             if (dadosValidar == false) return;
 
-            CadastrarConcessionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
+            if (dataGridViewConcessionaria.SelectedRows.Count == 0)
+                CadastrarConcessionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
+            else
+                EditarConcecionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
+
+            preencherDataGridViewConcessionaria();
+
+            LimparCampos();
+        }
+
+        private void EditarConcecionaria(string nome, string cnpj, string razaoSocial, string proprietario, string endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
+        {
+            var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
+
+            var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var concessionaria = new Concessionaria()
+            {
+                Codigo = codigoSelecionado,
+                Nome = nome,
+                Cnpj = cnpj,
+                RazaoSocial = razaoSocial,
+                Proprietario = pessoaServico.ObterPorNomePessoa(proprietario),
+                Endereco = enderecoServico.ObterPorLogredouro(endereco),
+                DataAbertura = dataAbertura,
+                HoraFecha = horaFecha,
+                HoraAbre = horaAbre,
+                AbreFinalSemana = abreFinalSemana
+            };
+            concessionariaServico.Editar(concessionaria);
 
         }
 
@@ -154,6 +183,35 @@ namespace Entra21.TrabalhoWindowsForm
             dataGridViewConcessionaria.ClearSelection();
         }
 
+        private void ApresentarDadosConcessionaria()
+        {
+            if (dataGridViewConcessionaria.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um registro para editar");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var concecionaria = concessionariaServico.ObterPorCodigo(codigo);
+
+            textBoxNome.Text = concecionaria.Nome;
+            maskedTextBoxCnpj.Text = concecionaria.Cnpj;
+            textBoxRazaoSocial.Text = concecionaria.RazaoSocial;
+            comboBoxProprietario.Text = concecionaria.Proprietario.Nome;
+            comboBoxEndereco.Text = concecionaria.Endereco.Logradouro + ", " + concecionaria.Endereco.Numero;
+            dateTimePickerDataAbertura.Text = Convert.ToString(concecionaria.DataAbertura);
+            dateTimePickerHoraAbre.Text = Convert.ToString(concecionaria.HoraAbre);
+            dateTimePickerHoraFecha.Text = Convert.ToString(concecionaria.HoraFecha);
+            if (concecionaria.AbreFinalSemana == true)
+                radioButtonAbreFinalSemana.Checked = concecionaria.AbreFinalSemana;
+            else
+                radioButtonNaoAbreFinalSemana.Checked = true;
+        }
+
+
         private void ConcessionariaForm_Load(object sender, EventArgs e)
         {
             preencherDataGridViewConcessionaria();
@@ -164,6 +222,11 @@ namespace Entra21.TrabalhoWindowsForm
             preencherDataGridViewConcessionaria();
 
             LimparCampos();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosConcessionaria();
         }
     }
 }
