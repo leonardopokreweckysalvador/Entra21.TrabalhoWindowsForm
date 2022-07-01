@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Entra21.TrabalhoWindowsForm
+﻿namespace Entra21.TrabalhoWindowsForm
 {
+    //Gustavo Lemos
     public partial class StatusForm : Form
     {
         private StatusServico statusServico;

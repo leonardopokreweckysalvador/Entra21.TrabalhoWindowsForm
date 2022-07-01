@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Entra21.TrabalhoWindowsForm
 {
+    //Leonardo Pokrewecky Salvador
     internal class ConcessionariaServico
     {
         private string LocalArquivo = "concessionaria.json";
@@ -127,10 +126,10 @@ namespace Entra21.TrabalhoWindowsForm
 
         public Concessionaria ObterPorNomeConcessionária(string nomeLoja)
         {
-            for(var i = 0; i<concessionarias.Count; i++)
+            for (var i = 0; i < concessionarias.Count; i++)
             {
                 var concessionaria = concessionarias[i];
-                if(concessionaria.Nome == nomeLoja) 
+                if (concessionaria.Nome == nomeLoja)
                     return concessionaria;
             }
             return null;

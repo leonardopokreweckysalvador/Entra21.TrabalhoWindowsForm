@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Entra21.TrabalhoWindowsForm
+﻿namespace Entra21.TrabalhoWindowsForm
 {
+    //William Lima de J. / Gustavo Lemos / Leonardo Pokrewecky Salvador
     public partial class MenuPrincipal : Form
     {
         public MenuPrincipal()

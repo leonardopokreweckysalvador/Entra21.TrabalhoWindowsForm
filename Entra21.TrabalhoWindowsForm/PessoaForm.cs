@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Entra21.TrabalhoWindowsForm
+﻿namespace Entra21.TrabalhoWindowsForm
 {
+    //Gustavo Lemos
     public partial class PessoaForm : Form
     {
         private PessoaServico pessoaServico;
@@ -20,7 +11,7 @@ namespace Entra21.TrabalhoWindowsForm
             InitializeComponent();
             pessoaServico = new PessoaServico();
             enderecoServico = new EnderecoServico();
-            PreencherDataGridViewComPessoa();            
+            PreencherDataGridViewComPessoa();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -89,7 +80,7 @@ namespace Entra21.TrabalhoWindowsForm
                 AdicionarPessoa(nome, dataNascimento, codigo, sexo, cpf, rg, possuiCarro, possuiMoto);
             else
                 EditarDados(nome, dataNascimento, sexo, cpf, rg, possuiCarro, possuiMoto);
-                PreencherDataGridViewComPessoa();
+            PreencherDataGridViewComPessoa();
             LimparCampos();
         }
 
