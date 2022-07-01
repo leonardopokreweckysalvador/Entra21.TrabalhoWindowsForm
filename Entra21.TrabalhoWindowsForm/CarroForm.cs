@@ -46,14 +46,15 @@ namespace Entra21.TrabalhoWindowsForm
                 dataGridViewCarroForm.Rows.Add(new object[]
                 {
                     carro.Codigo,
-                    carro.Proprietario,
-                    carro.LocalizacaoVeiculo,
-                    carro.Marca,
-                    carro.Renavam,
+                    carro.ModeloVeiculo,
+                    carro.Marca.Nome,
                     carro.Placa,
-                    carro.AnoFabricacao,
-                    carro.AnoModelo,
-
+                    carro.Renavam,
+                    carro.AnoModelo.ToString("yyyy"),
+                    carro.AnoFabricacao.ToString("yyyy"),
+                    carro.Proprietario.Nome,
+                    carro.LicenciamentoEmDia,
+                    carro.LocalizacaoVeiculo,
                 });
             }
             dataGridViewCarroForm.ClearSelection();
@@ -67,8 +68,8 @@ namespace Entra21.TrabalhoWindowsForm
             var marcaVeiculo = Convert.ToString(comboBoxMarcaVeiculo.SelectedItem);
             var placaVeiculo = textBoxPlacaVeiculo.Text;
             var renavam = maskedTextBoxRenavamVeiculo.Text;
-            var anoFabricacao = Convert.ToDateTime(dateTimePickerAnoFabricacao.Text);
-            var anoModelo = Convert.ToDateTime(dateTimePickerAnoModelo.Text);
+            var anoFabricacao = dateTimePickerAnoFabricacao.Value;
+            var anoModelo = dateTimePickerAnoModelo.Value;
             var licenciamentoEmDia = radioButtonLicenciamentoEmDia.Checked;
             var licenciamentoEmAtraso = radioButtonLicenciamentoEmAtraso.Checked;
             var travaEletrica = checkBoxTravaEletrica.Checked;
@@ -84,7 +85,7 @@ namespace Entra21.TrabalhoWindowsForm
             var combustivelAlcool = checkBoxCombustivelAlcool.Checked;
             var combustivelFlex = checkBoxCombustivelFlex.Checked;
 
-            var informacoesValidar = ValidarInformacoes(modeloVeiculo, marcaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+            var informacoesValidar = ValidarInformacoes(modeloVeiculo, marcaVeiculo, placaVeiculo, renavam, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
 
             if (informacoesValidar == false)
                 return;
@@ -101,7 +102,7 @@ namespace Entra21.TrabalhoWindowsForm
             LimparCampos();
         }
 
-        private bool ValidarInformacoes(string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        private bool ValidarInformacoes(string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam,  bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
             if (modeloVeiculo.Replace(" ", "").Trim().Length == 0)
             {
@@ -141,19 +142,19 @@ namespace Entra21.TrabalhoWindowsForm
                 return false;
             }
 
-            if (renavam.Replace("-", "").Trim().Length == 0)
+            if (renavam.Trim().Length == 0)
             {
                 MessageBox.Show("Digite um renavam válido!");
                 maskedTextBoxRenavamVeiculo.Focus();
                 return false;
             }
-            else if ((renavam.Replace("-", "").Trim().Length < 9))
+            else if ((renavam.Replace(",", "").Trim().Length < 9))
             {
                 MessageBox.Show("Digite um renavam válido!");
                 maskedTextBoxRenavamVeiculo.Focus();
                 return false;
             }
-            else if ((renavam.Replace("-", "").Trim().Length > 9))
+            else if ((renavam.Replace(",", "").Trim().Length > 9))
             {
                 MessageBox.Show("Digite um renavam válido!");
                 maskedTextBoxRenavamVeiculo.Focus();
@@ -211,9 +212,10 @@ namespace Entra21.TrabalhoWindowsForm
             carro.ArCondicionado = arCondicionado;
             carro.ComputadorDeBordo = computadorDeBordo;
             carro.CombustivelAlcool = combustivelAlcool;
+            carro.CombustivelGasolina = combustivelGasolina;
             carro.CombustivelDiesel = combustivelDiesel;
             carro.CombustivelFlex = combustivelFlex;
-            carro.CombustivelGasolina = combustivelGasolina;
+            
 
             carroServico.Adicionar(carro);
         }

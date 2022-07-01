@@ -95,7 +95,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         public int ObterUltimoCodigo()
         {
-            var ultimoCodigo = int.MinValue;
+            var ultimoCodigo = 0;
             for(var i = 0; i < carros.Count; i++)
             {
                 var carro = carros[i];
