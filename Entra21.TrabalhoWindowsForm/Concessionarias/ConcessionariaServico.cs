@@ -124,5 +124,16 @@ namespace Entra21.TrabalhoWindowsForm
 
             return UltimoCodigo;
         }
+
+        public Concessionaria ObterPorNomeConcessionária(string nomeLoja)
+        {
+            for(var i = 0; i<concessionarias.Count; i++)
+            {
+                var concessionaria = concessionarias[i];
+                if(concessionaria.Nome == nomeLoja) 
+                    return concessionaria;
+            }
+            return null;
+        }
     }
 }

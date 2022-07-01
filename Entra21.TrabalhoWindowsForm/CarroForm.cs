@@ -15,6 +15,7 @@ namespace Entra21.TrabalhoWindowsForm
         private CarroServico carroServico;
         private PessoaServico pessoaServico;
         private MarcaServico marcaServico;
+        private ConcessionariaServico concessionariaServico;
 
         public CarroForm()
         {
@@ -22,6 +23,8 @@ namespace Entra21.TrabalhoWindowsForm
 
             carroServico = new CarroServico();
             pessoaServico = new PessoaServico();
+            marcaServico = new MarcaServico();
+            concessionariaServico = new ConcessionariaServico();
 
             PreencherComboBoxComOsNomesPessoas();
             PreencherDataGridViewCarro();
@@ -56,7 +59,7 @@ namespace Entra21.TrabalhoWindowsForm
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var proprietarioVeiculo = Convert.ToString(comboBoxProprietario.SelectedItem);
-            var localizacaoVeiculo = textBoxLocalizacaoVeiculo.Text;
+            var localizacaoVeiculo = Convert.ToString(comboBoxLoja.SelectedItem);
             var modeloVeiculo = textBoxModeloVeiculo.Text;
             var marcaVeiculo = Convert.ToString(comboBoxMarcaVeiculo.SelectedItem);
             var placaVeiculo = maskedTextBoxPlacaVeiculo.Text;
@@ -112,13 +115,13 @@ namespace Entra21.TrabalhoWindowsForm
             if (localizacaoVeiculo.Trim().Length == 0)
             {
                 MessageBox.Show("Digite em qual unidade o veículo se encontra!");
-                textBoxLocalizacaoVeiculo.Focus();
+                comboBoxLoja.Focus();
                 return false;
             }
             else if(localizacaoVeiculo.Trim().Length < 5)
             {
                 MessageBox.Show("Digite em qual unidade o veículo se encontra!");
-                textBoxLocalizacaoVeiculo.Focus();
+                comboBoxLoja.Focus();
                 return false;
             }
             if (modeloVeiculo.Replace(" ", "").Trim().Length == 0)
@@ -169,7 +172,7 @@ namespace Entra21.TrabalhoWindowsForm
         private void LimparCampos()
         {
             comboBoxProprietario.ResetText();
-            textBoxLocalizacaoVeiculo.Text = string.Empty;
+            comboBoxLoja.ResetText();
             textBoxModeloVeiculo.Text = string.Empty;
             comboBoxMarcaVeiculo.ResetText(); 
             maskedTextBoxPlacaVeiculo.Text = string.Empty;
@@ -197,7 +200,7 @@ namespace Entra21.TrabalhoWindowsForm
             var carro = new Carro();
             carro.Codigo = carroServico.ObterUltimoCodigo() + 1;
             carro.Proprietario = pessoaServico.ObterPorNomePessoa(proprietarioVeiculo);
-            carro.LocalizacaoVeiculo = localizacaoVeiculo;
+            carro.LocalizacaoVeiculo = concessionariaServico.o;
             carro.ModeloVeiculo = modeloVeiculo;
             carro.Marca = marcaServico.ObterPorNomeMarca(marcaVeiculo);
             carro.Placa = placaVeiculo;
@@ -250,7 +253,7 @@ namespace Entra21.TrabalhoWindowsForm
             var carro = carroServico.ObterPorCodigo(codigo);
 
             comboBoxProprietario.Text = carro.Proprietario.Nome;
-            textBoxLocalizacaoVeiculo.Text = carro.LocalizacaoVeiculo;
+            comboBoxLoja.Text = carro.LocalizacaoVeiculo;
             textBoxModeloVeiculo.Text = carro.ModeloVeiculo;
             comboBoxMarcaVeiculo.Text = carro.Marca.Nome;
             maskedTextBoxPlacaVeiculo.Text = carro.Placa;
