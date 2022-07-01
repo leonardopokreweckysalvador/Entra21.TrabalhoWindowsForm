@@ -283,6 +283,7 @@
             this.dateTimePickerHoraAbre.Name = "dateTimePickerHoraAbre";
             this.dateTimePickerHoraAbre.Size = new System.Drawing.Size(167, 23);
             this.dateTimePickerHoraAbre.TabIndex = 15;
+            this.dateTimePickerHoraAbre.Value = new System.DateTime(2022, 7, 1, 2, 11, 1, 0);
             // 
             // dateTimePickerHoraFecha
             // 
@@ -354,6 +355,7 @@
             this.buttonApagar.TabIndex = 22;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // checkBoxApertoFinalSemana
             // 

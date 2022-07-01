@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Entra21.TrabalhoWindowsForm
+﻿namespace Entra21.TrabalhoWindowsForm
 {
     public partial class ConcessionariaForm : Form
     {
@@ -36,7 +26,7 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void preencherDataGridViewConcessionaria()
         {
-            var concessionarias = concessionariaServico.ObterTodos(checkBoxApertoFinalSemana.Checked);
+            var concessionarias = concessionariaServico.ObterTodosMostrar(checkBoxApertoFinalSemana.Checked);
 
             dataGridViewConcessionaria.Rows.Clear();
 
@@ -91,6 +81,46 @@ namespace Entra21.TrabalhoWindowsForm
             LimparCampos();
         }
 
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosConcessionaria();
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewConcessionaria.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um registro para remover");
+
+                return;
+            }
+
+            var validar = MessageBox.Show("Gostaria realmente de remover esse registro", "Aviso", MessageBoxButtons.OKCancel);
+
+            if (validar == DialogResult.Cancel) return;
+
+           var concessionaria = RetornaConcessionariaSelecionada();
+
+            concessionariaServico.Apagar(concessionaria);
+
+            preencherDataGridViewConcessionaria();
+        }
+
+        private Concessionaria RetornaConcessionariaSelecionada()
+        {
+            var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var concessionaria = concessionariaServico.ObterPorCodigo(codigo);
+            return concessionaria;
+        }
+
+        private void ConcessionariaForm_Load(object sender, EventArgs e)
+        {
+            preencherDataGridViewConcessionaria();
+        }
+
         private void EditarConcecionaria(string nome, string cnpj, string razaoSocial, string proprietario, string endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
         {
             var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
@@ -133,16 +163,185 @@ namespace Entra21.TrabalhoWindowsForm
 
         }
 
-        private bool ValidarDados(string nome, string cnpj, string razaoSocial, object proprietario, object endereco, DateTime dataAbertura, DateTime horaAbre1, DateTime horaAbre2, bool abreFinalSemana)
+        private bool ValidarDados(string nome, string cnpj, string razaoSocial, object proprietario, object endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
         {
-            if (nome.Trim().Length < 5)
+
+            try
             {
-                MessageBox.Show("Nome da concessionaria invalido!");
+                if (nome.Trim().Length < 5)
+                {
+                    MessageBox.Show("Nome da concessionaria invalido!");
+
+                    textBoxNome.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nome da concessionaria invalido ! \n Erro " + ex);
 
                 textBoxNome.Focus();
 
                 return false;
             }
+
+            try
+            {
+                if (cnpj.Length != 18)
+                {
+                    MessageBox.Show("CNPJ Invalido ");
+
+                    maskedTextBoxCnpj.Focus();
+
+                    return false;
+                }
+                if (dataGridViewConcessionaria.SelectedRows.Count == 0)
+                {
+                    var concessionarias = concessionariaServico.ObterTodos();
+                    for (var i = 0; i < concessionarias.Count; i++)
+                    {
+                        var concessionaria = concessionarias[i];
+                        if (concessionaria.Cnpj == cnpj)
+                        {
+                            MessageBox.Show("CNPJ já é cadastrado");
+
+                            maskedTextBoxCnpj.Focus();
+
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("CNPJ invalid ! \n Erro " + ex);
+
+                maskedTextBoxCnpj.Focus();
+
+                return false;
+            }
+
+            try
+            {
+                if (razaoSocial.Length < 5)
+                {
+                    MessageBox.Show("Razão Social Invalido \nNo minimo 5 caracter");
+
+                    textBoxRazaoSocial.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Razão Social Invalido ! \n Erro " + ex);
+
+                textBoxRazaoSocial.Focus();
+
+                return false;
+            }
+
+            try
+            {
+                if (proprietario == "")
+                {
+                    MessageBox.Show("Selecione uma pessoa");
+
+                    comboBoxProprietario.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro " + ex);
+
+                comboBoxProprietario.Focus();
+
+                return false;
+            }
+
+            try
+            {
+                if (endereco == "")
+                {
+                    MessageBox.Show("Selecione um endereço");
+
+                    comboBoxEndereco.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro " + ex);
+
+                comboBoxEndereco.Focus();
+
+                return false;
+            }
+
+            try
+            {
+                if (dataAbertura > DateTime.Now)
+                {
+                    MessageBox.Show("Data de abertura, não pode ser além de hoje");
+
+                    dateTimePickerDataAbertura.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro!!" + ex);
+
+                dateTimePickerDataAbertura.Focus();
+
+                return false;
+            }
+
+            try
+            {
+                if (dateTimePickerHoraAbre == dateTimePickerHoraFecha )
+                {
+                    MessageBox.Show("Preencha as horas corretamente ");
+
+                    dateTimePickerHoraAbre.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro!!" + ex);
+
+                dateTimePickerHoraAbre.Focus();
+
+                return false;
+            }
+
+            try
+            {
+                if (dateTimePickerHoraFecha == dateTimePickerHoraAbre)
+                {
+                    MessageBox.Show("Preencha as horas corretamente ");
+
+                    dateTimePickerHoraFecha.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro!!" + ex);
+
+                dateTimePickerHoraFecha.Focus();
+
+                return false;
+            }
+
             return true;
         }
 
@@ -191,30 +390,20 @@ namespace Entra21.TrabalhoWindowsForm
                 return;
             }
 
-            var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
+            var concessionaria = RetornaConcessionariaSelecionada();
 
-            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
-
-            var concecionaria = concessionariaServico.ObterPorCodigo(codigo);
-
-            textBoxNome.Text = concecionaria.Nome;
-            maskedTextBoxCnpj.Text = concecionaria.Cnpj;
-            textBoxRazaoSocial.Text = concecionaria.RazaoSocial;
-            comboBoxProprietario.Text = concecionaria.Proprietario.Nome;
-            comboBoxEndereco.Text = concecionaria.Endereco.Logradouro + ", " + concecionaria.Endereco.Numero;
-            dateTimePickerDataAbertura.Text = Convert.ToString(concecionaria.DataAbertura);
-            dateTimePickerHoraAbre.Text = Convert.ToString(concecionaria.HoraAbre);
-            dateTimePickerHoraFecha.Text = Convert.ToString(concecionaria.HoraFecha);
-            if (concecionaria.AbreFinalSemana == true)
-                radioButtonAbreFinalSemana.Checked = concecionaria.AbreFinalSemana;
+            textBoxNome.Text = concessionaria.Nome;
+            maskedTextBoxCnpj.Text = concessionaria.Cnpj;
+            textBoxRazaoSocial.Text = concessionaria.RazaoSocial;
+            comboBoxProprietario.Text = concessionaria.Proprietario.Nome;
+            comboBoxEndereco.Text = concessionaria.Endereco.Logradouro + ", " + concessionaria.Endereco.Numero;
+            dateTimePickerDataAbertura.Text = Convert.ToString(concessionaria.DataAbertura);
+            dateTimePickerHoraAbre.Text = Convert.ToString(concessionaria.HoraAbre);
+            dateTimePickerHoraFecha.Text = Convert.ToString(concessionaria.HoraFecha);
+            if (concessionaria.AbreFinalSemana == true)
+                radioButtonAbreFinalSemana.Checked = concessionaria.AbreFinalSemana;
             else
                 radioButtonNaoAbreFinalSemana.Checked = true;
-        }
-
-
-        private void ConcessionariaForm_Load(object sender, EventArgs e)
-        {
-            preencherDataGridViewConcessionaria();
         }
 
         private void checkBoxApertoFinalSemana_Click(object sender, EventArgs e)
@@ -224,9 +413,5 @@ namespace Entra21.TrabalhoWindowsForm
             LimparCampos();
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
-        {
-            ApresentarDadosConcessionaria();
-        }
     }
 }
