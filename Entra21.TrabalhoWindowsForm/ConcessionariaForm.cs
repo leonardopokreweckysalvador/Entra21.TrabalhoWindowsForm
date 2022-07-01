@@ -56,7 +56,7 @@ namespace Entra21.TrabalhoWindowsForm
                         concessionaria.HoraFecha.ToString("HH:mm:ss"),
                         concessionaria.AbreFinalSemana,
                         concessionaria.Proprietario.Nome
-                }); 
+                });
             }
         }
 
@@ -81,11 +81,37 @@ namespace Entra21.TrabalhoWindowsForm
 
             if (dadosValidar == false) return;
 
-            CadastrarConcessionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
+            if (dataGridViewConcessionaria.SelectedRows.Count == 0)
+                CadastrarConcessionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
+            else
+                EditarConcecionaria(nome, cnpj, razaoSocial, proprietario, endereco, dataAbertura, horaAbre, horaFecha, abreFinalSemana);
 
             preencherDataGridViewConcessionaria();
 
             LimparCampos();
+        }
+
+        private void EditarConcecionaria(string nome, string cnpj, string razaoSocial, string proprietario, string endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
+        {
+            var linhaSelecionada = dataGridViewConcessionaria.SelectedRows[0];
+
+            var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var concessionaria = new Concessionaria()
+            {
+                Codigo = codigoSelecionado,
+                Nome = nome,
+                Cnpj = cnpj,
+                RazaoSocial = razaoSocial,
+                Proprietario = pessoaServico.ObterPorNomePessoa(proprietario),
+                Endereco = enderecoServico.ObterPorLogredouro(endereco),
+                DataAbertura = dataAbertura,
+                HoraFecha = horaFecha,
+                HoraAbre = horaAbre,
+                AbreFinalSemana = abreFinalSemana
+            };
+            concessionariaServico.Editar(concessionaria);
+
         }
 
         private void CadastrarConcessionaria(string nome, string cnpj, string razaoSocial, string? proprietario, string? endereco, DateTime dataAbertura, DateTime horaAbre, DateTime horaFecha, bool abreFinalSemana)
