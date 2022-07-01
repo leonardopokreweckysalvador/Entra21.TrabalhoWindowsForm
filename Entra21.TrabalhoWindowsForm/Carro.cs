@@ -12,7 +12,7 @@ namespace Entra21.TrabalhoWindowsForm
         public string ModeloVeiculo;
         public Pessoa Proprietario;
         public Concessionaria Loja;
-        public string Categoria;
+        public Marca Marca;
         public string Renavam;
         public string Placa;
         public DateTime AnoFabricacao;

@@ -59,7 +59,7 @@ namespace Entra21.TrabalhoWindowsForm
                 {
                     carro.Proprietario = editarCarro.Proprietario;
                     carro.Loja = editarCarro.Loja;
-                    carro.Categoria = editarCarro.Categoria;
+                    carro.Marca = editarCarro.Marca;
                     carro.Renavam = editarCarro.Renavam;
                     carro.Placa = editarCarro.Placa;
                     carro.AnoFabricacao = editarCarro.AnoFabricacao;

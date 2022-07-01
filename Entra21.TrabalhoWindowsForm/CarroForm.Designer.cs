@@ -42,18 +42,17 @@
             this.buttonApagar = new System.Windows.Forms.Button();
             this.labelOpcionais = new System.Windows.Forms.Label();
             this.labelSituaçãoDocumentacao = new System.Windows.Forms.Label();
-            this.textBoxProprietario = new System.Windows.Forms.TextBox();
             this.labelProprietarioVeiculo = new System.Windows.Forms.Label();
             this.labelLoja = new System.Windows.Forms.Label();
             this.textBoxLocalizacaoVeiculo = new System.Windows.Forms.TextBox();
             this.labelModeloVeiculo = new System.Windows.Forms.Label();
             this.textBoxModeloVeiculo = new System.Windows.Forms.TextBox();
-            this.labelCategoriaDoVeiculo = new System.Windows.Forms.Label();
+            this.labelMarcaDoVeiculo = new System.Windows.Forms.Label();
             this.maskedTextBoxPlacaVeiculo = new System.Windows.Forms.MaskedTextBox();
             this.labelPlacaVeiculo = new System.Windows.Forms.Label();
             this.textBoxRenavam = new System.Windows.Forms.TextBox();
             this.labelRenavam = new System.Windows.Forms.Label();
-            this.comboBoxCategoriaVeiculo = new System.Windows.Forms.ComboBox();
+            this.comboBoxMarcaVeiculo = new System.Windows.Forms.ComboBox();
             this.labelAnoFabricacao = new System.Windows.Forms.Label();
             this.labelaAnoModelo = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
@@ -74,6 +73,7 @@
             this.radioButtonLicenciamentoEmAtraso = new System.Windows.Forms.RadioButton();
             this.dateTimePickerAnoFabricacao = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerAnoModelo = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxProprietario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarroForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,7 +141,7 @@
             this.ColumnAnoModelo.MinimumWidth = 6;
             this.ColumnAnoModelo.Name = "ColumnAnoModelo";
             this.ColumnAnoModelo.ReadOnly = true;
-            this.ColumnAnoModelo.Width = 90;
+            this.ColumnAnoModelo.Width = 98;
             // 
             // ColumnAnoFabricacao
             // 
@@ -150,7 +150,7 @@
             this.ColumnAnoFabricacao.MinimumWidth = 6;
             this.ColumnAnoFabricacao.Name = "ColumnAnoFabricacao";
             this.ColumnAnoFabricacao.ReadOnly = true;
-            this.ColumnAnoFabricacao.Width = 105;
+            this.ColumnAnoFabricacao.Width = 114;
             // 
             // ColumnProprietario
             // 
@@ -219,14 +219,6 @@
             this.labelSituaçãoDocumentacao.TabIndex = 17;
             this.labelSituaçãoDocumentacao.Text = "Documentação do veículo";
             // 
-            // textBoxProprietario
-            // 
-            this.textBoxProprietario.Location = new System.Drawing.Point(967, 45);
-            this.textBoxProprietario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxProprietario.Name = "textBoxProprietario";
-            this.textBoxProprietario.Size = new System.Drawing.Size(334, 23);
-            this.textBoxProprietario.TabIndex = 18;
-            // 
             // labelProprietarioVeiculo
             // 
             this.labelProprietarioVeiculo.AutoSize = true;
@@ -273,15 +265,15 @@
             this.textBoxModeloVeiculo.Size = new System.Drawing.Size(334, 23);
             this.textBoxModeloVeiculo.TabIndex = 22;
             // 
-            // labelCategoriaDoVeiculo
+            // labelMarcaDoVeiculo
             // 
-            this.labelCategoriaDoVeiculo.AutoSize = true;
-            this.labelCategoriaDoVeiculo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCategoriaDoVeiculo.Location = new System.Drawing.Point(967, 147);
-            this.labelCategoriaDoVeiculo.Name = "labelCategoriaDoVeiculo";
-            this.labelCategoriaDoVeiculo.Size = new System.Drawing.Size(120, 15);
-            this.labelCategoriaDoVeiculo.TabIndex = 25;
-            this.labelCategoriaDoVeiculo.Text = "Categoria do Veículo";
+            this.labelMarcaDoVeiculo.AutoSize = true;
+            this.labelMarcaDoVeiculo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelMarcaDoVeiculo.Location = new System.Drawing.Point(967, 147);
+            this.labelMarcaDoVeiculo.Name = "labelMarcaDoVeiculo";
+            this.labelMarcaDoVeiculo.Size = new System.Drawing.Size(101, 15);
+            this.labelMarcaDoVeiculo.TabIndex = 25;
+            this.labelMarcaDoVeiculo.Text = "Marca do veículo";
             // 
             // maskedTextBoxPlacaVeiculo
             // 
@@ -320,14 +312,14 @@
             this.labelRenavam.TabIndex = 29;
             this.labelRenavam.Text = "Renavam do Veículo";
             // 
-            // comboBoxCategoriaVeiculo
+            // comboBoxMarcaVeiculo
             // 
-            this.comboBoxCategoriaVeiculo.FormattingEnabled = true;
-            this.comboBoxCategoriaVeiculo.Location = new System.Drawing.Point(966, 164);
-            this.comboBoxCategoriaVeiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxCategoriaVeiculo.Name = "comboBoxCategoriaVeiculo";
-            this.comboBoxCategoriaVeiculo.Size = new System.Drawing.Size(133, 23);
-            this.comboBoxCategoriaVeiculo.TabIndex = 30;
+            this.comboBoxMarcaVeiculo.FormattingEnabled = true;
+            this.comboBoxMarcaVeiculo.Location = new System.Drawing.Point(966, 164);
+            this.comboBoxMarcaVeiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxMarcaVeiculo.Name = "comboBoxMarcaVeiculo";
+            this.comboBoxMarcaVeiculo.Size = new System.Drawing.Size(133, 23);
+            this.comboBoxMarcaVeiculo.TabIndex = 30;
             // 
             // labelAnoFabricacao
             // 
@@ -547,11 +539,20 @@
             this.dateTimePickerAnoModelo.Size = new System.Drawing.Size(92, 23);
             this.dateTimePickerAnoModelo.TabIndex = 52;
             // 
+            // comboBoxProprietario
+            // 
+            this.comboBoxProprietario.FormattingEnabled = true;
+            this.comboBoxProprietario.Location = new System.Drawing.Point(966, 46);
+            this.comboBoxProprietario.Name = "comboBoxProprietario";
+            this.comboBoxProprietario.Size = new System.Drawing.Size(266, 23);
+            this.comboBoxProprietario.TabIndex = 53;
+            // 
             // CarroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1261, 511);
+            this.Controls.Add(this.comboBoxProprietario);
             this.Controls.Add(this.dateTimePickerAnoModelo);
             this.Controls.Add(this.dateTimePickerAnoFabricacao);
             this.Controls.Add(this.radioButtonLicenciamentoEmAtraso);
@@ -572,18 +573,17 @@
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.labelaAnoModelo);
             this.Controls.Add(this.labelAnoFabricacao);
-            this.Controls.Add(this.comboBoxCategoriaVeiculo);
+            this.Controls.Add(this.comboBoxMarcaVeiculo);
             this.Controls.Add(this.labelRenavam);
             this.Controls.Add(this.textBoxRenavam);
             this.Controls.Add(this.labelPlacaVeiculo);
             this.Controls.Add(this.maskedTextBoxPlacaVeiculo);
-            this.Controls.Add(this.labelCategoriaDoVeiculo);
+            this.Controls.Add(this.labelMarcaDoVeiculo);
             this.Controls.Add(this.labelModeloVeiculo);
             this.Controls.Add(this.textBoxModeloVeiculo);
             this.Controls.Add(this.labelLoja);
             this.Controls.Add(this.textBoxLocalizacaoVeiculo);
             this.Controls.Add(this.labelProprietarioVeiculo);
-            this.Controls.Add(this.textBoxProprietario);
             this.Controls.Add(this.labelSituaçãoDocumentacao);
             this.Controls.Add(this.labelOpcionais);
             this.Controls.Add(this.buttonApagar);
@@ -606,18 +606,17 @@
         private Button buttonApagar;
         private Label labelOpcionais;
         private Label labelSituaçãoDocumentacao;
-        private TextBox textBoxProprietario;
         private Label labelProprietarioVeiculo;
         private Label labelLoja;
         private TextBox textBoxLocalizacaoVeiculo;
         private Label labelModeloVeiculo;
         private TextBox textBoxModeloVeiculo;
-        private Label labelCategoriaDoVeiculo;
+        private Label labelMarcaDoVeiculo;
         private MaskedTextBox maskedTextBoxPlacaVeiculo;
         private Label labelPlacaVeiculo;
         private TextBox textBoxRenavam;
         private Label labelRenavam;
-        private ComboBox comboBoxCategoriaVeiculo;
+        private ComboBox comboBoxMarcaVeiculo;
         private Label labelAnoFabricacao;
         private Label labelaAnoModelo;
         private Button buttonCancelar;
@@ -647,5 +646,6 @@
         private DataGridViewTextBoxColumn ColumnProprietario;
         private DataGridViewTextBoxColumn ColumnLicenciamento;
         private DataGridViewTextBoxColumn ColumnOpcionais;
+        private ComboBox comboBoxProprietario;
     }
 }

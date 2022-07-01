@@ -13,13 +13,17 @@ namespace Entra21.TrabalhoWindowsForm
     public partial class CarroForm : Form
     {
         private CarroServico carroServico;
+        private PessoaServico pessoaServico;
+        private MarcaServico marcaServico;
 
         public CarroForm()
         {
             InitializeComponent();
 
             carroServico = new CarroServico();
+            pessoaServico = new PessoaServico();
 
+            PreencherComboBoxComOsNomesPessoas();
             PreencherDataGridViewCarro();
         }
 
@@ -38,7 +42,7 @@ namespace Entra21.TrabalhoWindowsForm
                     carro.Codigo,
                     carro.Proprietario,
                     carro.Loja,
-                    carro.Categoria,
+                    carro.Marca,
                     carro.Renavam,
                     carro.Placa,
                     carro.AnoFabricacao,
@@ -51,10 +55,10 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            var proprietarioVeiculo = textBoxProprietario.Text;
+            var proprietarioVeiculo = Convert.ToString(comboBoxProprietario.SelectedItem);
             var localizacaoVeiculo = textBoxLocalizacaoVeiculo.Text;
             var modeloVeiculo = textBoxModeloVeiculo.Text;
-            var categoriaVeiculo = comboBoxCategoriaVeiculo.Text;
+            var marcaVeiculo = Convert.ToString(comboBoxMarcaVeiculo.SelectedItem);
             var placaVeiculo = maskedTextBoxPlacaVeiculo.Text;
             var renavam = textBoxRenavam.Text;
             var anoFabricacao = Convert.ToDateTime(dateTimePickerAnoFabricacao.Text);
@@ -74,37 +78,37 @@ namespace Entra21.TrabalhoWindowsForm
             var combustivelAlcool = checkBoxCombustivelAlcool.Checked;
             var combustivelFlex = checkBoxCombustivelFlex.Checked;
 
-            var informacoesValidar = ValidarInformacoes(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+            var informacoesValidar = ValidarInformacoes(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, marcaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
 
             if (informacoesValidar == false)
                 return;
 
             if (dataGridViewCarroForm.SelectedRows.Count == 0)
             {
-                CadastrarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+                CadastrarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, marcaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoEletrica, direcaoHidraulica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
             }
             else
-                EditarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, categoriaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoHidraulica, direcaoEletrica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
+                EditarCarro(proprietarioVeiculo, localizacaoVeiculo, modeloVeiculo, marcaVeiculo, placaVeiculo, renavam, anoFabricacao, anoModelo, licenciamentoEmDia, licenciamentoEmAtraso, travaEletrica, vidrosEletricos, direcaoHidraulica, direcaoEletrica, cambioAutomatico, bancosEmCouro, arCondicionado, computadorDeBordo, combustivelAlcool, combustivelGasolina, combustivelDiesel, combustivelFlex);
 
             PreencherDataGridViewCarro();
 
             LimparCampos();
         }
 
-        private bool ValidarInformacoes(string proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        private bool ValidarInformacoes(object proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
-            if (proprietarioVeiculo.Trim().Length == 0)
-            {
-                MessageBox.Show("Digite o nome completo do proprietário!");
-                textBoxProprietario.Focus();
-                return false;
-            }
-            else if(proprietarioVeiculo.Trim().Length < 6)
-            {
-                MessageBox.Show("Digite o nome completo do proprietário!");
-                textBoxProprietario.Focus();
-                return false;
-            }
+            //if (proprietarioVeiculo.Trim().Length == 0)
+            //{
+            //    MessageBox.Show("Digite o nome completo do proprietário!");
+            //    comboBoxProprietario.Focus();
+            //    return false;
+            //}
+            //if (proprietarioVeiculo.Trim().Length < 6)
+            //{
+            //    MessageBox.Show("Digite o nome completo do proprietário!");
+            //    comboBoxProprietario.Focus();
+            //    return false;
+            //}
             if (localizacaoVeiculo.Trim().Length == 0)
             {
                 MessageBox.Show("Digite em qual unidade o veículo se encontra!");
@@ -132,7 +136,7 @@ namespace Entra21.TrabalhoWindowsForm
             if (categoriaVeiculo.Length == -1)
             {
                 MessageBox.Show("Selecione uma categoria de veículo!");
-                comboBoxCategoriaVeiculo.Focus();
+                comboBoxMarcaVeiculo.Focus();
                 return false;
             }
             if (placaVeiculo.Replace("-", "").Trim().Length == 0)
@@ -164,10 +168,10 @@ namespace Entra21.TrabalhoWindowsForm
 
         private void LimparCampos()
         {
-            textBoxProprietario.Text = string.Empty;
+            comboBoxProprietario.ResetText();
             textBoxLocalizacaoVeiculo.Text = string.Empty;
             textBoxModeloVeiculo.Text = string.Empty;
-            comboBoxCategoriaVeiculo.ResetText(); 
+            comboBoxMarcaVeiculo.ResetText(); 
             maskedTextBoxPlacaVeiculo.Text = string.Empty;
             textBoxRenavam.Text = string.Empty;
             dateTimePickerAnoFabricacao.Text = string.Empty;
@@ -188,14 +192,14 @@ namespace Entra21.TrabalhoWindowsForm
             checkBoxVidrosEletricos.Checked = false;
         }
 
-        private void CadastrarCarro(Pessoa proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        private void CadastrarCarro(string? proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string? marcaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
             var carro = new Carro();
             carro.Codigo = carroServico.ObterUltimoCodigo() + 1;
-            carro.Proprietario = proprietarioVeiculo;
+            carro.Proprietario = pessoaServico.ObterPorNomePessoa(proprietarioVeiculo);
             carro.LocalizacaoVeiculo = localizacaoVeiculo;
             carro.ModeloVeiculo = modeloVeiculo;
-            carro.Categoria = categoriaVeiculo;
+            carro.Marca = marcaServico.ObterPorNomeMarca(marcaVeiculo);
             carro.Placa = placaVeiculo;
             carro.Renavam = renavam;
             carro.AnoFabricacao = anoFabricacao;
@@ -245,10 +249,10 @@ namespace Entra21.TrabalhoWindowsForm
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             var carro = carroServico.ObterPorCodigo(codigo);
 
-            //textBoxProprietario.Text = carro.Proprietario;
+            comboBoxProprietario.Text = carro.Proprietario.Nome;
             textBoxLocalizacaoVeiculo.Text = carro.LocalizacaoVeiculo;
             textBoxModeloVeiculo.Text = carro.ModeloVeiculo;
-            comboBoxCategoriaVeiculo.Text = carro.Categoria;
+            comboBoxMarcaVeiculo.Text = carro.Marca.Nome;
             maskedTextBoxPlacaVeiculo.Text = carro.Placa;
             textBoxRenavam.Text = carro.Renavam;
             dateTimePickerAnoFabricacao.Text = Convert.ToString(carro.AnoFabricacao);
@@ -268,17 +272,17 @@ namespace Entra21.TrabalhoWindowsForm
             checkBoxTravaEletrica.Checked = carro.TravaEletrica;
             checkBoxVidrosEletricos.Checked = carro.VidrosEletricos;
         }
-        private void EditarCarro(Pessoa proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string categoriaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
+        private void EditarCarro(string? proprietarioVeiculo, string localizacaoVeiculo, string modeloVeiculo, string? marcaVeiculo, string placaVeiculo, string renavam, DateTime anoFabricacao, DateTime anoModelo, bool licenciamentoEmDia, bool licenciamentoEmAtraso, bool travaEletrica, bool vidrosEletricos, bool direcaoEletrica, bool direcaoHidraulica, bool cambioAutomatico, bool bancosEmCouro, bool arCondicionado, bool computadorDeBordo, bool combustivelAlcool, bool combustivelGasolina, bool combustivelDiesel, bool combustivelFlex)
         {
             var linhaSelecionada = dataGridViewCarroForm.SelectedRows[0];
             var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             var carro = new Carro()
             {
                 Codigo = codigoSelecionado,
-                Proprietario = proprietarioVeiculo,
+                Proprietario = pessoaServico.ObterPorNomePessoa(proprietarioVeiculo),
                 LocalizacaoVeiculo = localizacaoVeiculo,
                 ModeloVeiculo = modeloVeiculo,
-                Categoria = categoriaVeiculo,
+                Marca = marcaServico.ObterPorNomeMarca(marcaVeiculo),
                 Placa = placaVeiculo,
                 Renavam = renavam,
                 AnoFabricacao = anoFabricacao,
@@ -323,6 +327,17 @@ namespace Entra21.TrabalhoWindowsForm
 
             carroServico.Apagar(carro);
             PreencherDataGridViewCarro();
+        }
+
+        private void PreencherComboBoxComOsNomesPessoas()
+        {
+            var pessoas = pessoaServico.ObterTodas();
+
+            for (var i = 0; i < pessoas.Count; i++)
+            {
+                var pessoa = pessoas[i];
+                comboBoxProprietario.Items.Add(pessoa.Nome);
+            }
         }
     }
 }
